@@ -19,8 +19,8 @@ TagManager:
   - lightning
   - shotglass
   - decanter
-  - doublerockglass
   - masonjar
+  - doublerocksglass
   layers:
   - Default
   - TransparentFX

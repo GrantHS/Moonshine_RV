@@ -2679,7 +2679,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 22a592d20a910c24397cde259e4ef354,
         type: 3}
       propertyPath: m_TagString
-      value: masonjar
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 2040542448765327740, guid: 22a592d20a910c24397cde259e4ef354,
         type: 3}
@@ -2694,7 +2694,7 @@ PrefabInstance:
     - target: {fileID: 2040542448765327740, guid: 22a592d20a910c24397cde259e4ef354,
         type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: masonjar
       objectReference: {fileID: 0}
     - target: {fileID: 4253280567622488715, guid: 22a592d20a910c24397cde259e4ef354,
         type: 3}
@@ -2711,13 +2711,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7750397243111347764, guid: 22a592d20a910c24397cde259e4ef354,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 22a592d20a910c24397cde259e4ef354,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1191963206}
+    m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 2040542448765327740, guid: 22a592d20a910c24397cde259e4ef354,
         type: 3}
@@ -4562,6 +4563,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114796010225658590, guid: 9f884ee7fc3b37143a98c092e78d99d6,
+        type: 3}
+      propertyPath: m_TagString
+      value: doublerocksglass
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 9f884ee7fc3b37143a98c092e78d99d6,
         type: 3}
       propertyPath: m_Name
@@ -4570,7 +4576,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 9f884ee7fc3b37143a98c092e78d99d6,
         type: 3}
       propertyPath: m_TagString
-      value: doublerockglass
+      value: doublerocksglass
       objectReference: {fileID: 0}
     - target: {fileID: 2721812103742640120, guid: 9f884ee7fc3b37143a98c092e78d99d6,
         type: 3}
@@ -4620,10 +4626,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   liquidEffect: {fileID: 11400000, guid: 91bfb016ec3b43942bb51a5a74ec7ef2, type: 2}
   material: {fileID: 2100000, guid: a515c987696f544488d42a3679dca449, type: 2}
-  clearObject: {fileID: 1454371243}
-  redObject: {fileID: 1291953187}
-  greenObject: {fileID: 558834435}
-  brownObject: {fileID: 1438656004}
 --- !u!1 &988107033
 GameObject:
   m_ObjectHideFlags: 0
@@ -5315,7 +5317,7 @@ PrefabInstance:
     - target: {fileID: 7750397243111347764, guid: ec9486d7563d7b44abdb17057a5d8663,
         type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: shotglass
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -5561,10 +5563,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   liquidEffect: {fileID: 11400000, guid: 74e26328039e225499993b6badf315dd, type: 2}
   material: {fileID: 2100000, guid: 42e95b0a8623c444f84f4086792ebd04, type: 2}
-  clearObject: {fileID: 1454371243}
-  redObject: {fileID: 1291953187}
-  greenObject: {fileID: 558834435}
-  brownObject: {fileID: 1438656004}
 --- !u!1 &1152056873
 GameObject:
   m_ObjectHideFlags: 0
@@ -5775,37 +5773,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1185274545}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1191963205
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1191963206}
-  m_Layer: 0
-  m_Name: spawnPic
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1191963206
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1191963205}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.0123, y: -0.011, z: -0.0506}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1898064165}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1222746856
 GameObject:
   m_ObjectHideFlags: 0
@@ -8906,12 +8873,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4bcc7404f9847bf49901b6a0607858ec, type: 3}
---- !u!4 &1898064165 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 22a592d20a910c24397cde259e4ef354,
-    type: 3}
-  m_PrefabInstance: {fileID: 669106544}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1913862982
 GameObject:
   m_ObjectHideFlags: 0
@@ -9053,6 +9014,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3564783574603935192, guid: 53a86133e48051949be5a1f31d9e7717,
+        type: 3}
+      propertyPath: m_TagString
+      value: decanter
+      objectReference: {fileID: 0}
     - target: {fileID: 6589126927893049898, guid: 53a86133e48051949be5a1f31d9e7717,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -9091,10 +9057,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   liquidEffect: {fileID: 11400000, guid: c8fef4300f5105140aec391c4303eb00, type: 2}
   material: {fileID: 2100000, guid: f723febe4dd16ba45b0d88e647295347, type: 2}
-  clearObject: {fileID: 1454371243}
-  redObject: {fileID: 1291953187}
-  greenObject: {fileID: 558834435}
-  brownObject: {fileID: 1438656004}
 --- !u!1 &1962741822
 GameObject:
   m_ObjectHideFlags: 0
@@ -9450,10 +9412,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   liquidEffect: {fileID: 11400000, guid: d64982d7b8b94374486716adb08535e8, type: 2}
   material: {fileID: 2100000, guid: 9a245bac1739c7d47a2577f4d32d8ff6, type: 2}
-  clearObject: {fileID: 1454371243}
-  redObject: {fileID: 1291953187}
-  greenObject: {fileID: 558834435}
-  brownObject: {fileID: 1438656004}
 --- !u!1 &2012134334
 GameObject:
   m_ObjectHideFlags: 0
