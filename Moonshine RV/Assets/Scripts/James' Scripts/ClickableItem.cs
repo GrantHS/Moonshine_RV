@@ -5,13 +5,24 @@ public class ClickableItem : MonoBehaviour
 {
     public LiquidEffect liquidEffect;
     public Material material;
-    private bool isSelected = false;
 
-    // Public game objects for each color
-    public GameObject clearObject;
-    public GameObject redObject;
-    public GameObject greenObject;
-    public GameObject brownObject;
+    // Enum to represent the selection states
+    private enum SelectionState
+    {
+        Glassware,
+        Color,
+        Flavor,
+        Finished
+    }
+
+    private SelectionState currentState = SelectionState.Glassware;
+
+    // Variables to store selected color, flavor, and glassware
+    private Color selectedColor = Color.white;
+    private string selectedFlavor = "";
+    private string selectedGlassware = "";
+
+    private bool isSelecting = false;
 
     private void Start()
     {
@@ -20,45 +31,58 @@ public class ClickableItem : MonoBehaviour
 
     void Update()
     {
-        if (isSelected && Input.GetMouseButtonDown(0))
+        if (isSelecting && Input.GetMouseButtonDown(0))
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
 
             if (Physics.Raycast(ray, out hit))
             {
-                if (hit.transform.CompareTag("clear") ||
-                    hit.transform.CompareTag("red") ||
-                    hit.transform.CompareTag("green") ||
-                    hit.transform.CompareTag("brown"))
+                if (currentState == SelectionState.Glassware)
                 {
-                    Color targetColor = GetColorFromTag(hit.transform.tag);
-
-                    liquidEffect.Top = targetColor;
-                    liquidEffect.Side = targetColor;
-                    StartCoroutine(IncreaseLiquid());
-
-                    // Set color properties in your material
-                    material.SetColor("_Top", liquidEffect.Top);
-                    material.SetColor("_Side", liquidEffect.Side);
-
-                    isSelected = false; // Reset selection state
-
-                    // Unhide the corresponding object based on the color
-                    switch (hit.transform.tag)
+                    if (hit.transform.CompareTag("shotglass") ||
+                        hit.transform.CompareTag("masonjar") ||
+                        hit.transform.CompareTag("decanter") ||
+                        hit.transform.CompareTag("doublerocksglass"))
                     {
-                        case "clear":
-                            UnhideObject(clearObject);
-                            break;
-                        case "red":
-                            UnhideObject(redObject);
-                            break;
-                        case "green":
-                            UnhideObject(greenObject);
-                            break;
-                        case "brown":
-                            UnhideObject(brownObject);
-                            break;
+                        selectedGlassware = hit.transform.tag;
+                        currentState = SelectionState.Color;
+                    }
+                }
+                else if (currentState == SelectionState.Color)
+                {
+                    if (hit.transform.CompareTag("clear") ||
+                        hit.transform.CompareTag("red") ||
+                        hit.transform.CompareTag("green") ||
+                        hit.transform.CompareTag("brown"))
+                    {
+                        selectedColor = GetColorFromTag(hit.transform.tag);
+
+                        liquidEffect.Top = selectedColor;
+                        liquidEffect.Side = selectedColor;
+                        StartCoroutine(IncreaseLiquid());
+
+                        // Set color properties in your material
+                        material.SetColor("_Top", liquidEffect.Top);
+                        material.SetColor("_Side", liquidEffect.Side);
+
+                        currentState = SelectionState.Flavor;
+                    }
+                }
+                else if (currentState == SelectionState.Flavor)
+                {
+                    if (hit.transform.CompareTag("cherry") ||
+                        hit.transform.CompareTag("honey") ||
+                        hit.transform.CompareTag("lightning") ||
+                        hit.transform.CompareTag("apple"))
+                    {
+                        selectedFlavor = hit.transform.tag;
+                        currentState = SelectionState.Finished;
+
+                        // Output selected items to debug log
+                        Debug.Log("Selected glassware: " + selectedGlassware +
+                                  " | Selected color: " + selectedColor +
+                                  " | Selected flavor: " + selectedFlavor);
                     }
                 }
             }
@@ -95,17 +119,10 @@ public class ClickableItem : MonoBehaviour
 
         // Ensure the final value is exactly 1
         material.SetFloat("_Liquid", 1f);
-
-        isSelected = false; // Reset selection state
     }
 
     void OnMouseDown()
     {
-        isSelected = true;
-    }
-
-    void UnhideObject(GameObject obj)
-    {
-        obj.SetActive(true);
+        isSelecting = true;
     }
 }

@@ -2312,13 +2312,14 @@ GameObject:
   - component: {fileID: 558834436}
   - component: {fileID: 558834438}
   - component: {fileID: 558834437}
+  - component: {fileID: 558834439}
   m_Layer: 5
   m_Name: Apple
-  m_TagString: Untagged
+  m_TagString: apple
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &558834436
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2373,6 +2374,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 558834435}
   m_CullTransparentMesh: 1
+--- !u!65 &558834439
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 558834435}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 50, y: 50, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &565199597
 GameObject:
   m_ObjectHideFlags: 0
@@ -2653,6 +2675,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: MasonJar
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 22a592d20a910c24397cde259e4ef354,
+        type: 3}
+      propertyPath: m_TagString
+      value: masonjar
       objectReference: {fileID: 0}
     - target: {fileID: 2040542448765327740, guid: 22a592d20a910c24397cde259e4ef354,
         type: 3}
@@ -4540,6 +4567,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: DoubleRocksGlass_V2
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9f884ee7fc3b37143a98c092e78d99d6,
+        type: 3}
+      propertyPath: m_TagString
+      value: doublerockglass
+      objectReference: {fileID: 0}
     - target: {fileID: 2721812103742640120, guid: 9f884ee7fc3b37143a98c092e78d99d6,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -5244,6 +5276,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ShotGlass
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ec9486d7563d7b44abdb17057a5d8663,
+        type: 3}
+      propertyPath: m_TagString
+      value: shotglass
       objectReference: {fileID: 0}
     - target: {fileID: 2040542448765327740, guid: ec9486d7563d7b44abdb17057a5d8663,
         type: 3}
@@ -6482,13 +6519,14 @@ GameObject:
   - component: {fileID: 1291953188}
   - component: {fileID: 1291953190}
   - component: {fileID: 1291953189}
+  - component: {fileID: 1291953191}
   m_Layer: 5
   m_Name: Cherry
-  m_TagString: Untagged
+  m_TagString: cherry
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1291953188
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6543,6 +6581,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1291953187}
   m_CullTransparentMesh: 1
+--- !u!65 &1291953191
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1291953187}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 50, y: 50, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1395362296
 GameObject:
   m_ObjectHideFlags: 0
@@ -6659,13 +6718,14 @@ GameObject:
   - component: {fileID: 1438656005}
   - component: {fileID: 1438656007}
   - component: {fileID: 1438656006}
+  - component: {fileID: 1438656008}
   m_Layer: 5
   m_Name: Honey
-  m_TagString: Untagged
+  m_TagString: honey
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1438656005
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6682,7 +6742,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -631.8364, y: -316.94098}
+  m_AnchoredPosition: {x: -632.0101, y: -316.94098}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1438656006
@@ -6720,6 +6780,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1438656004}
   m_CullTransparentMesh: 1
+--- !u!65 &1438656008
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1438656004}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 50, y: 50, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1454371243
 GameObject:
   m_ObjectHideFlags: 0
@@ -6731,13 +6812,14 @@ GameObject:
   - component: {fileID: 1454371244}
   - component: {fileID: 1454371246}
   - component: {fileID: 1454371245}
+  - component: {fileID: 1454371247}
   m_Layer: 5
   m_Name: Lightning
-  m_TagString: Untagged
+  m_TagString: lightning
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1454371244
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6792,6 +6874,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1454371243}
   m_CullTransparentMesh: 1
+--- !u!65 &1454371247
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1454371243}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 50, y: 50, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1513676873
 GameObject:
   m_ObjectHideFlags: 0
@@ -8934,6 +9037,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Decanter
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 53a86133e48051949be5a1f31d9e7717,
+        type: 3}
+      propertyPath: m_TagString
+      value: decanter
       objectReference: {fileID: 0}
     - target: {fileID: 3564783574603935192, guid: 53a86133e48051949be5a1f31d9e7717,
         type: 3}
