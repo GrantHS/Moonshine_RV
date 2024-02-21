@@ -1,10 +1,12 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ClickableItem : MonoBehaviour
 {
     public LiquidEffect liquidEffect;
     public Material material;
+    public GameObject[] flavorImages; // Array of flavor image game objects
 
     private enum SelectionState
     {
@@ -23,6 +25,11 @@ public class ClickableItem : MonoBehaviour
     private void Start()
     {
         material.SetFloat("_Liquid", 0f);
+        // Disable all flavor images initially
+        foreach (var image in flavorImages)
+        {
+            image.SetActive(false);
+        }
     }
 
     void Update()
@@ -69,15 +76,18 @@ public class ClickableItem : MonoBehaviour
                         hit.transform.CompareTag("apple"))
                     {
                         selectedFlavor = hit.transform.tag;
-                        currentState = SelectionState.Finished;
                         Debug.Log("Selected glassware: " + selectedGlassware +
                                   " | Selected color: " + selectedColor +
                                   " | Selected flavor: " + selectedFlavor);
+                        // Enable the flavor image corresponding to the selected flavor
+                        EnableFlavorImage(selectedFlavor);
+                        ResetSelection();
                     }
                 }
             }
         }
     }
+
 
     Color GetColorFromTag(string tag)
     {
@@ -109,10 +119,40 @@ public class ClickableItem : MonoBehaviour
         while (currentValue > 0f)
         {
             yield return new WaitForSeconds(0.8f);
+            // Disable all flavor images
+            foreach (var image in flavorImages)
+            {
+                image.SetActive(false);
+            }
             currentValue = 0f;
             material.SetFloat("_Liquid", currentValue);
         }
         material.SetFloat("_Liquid", 0f);
+    }
+
+    void ResetSelection()
+    {
+        isSelecting = false;
+        selectedGlassware = "";
+        selectedColor = Color.white;
+        selectedFlavor = "";
+        currentState = SelectionState.Glassware;
+    }
+
+
+    void EnableFlavorImage(string flavorTag)
+    {
+        Debug.Log("Flavor tag: " + flavorTag);
+
+        // Enable the flavor image corresponding to the flavor tag
+        foreach (var image in flavorImages)
+        {
+            if (image.CompareTag(flavorTag))
+            {
+                image.SetActive(true);
+                break;
+            }
+        }
     }
 
     void OnMouseDown()
