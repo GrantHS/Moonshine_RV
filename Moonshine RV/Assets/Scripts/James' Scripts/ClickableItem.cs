@@ -6,7 +6,6 @@ public class ClickableItem : MonoBehaviour
     public LiquidEffect liquidEffect;
     public Material material;
 
-    // Enum to represent the selection states
     private enum SelectionState
     {
         Glassware,
@@ -16,12 +15,9 @@ public class ClickableItem : MonoBehaviour
     }
 
     private SelectionState currentState = SelectionState.Glassware;
-
-    // Variables to store selected color, flavor, and glassware
     private Color selectedColor = Color.white;
     private string selectedFlavor = "";
     private string selectedGlassware = "";
-
     private bool isSelecting = false;
 
     private void Start()
@@ -57,15 +53,11 @@ public class ClickableItem : MonoBehaviour
                         hit.transform.CompareTag("brown"))
                     {
                         selectedColor = GetColorFromTag(hit.transform.tag);
-
                         liquidEffect.Top = selectedColor;
                         liquidEffect.Side = selectedColor;
                         StartCoroutine(IncreaseLiquid());
-
-                        // Set color properties in your material
                         material.SetColor("_Top", liquidEffect.Top);
                         material.SetColor("_Side", liquidEffect.Side);
-
                         currentState = SelectionState.Flavor;
                     }
                 }
@@ -78,8 +70,6 @@ public class ClickableItem : MonoBehaviour
                     {
                         selectedFlavor = hit.transform.tag;
                         currentState = SelectionState.Finished;
-
-                        // Output selected items to debug log
                         Debug.Log("Selected glassware: " + selectedGlassware +
                                   " | Selected color: " + selectedColor +
                                   " | Selected flavor: " + selectedFlavor);
@@ -100,9 +90,9 @@ public class ClickableItem : MonoBehaviour
             case "green":
                 return Color.green;
             case "brown":
-                return new Color(0.64f, 0.16f, 0.16f); // Brown color
+                return new Color(0.64f, 0.16f, 0.16f); // brown color
             default:
-                return Color.white; // Default color if tag is not recognized
+                return Color.white;
         }
     }
 
@@ -113,12 +103,22 @@ public class ClickableItem : MonoBehaviour
         {
             currentValue += 0.1f;
             material.SetFloat("_Liquid", currentValue);
-
-            yield return new WaitForSeconds(0.8f); // Adjust the delay as needed
+            yield return new WaitForSeconds(0.8f);
         }
-
-        // Ensure the final value is exactly 1
         material.SetFloat("_Liquid", 1f);
+        while (currentValue > 0f)
+        {
+            yield return new WaitForSeconds(0.8f);
+            currentValue = 0f;
+            material.SetFloat("_Liquid", currentValue);
+        }
+        material.SetFloat("_Liquid", 0f);
+
+        // Reset the state after brewing
+        currentState = SelectionState.Glassware;
+        selectedColor = Color.white;
+        selectedFlavor = "";
+        selectedGlassware = "";
     }
 
     void OnMouseDown()
