@@ -50,7 +50,7 @@ public class ClickableItem : MonoBehaviour
                 // this current state handle's the glassware
                 if (currentState == SelectionState.Glassware)
                 {
-                    // if you hit the object is one of the glassware options
+                    // checks if you hit the object that is one of the glassware options
                     if (hit.transform.CompareTag("shotglass") ||
                         hit.transform.CompareTag("masonjar") ||
                         hit.transform.CompareTag("decanter") ||
@@ -63,45 +63,45 @@ public class ClickableItem : MonoBehaviour
                 }
                 else if (currentState == SelectionState.Color)
                 {
-                    // Check if the hit object is one of the color options
+                    // checks if you hit the object that is one of the color options
                     if (hit.transform.CompareTag("clear") ||
                         hit.transform.CompareTag("red") ||
                         hit.transform.CompareTag("green") ||
                         hit.transform.CompareTag("brown"))
                     {
-                        // Update selected color and apply it to the liquid effect
+                        // update selected color and apply it to the liquid effect
                         selectedColor = GetColorFromTag(hit.transform.tag);
                         liquidEffect.Top = selectedColor;
                         liquidEffect.Side = selectedColor;
-                        StartCoroutine(IncreaseLiquid()); // Start liquid increase animation
+                        StartCoroutine(IncreaseLiquid()); // start's increaseliquid coroutine
                         material.SetColor("_Top", liquidEffect.Top);
                         material.SetColor("_Side", liquidEffect.Side);
-                        currentState = SelectionState.Flavor; // Move to flavor selection state
+                        currentState = SelectionState.Flavor; // move to flavor selection state
                     }
                 }
                 else if (currentState == SelectionState.Flavor)
                 {
-                    // Check if the hit object is one of the flavor options
+                    // check if you hit the object that is one of the flavor options
                     if (hit.transform.CompareTag("cherry") ||
                         hit.transform.CompareTag("honey") ||
                         hit.transform.CompareTag("lightning") ||
                         hit.transform.CompareTag("apple"))
                     {
-                        // Update selected flavor and log the selection
+                        // update selected flavor and log the selection for my clarity sake. 
                         selectedFlavor = hit.transform.tag;
-                        Debug.Log("Selected glassware: " + selectedGlassware +
+                        UnityEngine.Debug.Log("Selected glassware: " + selectedGlassware +
                                   " | Selected color: " + selectedColor +
                                   " | Selected flavor: " + selectedFlavor);
-                        // Enable the flavor image corresponding to the selected flavor
+                        // enable the flavor image corresponding to the selected flavor
                         EnableFlavorImage(selectedFlavor);
-                        ResetSelection(); // Reset the selection process
+                        ResetSelection(); // reset's the selection process
                     }
                 }
             }
         }
     }
 
-    // Get color from tag
+    // gets color from tag
     Color GetColorFromTag(string tag)
     {
         switch (tag)
@@ -113,53 +113,53 @@ public class ClickableItem : MonoBehaviour
             case "green":
                 return Color.green;
             case "brown":
-                return new Color(0.64f, 0.16f, 0.16f); // brown color
+                return new Color(0.64f, 0.16f, 0.16f);
             default:
                 return Color.white;
         }
     }
 
-    // Coroutine to increase liquid level
+    // coroutine to increase liquid level
     IEnumerator IncreaseLiquid()
     {
         float currentValue = material.GetFloat("_Liquid");
         while (currentValue < 1f)
-        {
+        { //increase liquid effect from 0 += 1
             currentValue += 0.1f;
             material.SetFloat("_Liquid", currentValue);
-            yield return new WaitForSeconds(0.8f); // Wait before increasing more
+            yield return new WaitForSeconds(0.8f); 
         }
-        material.SetFloat("_Liquid", 1f); // Ensure liquid level is exactly 1
+        material.SetFloat("_Liquid", 1f); // making sure liquid level is exactly 1
         while (currentValue > 0f)
         {
-            yield return new WaitForSeconds(0.8f); // Wait before decreasing
+            yield return new WaitForSeconds(0.8f); 
             // Disable all flavor images
             foreach (var image in flavorImages)
             {
-                image.SetActive(false);
+                image.SetActive(false); //png flavor image gets hidden
             }
-            currentValue = 0f; // Reset liquid level
+            currentValue = 0f; // reset liquid level
             material.SetFloat("_Liquid", currentValue);
         }
-        material.SetFloat("_Liquid", 0f); // Ensure liquid level is exactly 0
+        material.SetFloat("_Liquid", 0f); // same as the other setfloat, makes sure liquid level is 1
     }
 
-    // Reset selection state
+    // reset selection state
     void ResetSelection()
     {
         isSelecting = false;
         selectedGlassware = "";
-        selectedColor = Color.white;
-        selectedFlavor = "";
-        currentState = SelectionState.Glassware; // Go back to glassware selection state
+        selectedColor = Color.white; //resets all variables
+        selectedFlavor = ""; 
+        currentState = SelectionState.Glassware; // go back to glassware selection state
     }
 
-    // Enable flavor image
+    // enable flavor image
     void EnableFlavorImage(string flavorTag)
     {
-        Debug.Log("Flavor tag: " + flavorTag);
+        UnityEngine.Debug.Log("Flavor tag: " + flavorTag);
 
-        // Enable the flavor image corresponding to the flavor tag
+        // enable the flavor image that is tied to the flavor tag that the player chooses
         foreach (var image in flavorImages)
         {
             if (image.CompareTag(flavorTag))
@@ -170,9 +170,10 @@ public class ClickableItem : MonoBehaviour
         }
     }
 
-    // Handle mouse down event to initiate selection process
+    // bool to handle selection process
     void OnMouseDown()
     {
         isSelecting = true;
+        UnityEngine.Debug.Log("click? " + isSelecting);
     }
 }
