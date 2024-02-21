@@ -16,6 +16,50 @@ public class MenuManager : MonoBehaviour
     [SerializeField]
     private Text TutorialText;
 
+    [Header("Shop Menus")]
+    [SerializeField]
+    private bool LightningHarvestable, CherryHarvestable, AppleHarvestable, HoneyHarvestable;
+    [SerializeField]
+    private GameObject LightningTreeMenu, CherryTreeMenu, AppleTreeMenu, HoneyTreeMenu;
+    [SerializeField]
+    private GameObject GlassComputerMenu;
+    [SerializeField]
+    private GameObject TreeComputerMenu;
+    [SerializeField]
+    private GameObject MainComputerMenu;
+    [SerializeField]
+    private GameObject GlassMenuButton;
+
+    bool MenusOpen;
+
+    private void Update()
+    {
+        if (Input.GetMouseButtonDown(0) && !MenusOpen) 
+        {
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+            if(Physics.Raycast(ray,out hit, 1000))
+            {
+                if (hit.collider.tag == "LightningTree")
+                {
+                    LightningTree();
+                }
+                if (hit.collider.tag == "CherryTree")
+                {
+                    CherryTree();
+                }
+                if (hit.collider.tag == "AppleTree")
+                {
+                    AppleTree();
+                }
+                if (hit.collider.tag == "HoneyTree")
+                {
+                    HoneyTree();
+                }
+            }
+        }
+    }
+
     //Main Menu Buttons
 
     public void StartGame()
@@ -60,4 +104,62 @@ public class MenuManager : MonoBehaviour
         CreditsMenu.SetActive(false);
         MainMenu.SetActive(true);
     }
+
+    //Tree Menu Buttons
+    public void LightningTree()
+    {
+        if(LightningHarvestable) LightningTreeMenu.SetActive(true);
+        MenusOpen = true;
+    }
+    public void CherryTree()
+    {
+        if (CherryHarvestable) CherryTreeMenu.SetActive(true);
+        MenusOpen = true;
+    }
+    public void AppleTree()
+    {
+        if (AppleHarvestable) AppleTreeMenu.SetActive(true);
+        MenusOpen = true;
+    }
+    public void HoneyTree()
+    {
+        if (HoneyHarvestable) HoneyTreeMenu.SetActive(true);
+        MenusOpen = true;
+    }
+
+    public void HideHarvest()
+    {
+        LightningTreeMenu.SetActive(false);
+        CherryTreeMenu.SetActive(false);
+        AppleTreeMenu.SetActive(false);
+        HoneyTreeMenu.SetActive(false);
+        MenusOpen = false;
+    }
+
+
+    //Computer Buttons
+
+    public void GlassMenu()
+    {
+        GlassComputerMenu.SetActive(true);
+        GlassMenuButton.SetActive(false);
+        MenusOpen = true;
+    }
+
+    public void TreeMenu()
+    {
+        TreeComputerMenu.SetActive(false);
+        GlassMenuButton.SetActive(false);
+        MenusOpen = true;
+    }
+
+    public void CloseComputerMenus()
+    {
+        GlassComputerMenu.SetActive(false);
+        TreeComputerMenu.SetActive(false);
+        GlassMenuButton.SetActive(true);
+        MenusOpen = false;
+    }
+
+
 }

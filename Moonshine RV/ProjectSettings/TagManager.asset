@@ -3,7 +3,20 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Still
+  - Computer
+  - OrderWindow
+  - Backyard
+  - clear
+  - MainArea
+  - red
+  - green
+  - brown
+  - LightningTree
+  - CherryTree
+  - AppleTree
+  - HoneyTree
   layers:
   - Default
   - TransparentFX
