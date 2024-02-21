@@ -113,12 +113,6 @@ public class ClickableItem : MonoBehaviour
             material.SetFloat("_Liquid", currentValue);
         }
         material.SetFloat("_Liquid", 0f);
-
-        // Reset the state after brewing
-        currentState = SelectionState.Glassware;
-        selectedColor = Color.white;
-        selectedFlavor = "";
-        selectedGlassware = "";
     }
 
     void OnMouseDown()
