@@ -6,7 +6,7 @@ using UnityEngine;
 public class CameraTransition : MonoBehaviour
 {
     public List<GameObject> buttons; // list of buttons to manipulate
-    public CanvasGroup[] buttonCanvasGroups; // canvas groups associated with buttons
+    public CanvasGroup[] buttonCanvasGroups; // canvas groups associated with buttonsX
 
     public float transitionDuration; // duration of transition
 
@@ -50,9 +50,9 @@ public class CameraTransition : MonoBehaviour
         }
     }
 
-    private void SetButtonsActive(int[] indices, bool active)
+    private void SetButtonsActive(int[] Buttons, bool active)
     {
-        foreach (int index in indices)
+        foreach (int index in Buttons)
         {
             if (index >= 0 && index < buttons.Count)
             {
