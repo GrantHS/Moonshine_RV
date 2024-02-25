@@ -12,7 +12,6 @@ public class ClickableItem : MonoBehaviour
     public Material material;
     public GameObject[] flavorImages; // array of flavor image game objects
     public GameObject[] itemChosen;
-
     private Inventory inventory;
 
     private int index;
