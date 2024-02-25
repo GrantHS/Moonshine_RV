@@ -1,13 +1,22 @@
+using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.Diagnostics;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class ClickableItem : MonoBehaviour
 {
+    public GameObject GameManager;
     public LiquidEffect liquidEffect;
     public Material material;
     public GameObject[] flavorImages; // array of flavor image game objects
+    public GameObject[] itemChosen;
+
+    private Inventory inventory;
+
+    private int index;
+
 
     // enum that are for different states of selection
     private enum SelectionState
@@ -27,6 +36,9 @@ public class ClickableItem : MonoBehaviour
 
     private void Start()
     {
+        index = 0;
+        inventory = GameManager.GetComponent<Inventory>();  
+        
         // set liquid level to 0 and disable flavor images
         material.SetFloat("_Liquid", 0f);
         foreach (var image in flavorImages)
@@ -94,6 +106,9 @@ public class ClickableItem : MonoBehaviour
                                   " | Selected flavor: " + selectedFlavor);
                         // enable the flavor image corresponding to the selected flavor
                         EnableFlavorImage(selectedFlavor);
+
+                        inventory.GetItem(selectedGlassware, selectedColor, itemChosen[index]);
+
                         ResetSelection(); // reset's the selection process
                     }
                 }

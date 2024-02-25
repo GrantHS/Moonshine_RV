@@ -57,7 +57,7 @@ public class Inventory : MonoBehaviour
 
     }
 
-    public void GetItem(GameObject ItemGaining)
+    public void GetItem(string selectedGlassware, Color selectedColor, GameObject ItemGaining)
     {
         
 
