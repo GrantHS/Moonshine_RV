@@ -12105,6 +12105,10 @@ MonoBehaviour:
   - {fileID: 1150616823591125439, guid: 1fda4c4ebe6b5c847b90c68883260201, type: 3}
   - {fileID: 1150616823591125439, guid: b4429a63680af4a4d9853c84c8c86a8a, type: 3}
   - {fileID: 1150616823591125439, guid: ed0ab839db8c8394980594b364200772, type: 3}
+  - {fileID: 1150616823591125439, guid: 66a8b47c920a6cf4a9aae603b785a8cc, type: 3}
+  - {fileID: 1150616823591125439, guid: 0cee5c981b97b1243abfc333fddddd0b, type: 3}
+  - {fileID: 1150616823591125439, guid: b330f6030278aa7438ab65b44dc6bb47, type: 3}
+  - {fileID: 1150616823591125439, guid: 5e833ef7708d821418634b67f46392ed, type: 3}
 --- !u!64 &1091310720
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -30029,7 +30033,11 @@ MonoBehaviour:
   - {fileID: 1526354559}
   - {fileID: 1302060488}
   - {fileID: 2075722826}
-  itemChosen: []
+  itemChosen:
+  - {fileID: 1150616823591125439, guid: 451d7b3ccf488d8459fa02cdd27e1085, type: 3}
+  - {fileID: 1150616823591125439, guid: 518a7d328870f6a46a2806c8bfe982b5, type: 3}
+  - {fileID: 1150616823591125439, guid: 97a4dc09267196e4984a9be34f122ecd, type: 3}
+  - {fileID: 1150616823591125439, guid: 9cc91d05ad8f6af43835a593efc0ae66, type: 3}
 --- !u!1001 &1936205581
 PrefabInstance:
   m_ObjectHideFlags: 0
