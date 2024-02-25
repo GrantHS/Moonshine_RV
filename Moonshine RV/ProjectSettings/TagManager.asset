@@ -21,6 +21,12 @@ TagManager:
   - decanter
   - masonjar
   - doublerocksglass
+  - AppleTree
+  - CherryTree
+  - LightningTree
+  - HoneyTree
+  - masonclearhoney
+  - clearhoney
   layers:
   - Default
   - TransparentFX

@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 6094816239554642837}
   - component: {fileID: 3346247159251568010}
   m_Layer: 5
-  m_Name: masonclearapple
-  m_TagString: apple
+  m_Name: masonredcherry
+  m_TagString: cherry
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -67,7 +67,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 7157f0d9dfa0dcf48a25d0009f9ae1e8, type: 3}
+  m_Texture: {fileID: 2800000, guid: ee2c3faa0995d68489dc89a2413c3b6b, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -92,8 +92,8 @@ MonoBehaviour:
   TextAmount: {fileID: 1095634410915628752}
   SlotFilled: 0
   Amount: 0
-  Flavoring: 2
-  Coloring: 0
+  Flavoring: 1
+  Coloring: 1
   GlassType: 2
 --- !u!1 &8466814848608383299
 GameObject:

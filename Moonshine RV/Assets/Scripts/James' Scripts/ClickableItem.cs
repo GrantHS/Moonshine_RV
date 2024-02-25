@@ -16,6 +16,10 @@ public class ClickableItem : MonoBehaviour
 
     private int index;
 
+    InventorySlot.Flavor curFlavor = InventorySlot.Flavor.Apple;
+    InventorySlot.Color curColor = InventorySlot.Color.Red;
+    InventorySlot.Glass curGlass = InventorySlot.Glass.Double;
+
 
     // enum that are for different states of selection
     private enum SelectionState
@@ -51,6 +55,7 @@ public class ClickableItem : MonoBehaviour
         // checks if selecting is true, and mouse button is clicked
         if (isSelecting && Input.GetMouseButtonDown(0))
         {
+           
             // this casts a ray from the mouse position
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
@@ -67,6 +72,22 @@ public class ClickableItem : MonoBehaviour
                         hit.transform.CompareTag("decanter") ||
                         hit.transform.CompareTag("doublerocksglass"))
                     {
+                        if (hit.transform.CompareTag("shotglass"))
+                        {
+                            curGlass = InventorySlot.Glass.Shot;
+                        }
+                        else if (hit.transform.CompareTag("masonjar"))
+                        {
+                            curGlass = InventorySlot.Glass.Mason;
+                        }
+                        else if (hit.transform.CompareTag("decanter"))
+                        {
+                            curGlass = InventorySlot.Glass.Decanter;
+                        }
+                        else if (hit.transform.CompareTag("doublerocksglass"))
+                        {
+                            curGlass = InventorySlot.Glass.Double;
+                        }
                         // this updates the selected glassware and move to the next state
                         selectedGlassware = hit.transform.tag;
                         currentState = SelectionState.Color;
@@ -80,8 +101,26 @@ public class ClickableItem : MonoBehaviour
                         hit.transform.CompareTag("green") ||
                         hit.transform.CompareTag("brown"))
                     {
+                        if (hit.transform.CompareTag("clear"))
+                        {
+                            curColor = InventorySlot.Color.Clear;
+                        }
+                        else if (hit.transform.CompareTag("red"))
+                        {
+                            curColor = InventorySlot.Color.Red;
+                        }
+                        else if (hit.transform.CompareTag("green"))
+                        {
+                            curColor = InventorySlot.Color.Green;
+                        }
+                        else if (hit.transform.CompareTag("brown"))
+                        {
+                            curColor = InventorySlot.Color.Brown;
+                        }
+                      
                         // update selected color and apply it to the liquid effect
                         selectedColor = GetColorFromTag(hit.transform.tag);
+                       
                         liquidEffect.Top = selectedColor;
                         liquidEffect.Side = selectedColor;
                         StartCoroutine(IncreaseLiquid()); // start's increaseliquid coroutine
@@ -92,20 +131,52 @@ public class ClickableItem : MonoBehaviour
                 }
                 else if (currentState == SelectionState.Flavor)
                 {
+
                     // check if you hit the object that is one of the flavor options
                     if (hit.transform.CompareTag("cherry") ||
                         hit.transform.CompareTag("honey") ||
                         hit.transform.CompareTag("lightning") ||
                         hit.transform.CompareTag("apple"))
                     {
+                        if (hit.transform.CompareTag("cherry"))
+                        {
+                            curFlavor = InventorySlot.Flavor.Cherry;
+                        }
+                        else if (hit.transform.CompareTag("honey"))
+                        {
+                            curFlavor = InventorySlot.Flavor.Honey;
+                        }
+                        else if (hit.transform.CompareTag("lightning"))
+                        {
+                            curFlavor = InventorySlot.Flavor.Lightning;
+                        }
+                        else if (hit.transform.CompareTag("apple"))
+                        {
+                            curFlavor = InventorySlot.Flavor.Apple;
+                        }
+                        UnityEngine.Debug.Log(curFlavor);
+                        UnityEngine.Debug.Log(curColor);
+                        UnityEngine.Debug.Log(curGlass);
+
                         // update selected flavor and log the selection for my clarity sake. 
                         selectedFlavor = hit.transform.tag;
+                     
                         UnityEngine.Debug.Log("Selected glassware: " + selectedGlassware +
                                   " | Selected color: " + selectedColor +
                                   " | Selected flavor: " + selectedFlavor);
                         // enable the flavor image corresponding to the selected flavor
                         EnableFlavorImage(selectedFlavor);
 
+                        for (int i = 0; i < itemChosen.Length; i++)
+                        {
+                            InventorySlot invs = itemChosen[i].GetComponent<InventorySlot>();
+                            if (invs.Flavoring==curFlavor&&invs.Coloring==curColor&&invs.GlassType==curGlass)
+                            {
+                                index = i;
+                                break;
+                            }
+                        }
+                        
                         inventory.GetItem(selectedGlassware, selectedColor, itemChosen[index]);
 
                         ResetSelection(); // reset's the selection process
