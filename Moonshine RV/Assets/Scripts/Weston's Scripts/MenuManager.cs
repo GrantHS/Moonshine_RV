@@ -15,6 +15,8 @@ public class MenuManager : MonoBehaviour
     bool Tutorial = true;
     [SerializeField]
     private Text TutorialText;
+    [SerializeField]
+    private Text MoneyText;
 
     [Header("Shop Menus")]
     [SerializeField]
@@ -29,6 +31,10 @@ public class MenuManager : MonoBehaviour
     private GameObject MainComputerMenu;
     [SerializeField]
     private GameObject GlassMenuButton;
+    [SerializeField]
+    private GameObject TreeMenuButton;
+
+    private int Currency;
 
     bool MenusOpen;
 
@@ -108,22 +114,22 @@ public class MenuManager : MonoBehaviour
     //Tree Menu Buttons
     public void LightningTree()
     {
-        if(LightningHarvestable) LightningTreeMenu.SetActive(true);
+        if (LightningHarvestable && !MenusOpen) LightningTreeMenu.SetActive(true);
         MenusOpen = true;
     }
     public void CherryTree()
     {
-        if (CherryHarvestable) CherryTreeMenu.SetActive(true);
+        if (CherryHarvestable && !MenusOpen) CherryTreeMenu.SetActive(true);
         MenusOpen = true;
     }
     public void AppleTree()
     {
-        if (AppleHarvestable) AppleTreeMenu.SetActive(true);
+        if (AppleHarvestable && !MenusOpen) AppleTreeMenu.SetActive(true);
         MenusOpen = true;
     }
     public void HoneyTree()
     {
-        if (HoneyHarvestable) HoneyTreeMenu.SetActive(true);
+        if (HoneyHarvestable && !MenusOpen) HoneyTreeMenu.SetActive(true);
         MenusOpen = true;
     }
 
@@ -143,12 +149,14 @@ public class MenuManager : MonoBehaviour
     {
         GlassComputerMenu.SetActive(true);
         GlassMenuButton.SetActive(false);
+        TreeMenuButton.SetActive(false);
         MenusOpen = true;
     }
 
     public void TreeMenu()
     {
         TreeComputerMenu.SetActive(false);
+        TreeMenuButton.SetActive(false);
         GlassMenuButton.SetActive(false);
         MenusOpen = true;
     }
@@ -158,6 +166,7 @@ public class MenuManager : MonoBehaviour
         GlassComputerMenu.SetActive(false);
         TreeComputerMenu.SetActive(false);
         GlassMenuButton.SetActive(true);
+        TreeMenuButton.SetActive(true);
         MenusOpen = false;
     }
 
