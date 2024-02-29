@@ -10,7 +10,7 @@ public class Inventory : MonoBehaviour
     public bool StatusEnabled;
 
     [SerializeField]
-    private List<GameObject> InventorySlots;
+    public List<GameObject> InventorySlots;
     [SerializeField]
     private GameObject InventoryItem;
     [SerializeField]
@@ -114,5 +114,60 @@ public class Inventory : MonoBehaviour
         this.gameObject.GetComponent<MenuManager>().HideHarvest();
     }
 
+    public void getButtonItem (GameObject ItemGaining)
+    {
 
+
+        for (int i = 0; i < InventorySlots.Count; i++)
+        {
+            GameObject InvenSlot = InventorySlots[i];
+            if (InvenSlot.GetComponent<Item>().Occupied == true)
+            {
+                GameObject ExistingObject = InvenSlot.GetComponent<Item>().CurrentItem;
+                //Debug.Log("Slot Identified");
+                if (ItemGaining.GetComponent<InventorySlot>().Flavoring == ExistingObject.GetComponent<InventorySlot>().Flavoring && ItemGaining.GetComponent<InventorySlot>().Coloring == ExistingObject.GetComponent<InventorySlot>().Coloring && ItemGaining.GetComponent<InventorySlot>().GlassType == ExistingObject.GetComponent<InventorySlot>().GlassType)
+                {
+                    Debug.Log("Match Identified");
+                    InvenSlot.GetComponent<Item>().CurrentItem.GetComponent<InventorySlot>().Amount++;
+                    InvenSlot.GetComponent<Item>().CurrentItem.GetComponent<InventorySlot>().ChangeText();
+                    i = InventorySlots.Count;
+                    Stacked = true;
+                }
+
+            }
+        }
+        if (!Stacked)
+        {
+            for (int i = 0; i < InventorySlots.Count; i++)
+            {
+                GameObject InvenSlot = InventorySlots[i];
+
+                if (InvenSlot.GetComponent<Item>().Occupied == false)
+                {
+                    GameObject NewItem = Instantiate(ItemGaining, Vector3.zero, new Quaternion(0f, 0f, 0f, 0f));
+                    NewItem.GetComponent<InventorySlot>().parentAfterDrag = InvenSlot.transform;
+                    NewItem.GetComponent<InventorySlot>().SwitchSlots();
+                    i = InventorySlots.Count;
+                    InvenSlot.GetComponent<Item>().Occupied = true;
+                    InvenSlot.GetComponent<Item>().CurrentItem = NewItem;
+
+                }
+                if (i == InventorySlots.Count - 1 && (InventorySlots[i].GetComponent<Item>().Occupied == true))
+                {
+                    Debug.Log("Inventory Full");
+                }
+            }
+
+        }
+        else
+        {
+            Stacked = false;
+        }
+
+
+
+
+
+        this.gameObject.GetComponent<MenuManager>().HideHarvest();
+    }
 }

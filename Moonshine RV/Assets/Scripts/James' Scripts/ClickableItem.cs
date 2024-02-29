@@ -66,6 +66,11 @@ public class ClickableItem : MonoBehaviour
                 // this current state handle's the glassware
                 if (currentState == SelectionState.Glassware)
                 {
+                    if (!HasGlasswareInInventory())
+                    {
+                        UnityEngine.Debug.Log("You need to acquire glassware first.");
+                        return; // Prevent further execution if no glassware in inventory
+                    }
                     // checks if you hit the object that is one of the glassware options
                     if (hit.transform.CompareTag("shotglass") ||
                         hit.transform.CompareTag("masonjar") ||
@@ -185,6 +190,34 @@ public class ClickableItem : MonoBehaviour
             }
         }
     }
+
+    private bool HasGlasswareInInventory()
+    {
+        // Iterate over each GameObject in your InventorySlots list.
+        foreach (var slotGameObject in inventory.InventorySlots)
+        {
+            // Access the InventorySlot component of the GameObject.
+            InventorySlot slot = slotGameObject.GetComponent<Item>().CurrentItem?.GetComponent<InventorySlot>();
+
+            // Ensure both Color and Flavor are in their "null" or unset state alongside checking GlassType.
+            // This example assumes 'Coloring' and 'Flavoring' can be checked against a default or null value to determine if they're unset.
+            // Adjust these checks based on your actual implementation of color and flavor properties.
+            if (slot != null &&
+                (slot.GlassType == InventorySlot.Glass.Shot ||
+                 slot.GlassType == InventorySlot.Glass.Mason ||
+                 slot.GlassType == InventorySlot.Glass.Decanter ||
+                 slot.GlassType == InventorySlot.Glass.Double) &&
+                slot.Coloring == null && // Assuming 'Coloring' can be null or has a default unset state.
+                slot.Flavoring == null)  // Assuming 'Flavoring' can be null or has a default unset state.
+            {
+                return true; // Found at least one glassware item with no color or flavor.
+            }
+        }
+        return false; // No suitable glassware items found.
+    }
+
+
+
 
     // gets color from tag
     Color GetColorFromTag(string tag)
