@@ -170,4 +170,28 @@ public class Inventory : MonoBehaviour
 
         this.gameObject.GetComponent<MenuManager>().HideHarvest();
     }
+
+    public void RemoveItem(GameObject itemToRemove)
+    {
+        // check to see if an item is able to remove from the inventory
+        if (InventorySlots.Contains(itemToRemove))
+        {
+            // removes the item from weston's inventory
+            InventorySlots.Remove(itemToRemove);
+
+            // destroys the glassware item
+            Destroy(itemToRemove.GetComponent<Item>().CurrentItem);
+
+            // slot is unoccupied and clear the reference to the current item
+            itemToRemove.GetComponent<Item>().Occupied = false;
+            itemToRemove.GetComponent<Item>().CurrentItem = null;
+        }
+        else
+        {
+            Debug.LogWarning("The item to remove is not in the inventory.");
+        }
+    }
+
+
+
 }

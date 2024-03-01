@@ -80,18 +80,23 @@ public class ClickableItem : MonoBehaviour
                         if (hit.transform.CompareTag("shotglass"))
                         {
                             curGlass = InventorySlot.Glass.Shot;
+                            RemoveSelectedGlasswareFromInventory();
+
                         }
                         else if (hit.transform.CompareTag("masonjar"))
                         {
                             curGlass = InventorySlot.Glass.Mason;
+                            RemoveSelectedGlasswareFromInventory();
                         }
                         else if (hit.transform.CompareTag("decanter"))
                         {
                             curGlass = InventorySlot.Glass.Decanter;
+                            RemoveSelectedGlasswareFromInventory();
                         }
                         else if (hit.transform.CompareTag("doublerocksglass"))
                         {
                             curGlass = InventorySlot.Glass.Double;
+                            RemoveSelectedGlasswareFromInventory();
                         }
                         // this updates the selected glassware and move to the next state
                         selectedGlassware = hit.transform.tag;
@@ -207,8 +212,8 @@ public class ClickableItem : MonoBehaviour
                  slot.GlassType == InventorySlot.Glass.Mason ||
                  slot.GlassType == InventorySlot.Glass.Decanter ||
                  slot.GlassType == InventorySlot.Glass.Double) &&
-                slot.Coloring == null && // Assuming 'Coloring' can be null or has a default unset state.
-                slot.Flavoring == null)  // Assuming 'Flavoring' can be null or has a default unset state.
+                slot.Coloring == InventorySlot.Color.None && 
+                slot.Flavoring == InventorySlot.Flavor.None)  
             {
                 return true; // Found at least one glassware item with no color or flavor.
             }
@@ -216,7 +221,41 @@ public class ClickableItem : MonoBehaviour
         return false; // No suitable glassware items found.
     }
 
+    private GameObject GetSelectedGlasswareFromInventory()
+    {
+        // Iterate over each GameObject in your InventorySlots list.
+        foreach (var slotGameObject in inventory.InventorySlots)
+        {
+            // Access the InventorySlot component of the GameObject.
+            InventorySlot slot = slotGameObject.GetComponent<Item>().CurrentItem?.GetComponent<InventorySlot>();
 
+            // Ensure both Color and Flavor are in their "null" or unset state alongside checking GlassType.
+            // This example assumes 'Coloring' and 'Flavoring' can be checked against a default or null value to determine if they're unset.
+            // Adjust these checks based on your actual implementation of color and flavor properties.
+            if (slot != null &&
+                (slot.GlassType == InventorySlot.Glass.Shot ||
+                 slot.GlassType == InventorySlot.Glass.Mason ||
+                 slot.GlassType == InventorySlot.Glass.Decanter ||
+                 slot.GlassType == InventorySlot.Glass.Double) &&
+                slot.Coloring == InventorySlot.Color.None &&
+                slot.Flavoring == InventorySlot.Flavor.None)
+            {
+                return slotGameObject; // Found at least one glassware item with no color or flavor.
+            }
+        }
+        return null; // No suitable glassware items found.
+    }
+
+    private void RemoveSelectedGlasswareFromInventory()
+    {
+        GameObject selectedGlassware = GetSelectedGlasswareFromInventory();
+        if (selectedGlassware != null)
+        {
+            // Remove the selected glassware from the inventory.
+            inventory.RemoveItem(selectedGlassware);
+
+        }
+    }
 
 
     // gets color from tag
@@ -291,6 +330,7 @@ public class ClickableItem : MonoBehaviour
     // bool to handle selection process
     void OnMouseDown()
     {
+        // Set isSelecting to true
         isSelecting = true;
         UnityEngine.Debug.Log("click? " + isSelecting);
     }
