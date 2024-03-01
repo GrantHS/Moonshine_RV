@@ -14,6 +14,9 @@ public class ClickableItem : MonoBehaviour
     public GameObject[] itemChosen;
     private Inventory inventory;
 
+    public OrderSlot orderSlot; // Assign this in the Unity Editor
+
+
     private int index;
 
     InventorySlot.Flavor curFlavor = InventorySlot.Flavor.Apple;
@@ -40,8 +43,9 @@ public class ClickableItem : MonoBehaviour
     private void Start()
     {
         index = 0;
-        inventory = GameManager.GetComponent<Inventory>();  
-        
+        inventory = GameManager.GetComponent<Inventory>();
+
+
         // set liquid level to 0 and disable flavor images
         material.SetFloat("_Liquid", 0f);
         foreach (var image in flavorImages)
@@ -69,7 +73,7 @@ public class ClickableItem : MonoBehaviour
                     if (!HasGlasswareInInventory())
                     {
                         UnityEngine.Debug.Log("You need to acquire glassware first.");
-                        return; // Prevent further execution if no glassware in inventory
+                        return; // player needs to have glassware to go further
                     }
                     // checks if you hit the object that is one of the glassware options
                     if (hit.transform.CompareTag("shotglass") ||
@@ -188,6 +192,7 @@ public class ClickableItem : MonoBehaviour
                         }
                         
                         inventory.GetItem(selectedGlassware, selectedColor, itemChosen[index]);
+                        CheckOrderCompletion();
 
                         ResetSelection(); // reset's the selection process
                     }
@@ -198,15 +203,13 @@ public class ClickableItem : MonoBehaviour
 
     private bool HasGlasswareInInventory()
     {
-        // Iterate over each GameObject in your InventorySlots list.
+        
         foreach (var slotGameObject in inventory.InventorySlots)
         {
-            // Access the InventorySlot component of the GameObject.
+            // access the inventoryslot component of the gameobject
             InventorySlot slot = slotGameObject.GetComponent<Item>().CurrentItem?.GetComponent<InventorySlot>();
 
-            // Ensure both Color and Flavor are in their "null" or unset state alongside checking GlassType.
-            // This example assumes 'Coloring' and 'Flavoring' can be checked against a default or null value to determine if they're unset.
-            // Adjust these checks based on your actual implementation of color and flavor properties.
+            //checks if the glassware has a title with no falvor or color
             if (slot != null &&
                 (slot.GlassType == InventorySlot.Glass.Shot ||
                  slot.GlassType == InventorySlot.Glass.Mason ||
@@ -215,24 +218,22 @@ public class ClickableItem : MonoBehaviour
                 slot.Coloring == InventorySlot.Color.None && 
                 slot.Flavoring == InventorySlot.Flavor.None)  
             {
-                return true; // Found at least one glassware item with no color or flavor.
+                return true; // found at least one glassware item with no color or flavor.
             }
         }
-        return false; // No suitable glassware items found.
+        return false; // no glassware items found.
     }
 
     private GameObject GetSelectedGlasswareFromInventory()
     {
-        // Iterate over each GameObject in your InventorySlots list.
+        
         foreach (var slotGameObject in inventory.InventorySlots)
         {
-            // Access the InventorySlot component of the GameObject.
+            // access the onventoryslot component of the gameobject
             InventorySlot slot = slotGameObject.GetComponent<Item>().CurrentItem?.GetComponent<InventorySlot>();
 
-            // Ensure both Color and Flavor are in their "null" or unset state alongside checking GlassType.
-            // This example assumes 'Coloring' and 'Flavoring' can be checked against a default or null value to determine if they're unset.
-            // Adjust these checks based on your actual implementation of color and flavor properties.
-            if (slot != null &&
+            
+            if (slot != null && //checks if the glassware has a title with no falvor or color
                 (slot.GlassType == InventorySlot.Glass.Shot ||
                  slot.GlassType == InventorySlot.Glass.Mason ||
                  slot.GlassType == InventorySlot.Glass.Decanter ||
@@ -240,10 +241,10 @@ public class ClickableItem : MonoBehaviour
                 slot.Coloring == InventorySlot.Color.None &&
                 slot.Flavoring == InventorySlot.Flavor.None)
             {
-                return slotGameObject; // Found at least one glassware item with no color or flavor.
+                return slotGameObject; // finds at least one glassware item with no color or flavor
             }
         }
-        return null; // No suitable glassware items found.
+        return null; // no glassware items found
     }
 
     private void RemoveSelectedGlasswareFromInventory()
@@ -251,7 +252,7 @@ public class ClickableItem : MonoBehaviour
         GameObject selectedGlassware = GetSelectedGlasswareFromInventory();
         if (selectedGlassware != null)
         {
-            // Remove the selected glassware from the inventory.
+            // removes the selected glassware from the inventory
             inventory.RemoveItem(selectedGlassware);
 
         }
@@ -334,4 +335,69 @@ public class ClickableItem : MonoBehaviour
         isSelecting = true;
         UnityEngine.Debug.Log("click? " + isSelecting);
     }
+
+    // checks if the player completed the order.
+    public void CheckOrderCompletion()
+    {
+        // Convert the player's selection into the format used by OrderSlot.Order
+        int flavorIndex = ConvertFlavorToIndex(curFlavor);
+        int colorIndex = ConvertColorToIndex(curColor); // clear will always be 0
+        int glassIndex = ConvertGlassToIndex(curGlass);
+
+        // check if the player's selection matches the order
+        if (orderSlot.CheckOrder(flavorIndex, colorIndex, glassIndex))
+        {
+            UnityEngine.Debug.Log("Order is correct!");
+
+            // Find the Customer instance dynamically
+            Customer customer = FindObjectOfType<Customer>();
+            if (customer != null)
+            {
+                customer.Leave(); // destroys the customer.
+            }
+            else
+            {
+                UnityEngine.Debug.LogError("No customer found to leave.");
+            }
+        }
+        else
+        {
+            UnityEngine.Debug.Log("Order is incorrect!");
+            // order not correct.
+        }
+    }
+
+    // Helper methods to convert the player's selection to indices
+    private int ConvertFlavorToIndex(InventorySlot.Flavor flavor)
+    {
+        // This mapping should match the one used in OrderMaker
+        switch (flavor)
+        {
+            case InventorySlot.Flavor.Lightning: return 0;
+            case InventorySlot.Flavor.Cherry: return 1;
+            case InventorySlot.Flavor.Apple: return 2;
+            case InventorySlot.Flavor.Honey: return 3;
+            default: return -1; // Unknown flavor
+        }
+    }
+
+    private int ConvertColorToIndex(InventorySlot.Color color)
+    {
+        // Since color is always clear for now, we return 0
+        return 0;
+    }
+
+    private int ConvertGlassToIndex(InventorySlot.Glass glass)
+    {
+        // This mapping should match the one used in OrderMaker
+        switch (glass)
+        {
+            case InventorySlot.Glass.Shot: return 0;
+            case InventorySlot.Glass.Double: return 1;
+            case InventorySlot.Glass.Mason: return 2;
+            case InventorySlot.Glass.Decanter: return 3;
+            default: return -1; // Unknown glassware
+        }
+    }
+
 }
