@@ -39,6 +39,8 @@ public class MenuManager : MonoBehaviour
     private int Currency;
     [SerializeField]
     private int CherTreePrice, AppTreePrice, HonTreePrice, ShotGlassPrice, DoubleGlassPrice, MasonGlassPrice, CanterGlassPrice;
+    [SerializeField]
+    private GameObject CherryButton, AppleButton, HoneyButton;
 
     bool MenusOpen;
     [SerializeField]
@@ -184,6 +186,7 @@ public class MenuManager : MonoBehaviour
             CherTree.SetActive(true);
             MoneyText.text = "Money: " + Currency + "$";
             ShopMoneyText.text = "Money: " + Currency + "$";
+            CherryButton.GetComponent<Button>().interactable = false;
         }
     }
 
@@ -195,6 +198,7 @@ public class MenuManager : MonoBehaviour
             AppTree.SetActive(true);
             MoneyText.text = "Money: " + Currency + "$";
             ShopMoneyText.text = "Money: " + Currency + "$";
+            AppleButton.GetComponent<Button>().interactable = false;
         }
     }
 
@@ -206,6 +210,7 @@ public class MenuManager : MonoBehaviour
             HonTree.SetActive(true);
             MoneyText.text = "Money: " + Currency + "$";
             ShopMoneyText.text = "Money: " + Currency + "$";
+            HoneyButton.GetComponent<Button>().interactable = false;
         }
     }
 

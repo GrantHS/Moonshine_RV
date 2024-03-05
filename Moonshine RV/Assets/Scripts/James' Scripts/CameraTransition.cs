@@ -14,6 +14,12 @@ public class CameraTransition : MonoBehaviour
     private Vector3 originalPosition; // original position of the camera
     private Quaternion originalRotation; // original rotation of the camera
 
+    //Westen Variable
+    [SerializeField]
+    private GameObject ComputerButtons;
+    [SerializeField]
+    private GameObject TreeMenu, GlassMenu;
+
     private void Update()
     {
         HandleSceneTransitions(); // handle scene transitions
@@ -66,9 +72,18 @@ public class CameraTransition : MonoBehaviour
         foreach (GameObject obj in buttons)
         {
             obj.SetActive(false); // hide all buttons
+            //WestenCode
+            ComputerButtons.SetActive(false);
+            GlassMenu.SetActive(false);
+            TreeMenu.SetActive(false);
         }
 
         SetButtonsActive(new int[] { 0, 1, 2 }, true); // set specific elements active
+
+        //Westen Temp Code
+        ComputerButtons.SetActive(true);
+
+        //Temp Code End
 
         targetPos = targetTransform;
         originalPosition = transform.position;
@@ -118,6 +133,10 @@ public class CameraTransition : MonoBehaviour
         foreach (GameObject obj in buttons)
         {
             obj.SetActive(false); // hide all buttons
+            //WestenCode
+            ComputerButtons.SetActive(false);
+            GlassMenu.SetActive(false);
+            TreeMenu.SetActive(false);
         }
 
         if (buttons.Count > 0)
@@ -164,6 +183,10 @@ public class CameraTransition : MonoBehaviour
         foreach (GameObject obj in buttons)
         {
             obj.SetActive(false); // hide all buttons
+            //WestenCode
+            ComputerButtons.SetActive(false);
+            GlassMenu.SetActive(false);
+            TreeMenu.SetActive(false);
         }
 
         if (buttons.Count > 0) buttons[0].SetActive(true); // show specific elements
@@ -216,6 +239,10 @@ public class CameraTransition : MonoBehaviour
         foreach (GameObject obj in buttons)
         {
             obj.SetActive(false); // hide all buttons
+            //WestenCode
+            ComputerButtons.SetActive(false);
+            GlassMenu.SetActive(false);
+            TreeMenu.SetActive(false);
         }
 
         if (buttons.Count > 0) buttons[0].SetActive(true); // show specific elements
@@ -269,6 +296,10 @@ public class CameraTransition : MonoBehaviour
         foreach (GameObject obj in buttons)
         {
             obj.SetActive(false); // hide all buttons
+            //WestenCode
+            ComputerButtons.SetActive(false);
+            GlassMenu.SetActive(false);
+            TreeMenu.SetActive(false);
         }
 
         StopAllCoroutines(); // stop any ongoing transitions

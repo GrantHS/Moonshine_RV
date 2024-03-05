@@ -206,14 +206,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1511155457}
-        m_TargetAssemblyTypeName: Inventory, Assembly-CSharp
-        m_MethodName: GetItem
-        m_Mode: 2
+      - m_Target: {fileID: 1511155458}
+        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
+        m_MethodName: BuyCherryTree
+        m_Mode: 1
         m_Arguments:
-          m_ObjectArgument: {fileID: 1150616823591125439, guid: 3e4bab6643d6cde4cae0aa3c749515e1,
-            type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -421,7 +420,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1511155457}
         m_TargetAssemblyTypeName: Inventory, Assembly-CSharp
-        m_MethodName: GetItem
+        m_MethodName: getButtonItem
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 1150616823591125439, guid: 54922fc1c396afe4aa5d7f19dcb4fa25,
@@ -630,7 +629,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1511155457}
         m_TargetAssemblyTypeName: Inventory, Assembly-CSharp
-        m_MethodName: GetItem
+        m_MethodName: getButtonItem
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 1150616823591125439, guid: 073676ea43817044a8744e33754d3757,
@@ -1742,6 +1741,9 @@ MonoBehaviour:
   - {fileID: 90589225}
   - {fileID: 832202863}
   transitionDuration: 1
+  ComputerButtons: {fileID: 1942602507}
+  TreeMenu: {fileID: 1853023972}
+  GlassMenu: {fileID: 1588250924}
 --- !u!4 &241654668 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 9f884ee7fc3b37143a98c092e78d99d6,
@@ -3194,14 +3196,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1511155457}
-        m_TargetAssemblyTypeName: Inventory, Assembly-CSharp
-        m_MethodName: GetItem
-        m_Mode: 2
+      - m_Target: {fileID: 1511155458}
+        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
+        m_MethodName: BuyAppleTree
+        m_Mode: 1
         m_Arguments:
-          m_ObjectArgument: {fileID: 1150616823591125439, guid: 28c5713936508fa4fabf60b27ac84d11,
-            type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -5101,7 +5102,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1511155457}
         m_TargetAssemblyTypeName: Inventory, Assembly-CSharp
-        m_MethodName: GetItem
+        m_MethodName: getButtonItem
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 1150616823591125439, guid: bb53e7bb01dac3e49a5ea235b0ef3d26,
@@ -6493,7 +6494,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1511155457}
         m_TargetAssemblyTypeName: Inventory, Assembly-CSharp
-        m_MethodName: GetItem
+        m_MethodName: getButtonItem
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 1150616823591125439, guid: 488c321e33456b745bc929186108e416,
@@ -6986,7 +6987,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1511155457}
         m_TargetAssemblyTypeName: Inventory, Assembly-CSharp
-        m_MethodName: GetItem
+        m_MethodName: getButtonItem
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 1150616823591125439, guid: b6cda769c1a882a4a8267d5d1a385720,
@@ -7759,6 +7760,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3640369435795777803, guid: ba9ae95e849cca54780ff9f0d4849462,
         type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3640369435795777803, guid: ba9ae95e849cca54780ff9f0d4849462,
+        type: 3}
       propertyPath: m_TagString
       value: AppleTree
       objectReference: {fileID: 0}
@@ -7829,8 +7835,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5797219779937119198, guid: ba9ae95e849cca54780ff9f0d4849462,
         type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5797219779937119198, guid: ba9ae95e849cca54780ff9f0d4849462,
+        type: 3}
       propertyPath: m_TagString
       value: CherryTree
+      objectReference: {fileID: 0}
+    - target: {fileID: 8115348587016929881, guid: ba9ae95e849cca54780ff9f0d4849462,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8115348587016929881, guid: ba9ae95e849cca54780ff9f0d4849462,
         type: 3}
@@ -9601,7 +9617,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1511155457}
         m_TargetAssemblyTypeName: Inventory, Assembly-CSharp
-        m_MethodName: GetItem
+        m_MethodName: getButtonItem
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 1150616823591125439, guid: aee56b6fd2750094c9a32920abe5357c,
@@ -10346,8 +10362,8 @@ MonoBehaviour:
   OptionsMenuObject: {fileID: 1937150154}
   CreditsMenu: {fileID: 876205703}
   TutorialText: {fileID: 1389534299}
-  MoneyText: {fileID: 0}
-  ShopMoneyText: {fileID: 0}
+  MoneyText: {fileID: 1726361807}
+  ShopMoneyText: {fileID: 1726361807}
   LightningHarvestable: 1
   CherryHarvestable: 1
   AppleHarvestable: 1
@@ -10369,6 +10385,9 @@ MonoBehaviour:
   DoubleGlassPrice: 0
   MasonGlassPrice: 0
   CanterGlassPrice: 0
+  CherryButton: {fileID: 3276117}
+  AppleButton: {fileID: 531940500}
+  HoneyButton: {fileID: 2124402079}
   LightTree: {fileID: 1312292233}
   CherTree: {fileID: 668656011}
   AppTree: {fileID: 1246792052}
@@ -10544,7 +10563,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1511155457}
         m_TargetAssemblyTypeName: Inventory, Assembly-CSharp
-        m_MethodName: GetItem
+        m_MethodName: getButtonItem
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 1150616823591125439, guid: 772ee257bfcba62409ea7a80c3e6c935,
@@ -10783,7 +10802,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1511155457}
         m_TargetAssemblyTypeName: Inventory, Assembly-CSharp
-        m_MethodName: GetItem
+        m_MethodName: getButtonItem
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 1150616823591125439, guid: 28c5713936508fa4fabf60b27ac84d11,
@@ -13704,7 +13723,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1511155457}
         m_TargetAssemblyTypeName: Inventory, Assembly-CSharp
-        m_MethodName: GetItem
+        m_MethodName: getButtonItem
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 1150616823591125439, guid: f2c51d038a7f3be4f98a0b4adfcb85a3,
@@ -14130,7 +14149,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1511155457}
         m_TargetAssemblyTypeName: Inventory, Assembly-CSharp
-        m_MethodName: GetItem
+        m_MethodName: getButtonItem
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 1150616823591125439, guid: bd3a53f37e01e9a4e9312c1321e1b88b,
@@ -14380,7 +14399,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1511155457}
         m_TargetAssemblyTypeName: Inventory, Assembly-CSharp
-        m_MethodName: GetItem
+        m_MethodName: getButtonItem
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 1150616823591125439, guid: 9945e1ebc6fa8c343ba5dc2acf2976e8,
@@ -16079,14 +16098,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1511155457}
-        m_TargetAssemblyTypeName: Inventory, Assembly-CSharp
-        m_MethodName: GetItem
-        m_Mode: 2
+      - m_Target: {fileID: 1511155458}
+        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
+        m_MethodName: BuyHoneyTree
+        m_Mode: 1
         m_Arguments:
-          m_ObjectArgument: {fileID: 1150616823591125439, guid: f2c51d038a7f3be4f98a0b4adfcb85a3,
-            type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -16254,7 +16272,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1511155457}
         m_TargetAssemblyTypeName: Inventory, Assembly-CSharp
-        m_MethodName: GetItem
+        m_MethodName: getButtonItem
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 1150616823591125439, guid: 3e4bab6643d6cde4cae0aa3c749515e1,
@@ -16385,20 +16403,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2139027442}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1511155457}
-        m_TargetAssemblyTypeName: Inventory, Assembly-CSharp
-        m_MethodName: GetItem
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 1150616823591125439, guid: 9945e1ebc6fa8c343ba5dc2acf2976e8,
-            type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &2139027442
 MonoBehaviour:
   m_ObjectHideFlags: 0
