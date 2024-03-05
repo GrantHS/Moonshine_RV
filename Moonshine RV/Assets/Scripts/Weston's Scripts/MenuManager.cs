@@ -17,6 +17,8 @@ public class MenuManager : MonoBehaviour
     private Text TutorialText;
     [SerializeField]
     private Text MoneyText;
+    [SerializeField]
+    private Text ShopMoneyText;
 
     [Header("Shop Menus")]
     [SerializeField]
@@ -33,18 +35,22 @@ public class MenuManager : MonoBehaviour
     private GameObject GlassMenuButton;
     [SerializeField]
     private GameObject TreeMenuButton;
-
+    [SerializeField]
     private int Currency;
+    [SerializeField]
+    private int CherTreePrice, AppTreePrice, HonTreePrice, ShotGlassPrice, DoubleGlassPrice, MasonGlassPrice, CanterGlassPrice;
 
     bool MenusOpen;
+    [SerializeField]
+    private GameObject LightTree, CherTree, AppTree, HonTree;
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0) && !MenusOpen) 
+        if (Input.GetMouseButtonDown(0) && !MenusOpen)
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
-            if(Physics.Raycast(ray,out hit, 1000))
+            if (Physics.Raycast(ray, out hit, 1000))
             {
                 if (hit.collider.tag == "LightningTree")
                 {
@@ -155,7 +161,7 @@ public class MenuManager : MonoBehaviour
 
     public void TreeMenu()
     {
-        TreeComputerMenu.SetActive(false);
+        TreeComputerMenu.SetActive(true);
         TreeMenuButton.SetActive(false);
         GlassMenuButton.SetActive(false);
         MenusOpen = true;
@@ -170,5 +176,77 @@ public class MenuManager : MonoBehaviour
         MenusOpen = false;
     }
 
+    public void BuyCherryTree()
+    {
+        if (Currency >= CherTreePrice)
+        {
+            Currency -= CherTreePrice;
+            CherTree.SetActive(true);
+            MoneyText.text = "Money: " + Currency + "$";
+            ShopMoneyText.text = "Money: " + Currency + "$";
+        }
+    }
+
+    public void BuyAppleTree()
+    {
+        if (Currency >= AppTreePrice)
+        {
+            Currency -= AppTreePrice;
+            AppTree.SetActive(true);
+            MoneyText.text = "Money: " + Currency + "$";
+            ShopMoneyText.text = "Money: " + Currency + "$";
+        }
+    }
+
+    public void BuyHoneyTree()
+    {
+        if (Currency >= HonTreePrice)
+        {
+            Currency -= HonTreePrice;
+            HonTree.SetActive(true);
+            MoneyText.text = "Money: " + Currency + "$";
+            ShopMoneyText.text = "Money: " + Currency + "$";
+        }
+    }
+
+    public void BuyShotGlass()
+    {
+        if (Currency >= ShotGlassPrice)
+        {
+            Currency -= ShotGlassPrice;
+            MoneyText.text = "Money: " + Currency + "$";
+            ShopMoneyText.text = "Money: " + Currency + "$";
+        }
+    }
+
+    public void BuyDoubleGlass()
+    {
+        if (Currency >= DoubleGlassPrice)
+        {
+            Currency -= DoubleGlassPrice;
+            MoneyText.text = "Money: " + Currency + "$";
+            ShopMoneyText.text = "Money: " + Currency + "$";
+        }
+    }
+
+    public void BuyMasonJar()
+    {
+        if (Currency >= MasonGlassPrice)
+        {
+            Currency -= MasonGlassPrice;
+            MoneyText.text = "Money: " + Currency + "$";
+            ShopMoneyText.text = "Money: " + Currency + "$";
+        }
+    }
+
+    public void BuyDecanter()
+    {
+        if (Currency >= CanterGlassPrice)
+        {
+            Currency -= CanterGlassPrice;
+            MoneyText.text = "Money: " + Currency + "$";
+            ShopMoneyText.text = "Money: " + Currency + "$";
+        }
+    }
 
 }
