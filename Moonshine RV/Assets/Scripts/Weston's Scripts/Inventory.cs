@@ -10,12 +10,13 @@ public class Inventory : MonoBehaviour
     public bool StatusEnabled;
 
     [SerializeField]
-    private List<GameObject> InventorySlots;
+    public List<GameObject> InventorySlots;
     [SerializeField]
     private GameObject InventoryItem;
     [SerializeField]
     private GameObject InventoryBox;
-
+    [SerializeField]
+    private bool Stacked;
 
     // Start is called before the first frame update
     void Start()
@@ -56,7 +57,7 @@ public class Inventory : MonoBehaviour
 
     }
 
-    public void GetItem(GameObject ItemGaining)
+    public void GetItem(string selectedGlassware, Color selectedColor, GameObject ItemGaining)
     {
         
 
@@ -66,42 +67,131 @@ public class Inventory : MonoBehaviour
             if (InvenSlot.GetComponent<Item>().Occupied == true)
             {
                 GameObject ExistingObject = InvenSlot.GetComponent<Item>().CurrentItem;
-                Debug.Log("Slot Identified");
+                //Debug.Log("Slot Identified");
                 if (ItemGaining.GetComponent<InventorySlot>().Flavoring == ExistingObject.GetComponent<InventorySlot>().Flavoring && ItemGaining.GetComponent<InventorySlot>().Coloring == ExistingObject.GetComponent<InventorySlot>().Coloring && ItemGaining.GetComponent<InventorySlot>().GlassType == ExistingObject.GetComponent<InventorySlot>().GlassType)
                 {
                     Debug.Log("Match Identified");
                     InvenSlot.GetComponent<Item>().CurrentItem.GetComponent<InventorySlot>().Amount++;
                     InvenSlot.GetComponent<Item>().CurrentItem.GetComponent<InventorySlot>().ChangeText();
                     i = InventorySlots.Count;
+                    Stacked = true;
                 }
 
             }
         }
+        if (!Stacked)
+        {
+            for (int i = 0; i < InventorySlots.Count; i++)
+            {
+                GameObject InvenSlot = InventorySlots[i];
+
+                if (InvenSlot.GetComponent<Item>().Occupied == false)
+                {
+                    GameObject NewItem = Instantiate(ItemGaining, Vector3.zero, new Quaternion(0f, 0f, 0f, 0f));
+                    NewItem.GetComponent<InventorySlot>().parentAfterDrag = InvenSlot.transform;
+                    NewItem.GetComponent<InventorySlot>().SwitchSlots();
+                    i = InventorySlots.Count;
+                    InvenSlot.GetComponent<Item>().Occupied = true;
+                    InvenSlot.GetComponent<Item>().CurrentItem = NewItem;
+
+                }
+                if (i == InventorySlots.Count - 1 && (InventorySlots[i].GetComponent<Item>().Occupied == true))
+                {
+                    Debug.Log("Inventory Full");
+                }
+            }
+            
+        }
+        else
+        {
+            Stacked = false;
+        }
+       
+
+            
         
+
+        this.gameObject.GetComponent<MenuManager>().HideHarvest();
+    }
+
+    public void getButtonItem (GameObject ItemGaining)
+    {
+
 
         for (int i = 0; i < InventorySlots.Count; i++)
         {
             GameObject InvenSlot = InventorySlots[i];
-
-            if (InvenSlot.GetComponent<Item>().Occupied == false)
+            if (InvenSlot.GetComponent<Item>().Occupied == true)
             {
-                GameObject NewItem = Instantiate(ItemGaining, Vector3.zero, new Quaternion(0f, 0f, 0f, 0f));
-                NewItem.GetComponent<InventorySlot>().parentAfterDrag = InvenSlot.transform;
-                NewItem.GetComponent<InventorySlot>().SwitchSlots();
-                i = InventorySlots.Count;
-                InvenSlot.GetComponent<Item>().Occupied = true;
-                InvenSlot.GetComponent<Item>().CurrentItem = NewItem;
+                GameObject ExistingObject = InvenSlot.GetComponent<Item>().CurrentItem;
+                //Debug.Log("Slot Identified");
+                if (ItemGaining.GetComponent<InventorySlot>().Flavoring == ExistingObject.GetComponent<InventorySlot>().Flavoring && ItemGaining.GetComponent<InventorySlot>().Coloring == ExistingObject.GetComponent<InventorySlot>().Coloring && ItemGaining.GetComponent<InventorySlot>().GlassType == ExistingObject.GetComponent<InventorySlot>().GlassType)
+                {
+                    Debug.Log("Match Identified");
+                    InvenSlot.GetComponent<Item>().CurrentItem.GetComponent<InventorySlot>().Amount++;
+                    InvenSlot.GetComponent<Item>().CurrentItem.GetComponent<InventorySlot>().ChangeText();
+                    i = InventorySlots.Count;
+                    Stacked = true;
+                }
 
             }
-
-            if (i == InventorySlots.Count - 1 && (InventorySlots[i].GetComponent<Item>().Occupied == true))
+        }
+        if (!Stacked)
+        {
+            for (int i = 0; i < InventorySlots.Count; i++)
             {
-                Debug.Log("Inventory Full");
+                GameObject InvenSlot = InventorySlots[i];
+
+                if (InvenSlot.GetComponent<Item>().Occupied == false)
+                {
+                    GameObject NewItem = Instantiate(ItemGaining, Vector3.zero, new Quaternion(0f, 0f, 0f, 0f));
+                    NewItem.GetComponent<InventorySlot>().parentAfterDrag = InvenSlot.transform;
+                    NewItem.GetComponent<InventorySlot>().SwitchSlots();
+                    i = InventorySlots.Count;
+                    InvenSlot.GetComponent<Item>().Occupied = true;
+                    InvenSlot.GetComponent<Item>().CurrentItem = NewItem;
+
+                }
+                if (i == InventorySlots.Count - 1 && (InventorySlots[i].GetComponent<Item>().Occupied == true))
+                {
+                    Debug.Log("Inventory Full");
+                }
             }
+
+        }
+        else
+        {
+            Stacked = false;
         }
 
 
+
+
+
+        this.gameObject.GetComponent<MenuManager>().HideHarvest();
     }
+
+    public void RemoveItem(GameObject itemToRemove)
+    {
+        // check to see if an item is able to remove from the inventory
+        if (InventorySlots.Contains(itemToRemove))
+        {
+            // removes the item from weston's inventory
+            InventorySlots.Remove(itemToRemove);
+
+            // destroys the glassware item
+            Destroy(itemToRemove.GetComponent<Item>().CurrentItem);
+
+            // slot is unoccupied and clear the reference to the current item
+            itemToRemove.GetComponent<Item>().Occupied = false;
+            itemToRemove.GetComponent<Item>().CurrentItem = null;
+        }
+        else
+        {
+            Debug.LogWarning("The item to remove is not in the inventory.");
+        }
+    }
+
 
 
 }
