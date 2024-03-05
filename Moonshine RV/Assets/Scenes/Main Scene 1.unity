@@ -6676,12 +6676,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae6925fa1a909f8448ce14769560b453, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameManager: {fileID: 1511155455}
   liquidEffect: {fileID: 11400000, guid: 91bfb016ec3b43942bb51a5a74ec7ef2, type: 2}
   material: {fileID: 2100000, guid: a515c987696f544488d42a3679dca449, type: 2}
-  clearObject: {fileID: 1454371243}
-  redObject: {fileID: 1291953187}
-  greenObject: {fileID: 558834435}
-  brownObject: {fileID: 1438656004}
+  flavorImages: []
+  itemChosen: []
+  orderSlot: {fileID: 0}
 --- !u!1 &988107033
 GameObject:
   m_ObjectHideFlags: 0
@@ -7541,12 +7541,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae6925fa1a909f8448ce14769560b453, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameManager: {fileID: 1511155455}
   liquidEffect: {fileID: 11400000, guid: 74e26328039e225499993b6badf315dd, type: 2}
   material: {fileID: 2100000, guid: 42e95b0a8623c444f84f4086792ebd04, type: 2}
-  clearObject: {fileID: 1454371243}
-  redObject: {fileID: 1291953187}
-  greenObject: {fileID: 558834435}
-  brownObject: {fileID: 1438656004}
+  flavorImages: []
+  itemChosen: []
+  orderSlot: {fileID: 0}
 --- !u!1 &1094673331
 GameObject:
   m_ObjectHideFlags: 0
@@ -8026,6 +8026,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Monitor
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 382e6b35aa3d7da4c9f2965ee341ab01,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10305,6 +10310,7 @@ MonoBehaviour:
   HoneyTree: 0
   MasonJar: 0
   Decanter: 0
+  orderSlot: {fileID: 0}
 --- !u!114 &1511155457
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10341,6 +10347,7 @@ MonoBehaviour:
   CreditsMenu: {fileID: 876205703}
   TutorialText: {fileID: 1389534299}
   MoneyText: {fileID: 0}
+  ShopMoneyText: {fileID: 0}
   LightningHarvestable: 1
   CherryHarvestable: 1
   AppleHarvestable: 1
@@ -10354,6 +10361,18 @@ MonoBehaviour:
   MainComputerMenu: {fileID: 0}
   GlassMenuButton: {fileID: 798850198}
   TreeMenuButton: {fileID: 508252961}
+  Currency: 0
+  CherTreePrice: 0
+  AppTreePrice: 0
+  HonTreePrice: 0
+  ShotGlassPrice: 0
+  DoubleGlassPrice: 0
+  MasonGlassPrice: 0
+  CanterGlassPrice: 0
+  LightTree: {fileID: 1312292233}
+  CherTree: {fileID: 668656011}
+  AppTree: {fileID: 1246792052}
+  HonTree: {fileID: 248672892}
 --- !u!65 &1511155459
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11240,7 +11259,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1588250925
 Transform:
   m_ObjectHideFlags: 0
@@ -12982,6 +13001,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Computer (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e6a422efc5634da4a9056b66e72dad68,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -13574,7 +13598,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1853023973
 Transform:
   m_ObjectHideFlags: 0
@@ -14625,12 +14649,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae6925fa1a909f8448ce14769560b453, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameManager: {fileID: 1511155455}
   liquidEffect: {fileID: 11400000, guid: c8fef4300f5105140aec391c4303eb00, type: 2}
   material: {fileID: 2100000, guid: f723febe4dd16ba45b0d88e647295347, type: 2}
-  clearObject: {fileID: 1454371243}
-  redObject: {fileID: 1291953187}
-  greenObject: {fileID: 558834435}
-  brownObject: {fileID: 1438656004}
+  flavorImages: []
+  itemChosen: []
+  orderSlot: {fileID: 0}
 --- !u!1 &1937150154
 GameObject:
   m_ObjectHideFlags: 0
@@ -14684,7 +14708,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1942602508
 Transform:
   m_ObjectHideFlags: 0
@@ -15271,12 +15295,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae6925fa1a909f8448ce14769560b453, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameManager: {fileID: 1511155455}
   liquidEffect: {fileID: 11400000, guid: d64982d7b8b94374486716adb08535e8, type: 2}
   material: {fileID: 2100000, guid: 9a245bac1739c7d47a2577f4d32d8ff6, type: 2}
-  clearObject: {fileID: 1454371243}
-  redObject: {fileID: 1291953187}
-  greenObject: {fileID: 558834435}
-  brownObject: {fileID: 1438656004}
+  flavorImages: []
+  itemChosen: []
+  orderSlot: {fileID: 0}
 --- !u!1 &2012134334
 GameObject:
   m_ObjectHideFlags: 0
