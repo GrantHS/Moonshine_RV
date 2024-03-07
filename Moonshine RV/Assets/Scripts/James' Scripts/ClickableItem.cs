@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using UnityEngine;
 using UnityEngine.UI;
+using static InventorySlot;
 
 public class ClickableItem : MonoBehaviour
 {
@@ -35,7 +36,7 @@ public class ClickableItem : MonoBehaviour
 
     // current state of selection
     private SelectionState currentState = SelectionState.Glassware;
-    private Color selectedColor = Color.white;
+    private UnityEngine.Color selectedColor = UnityEngine.Color.white;
     private string selectedFlavor = "";
     private string selectedGlassware = "";
     private bool isSelecting = false;
@@ -260,20 +261,20 @@ public class ClickableItem : MonoBehaviour
 
 
     // gets color from tag
-    Color GetColorFromTag(string tag)
+    UnityEngine.Color GetColorFromTag(string tag)
     {
         switch (tag)
         {
             case "clear":
-                return Color.white;
+                return UnityEngine.Color.white;
             case "red":
-                return Color.red;
+                return UnityEngine.Color.red;
             case "green":
-                return Color.green;
+                return UnityEngine.Color.green;
             case "brown":
-                return new Color(0.64f, 0.16f, 0.16f);
+                return new UnityEngine.Color(0.64f, 0.16f, 0.16f);
             default:
-                return Color.white;
+                return UnityEngine.Color.white;
         }
     }
 
@@ -307,7 +308,7 @@ public class ClickableItem : MonoBehaviour
     {
         isSelecting = false;
         selectedGlassware = "";
-        selectedColor = Color.white; //resets all variables
+        selectedColor = UnityEngine.Color.white; //resets all variables
         selectedFlavor = ""; 
         currentState = SelectionState.Glassware; // go back to glassware selection state
     }
@@ -367,10 +368,10 @@ public class ClickableItem : MonoBehaviour
         }
     }
 
-    // Helper methods to convert the player's selection to indices
+    // method to convert the player's selection to indexs
     private int ConvertFlavorToIndex(InventorySlot.Flavor flavor)
     {
-        // This mapping should match the one used in OrderMaker
+        // inventoryslot and ordermaker can talk to eachother for the order completion
         switch (flavor)
         {
             case InventorySlot.Flavor.Lightning: return 0;
@@ -383,13 +384,20 @@ public class ClickableItem : MonoBehaviour
 
     private int ConvertColorToIndex(InventorySlot.Color color)
     {
-        // Since color is always clear for now, we return 0
-        return 0;
+        // inventoryslot and ordermaker can talk to eachother for the order completion
+        switch (color)
+        {
+            case InventorySlot.Color.Clear: return 0;
+            case InventorySlot.Color.Red: return 1;
+            case InventorySlot.Color.Green: return 2;
+            case InventorySlot.Color.Brown: return 3;
+            default: return -1; // Unknown glassware
+        }
     }
 
     private int ConvertGlassToIndex(InventorySlot.Glass glass)
     {
-        // This mapping should match the one used in OrderMaker
+        // inventoryslot and ordermaker can talk to eachother for the order completion
         switch (glass)
         {
             case InventorySlot.Glass.Shot: return 0;
