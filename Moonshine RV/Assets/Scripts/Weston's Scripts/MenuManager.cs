@@ -18,7 +18,7 @@ public class MenuManager : MonoBehaviour
     [SerializeField]
     private Text MoneyText;
     [SerializeField]
-    private Text ShopMoneyText;
+    private Text TreeShopMoneyText,GlassShopMoneyText;
 
     [Header("Shop Menus")]
     [SerializeField]
@@ -185,10 +185,13 @@ public class MenuManager : MonoBehaviour
             Currency -= CherTreePrice;
             CherTree.SetActive(true);
             MoneyText.text = "Money: " + Currency + "$";
-            ShopMoneyText.text = "Money: " + Currency + "$";
+            TreeShopMoneyText.text = "Money: " + Currency + "$";
+            GlassShopMoneyText.text = "Money: " + Currency + "$";
             CherryButton.GetComponent<Button>().interactable = false;
         }
     }
+
+    
 
     public void BuyAppleTree()
     {
@@ -197,7 +200,8 @@ public class MenuManager : MonoBehaviour
             Currency -= AppTreePrice;
             AppTree.SetActive(true);
             MoneyText.text = "Money: " + Currency + "$";
-            ShopMoneyText.text = "Money: " + Currency + "$";
+            TreeShopMoneyText.text = "Money: " + Currency + "$";
+            GlassShopMoneyText.text = "Money: " + Currency + "$";
             AppleButton.GetComponent<Button>().interactable = false;
         }
     }
@@ -209,7 +213,8 @@ public class MenuManager : MonoBehaviour
             Currency -= HonTreePrice;
             HonTree.SetActive(true);
             MoneyText.text = "Money: " + Currency + "$";
-            ShopMoneyText.text = "Money: " + Currency + "$";
+            TreeShopMoneyText.text = "Money: " + Currency + "$";
+            GlassShopMoneyText.text = "Money: " + Currency + "$";
             HoneyButton.GetComponent<Button>().interactable = false;
         }
     }
@@ -220,7 +225,8 @@ public class MenuManager : MonoBehaviour
         {
             Currency -= ShotGlassPrice;
             MoneyText.text = "Money: " + Currency + "$";
-            ShopMoneyText.text = "Money: " + Currency + "$";
+            GlassShopMoneyText.text = "Money: " + Currency + "$";
+            TreeShopMoneyText.text = "Money: " + Currency + "$";
         }
     }
 
@@ -230,7 +236,8 @@ public class MenuManager : MonoBehaviour
         {
             Currency -= DoubleGlassPrice;
             MoneyText.text = "Money: " + Currency + "$";
-            ShopMoneyText.text = "Money: " + Currency + "$";
+            GlassShopMoneyText.text = "Money: " + Currency + "$";
+            TreeShopMoneyText.text = "Money: " + Currency + "$";
         }
     }
 
@@ -240,7 +247,8 @@ public class MenuManager : MonoBehaviour
         {
             Currency -= MasonGlassPrice;
             MoneyText.text = "Money: " + Currency + "$";
-            ShopMoneyText.text = "Money: " + Currency + "$";
+            GlassShopMoneyText.text = "Money: " + Currency + "$";
+            TreeShopMoneyText.text = "Money: " + Currency + "$";
         }
     }
 
@@ -250,7 +258,8 @@ public class MenuManager : MonoBehaviour
         {
             Currency -= CanterGlassPrice;
             MoneyText.text = "Money: " + Currency + "$";
-            ShopMoneyText.text = "Money: " + Currency + "$";
+            GlassShopMoneyText.text = "Money: " + Currency + "$";
+            TreeShopMoneyText.text = "Money: " + Currency + "$";
         }
     }
 
