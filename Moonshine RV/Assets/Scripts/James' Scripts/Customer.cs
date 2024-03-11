@@ -1,36 +1,45 @@
 using UnityEngine;
-[RequireComponent(typeof(UnityEngine.AI.NavMeshAgent))]
+using UnityEngine.AI;
+
+[RequireComponent(typeof(NavMeshAgent))]
 public class Customer : MonoBehaviour
 {
-    public CustomerSpawner Spawner { get; set; } // reference to the spawner
+    public CustomerSpawner Spawner { get; set; }
 
     private OrderMaker orderMaker;
     public OrderMaker.Order CurrentOrder { get; private set; }
 
-    private UnityEngine.AI.NavMeshAgent agent;
+    private NavMeshAgent agent;
+    private bool hasRequestedOrder = false; // Flag to prevent multiple orders
 
     private void Start()
     {
+        agent = GetComponent<NavMeshAgent>();
         orderMaker = FindObjectOfType<OrderMaker>();
-        RequestOrder();
     }
 
-    // order request triggered automatically when the customer is spawned
+    private void Update()
+    {
+        // Check if customer has reached the window point and then requests an order, only once
+        if (!hasRequestedOrder && Vector3.Distance(transform.position, Spawner.windowPoint.position) < 1.3f)
+        {
+            RequestOrder();
+            hasRequestedOrder = true; // Ensure RequestOrder is called only once
+        }
+    }
+
     public void RequestOrder()
     {
         if (orderMaker != null)
         {
             orderMaker.OrderUp();
-            CurrentOrder = orderMaker.CurrentOrder; // store the current order for this customer
+            CurrentOrder = orderMaker.CurrentOrder;
         }
     }
 
-    // leave is called when the order is done 
     public void Leave()
     {
-        Destroy(gameObject); // Destroy the customer GameObject
-
-        // creates a new customer after a delay
+        Destroy(gameObject);
         if (Spawner != null)
         {
             Spawner.CustomerLeft();

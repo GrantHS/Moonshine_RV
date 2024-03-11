@@ -261,35 +261,44 @@ public class CameraTransition : MonoBehaviour
     private IEnumerator StillTransition(Transform targetTransform)
     {
         float elapsedTime = 0.0f;
-        float zDistance = -5f;//distance between camera and object
-        Vector3 targetPosition = targetTransform.position + targetTransform.forward * zDistance; // calculate target position
-        originalPosition = transform.position;
-        originalRotation = transform.rotation;
+        float zDistance = -5f; // Distance between camera and object.
+        float yIncrease = 4f; // Amount to increase y value by. Change this value to 3f if you prefer.
 
-        foreach (var canvasGroup in buttonCanvasGroups)
+        // Calculate target position and add yIncrease to the y component.
+        Vector3 targetPosition = targetTransform.position + targetTransform.forward * zDistance + new Vector3(0, yIncrease, 0);
+
+        Vector3 originalPosition = transform.position; // Assuming you have declared this variable elsewhere if not, declare it.
+        Quaternion originalRotation = transform.rotation; // Assuming you have declared this variable elsewhere if not, declare it.
+
+        foreach (var canvasGroup in buttonCanvasGroups) // Assuming buttonCanvasGroups is declared and initialized.
         {
-            canvasGroup.alpha = 0f; // turn off alpha in buttoncanvasgroup
+            canvasGroup.alpha = 0f; // Turn off alpha in buttonCanvasGroups.
         }
 
-        while (elapsedTime < transitionDuration)
+        while (elapsedTime < transitionDuration) // Assuming transitionDuration is declared and initialized.
         {
             float t = elapsedTime / transitionDuration;
 
-            transform.position = Vector3.Lerp(originalPosition, targetPosition, t); // interpolate position
-            transform.rotation = Quaternion.Slerp(originalRotation, Quaternion.identity, t); // interpolate rotation
+            // Interpolate position.
+            transform.position = Vector3.Lerp(originalPosition, targetPosition, t);
+            // Interpolate rotation.
+            transform.rotation = Quaternion.Slerp(originalRotation, Quaternion.identity, t);
 
             elapsedTime += Time.deltaTime;
             yield return null;
         }
 
+        // After finishing the transition, ensure the final state is exactly as intended.
         transform.position = targetPosition;
         transform.rotation = Quaternion.identity;
 
         foreach (var canvasGroup in buttonCanvasGroups)
         {
-            canvasGroup.alpha = 1f; // turn on alpha in buttoncanvasgroup
+            canvasGroup.alpha = 1f; // Turn on alpha in buttonCanvasGroups.
         }
     }
+
+
 
     public void MainAreaTransition()
     {
