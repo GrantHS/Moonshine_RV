@@ -261,21 +261,21 @@ public class CameraTransition : MonoBehaviour
     private IEnumerator StillTransition(Transform targetTransform)
     {
         float elapsedTime = 0.0f;
-        float zDistance = -5f; // Distance between camera and object.
-        float yIncrease = 4f; // Amount to increase y value by. Change this value to 3f if you prefer.
+        float zDistance = -5f; // z value distance
+        float yIncrease = 4f; // y value distance
 
-        // Calculate target position and add yIncrease to the y component.
+        // calculate vec3 target positionj for z and y value
         Vector3 targetPosition = targetTransform.position + targetTransform.forward * zDistance + new Vector3(0, yIncrease, 0);
 
-        Vector3 originalPosition = transform.position; // Assuming you have declared this variable elsewhere if not, declare it.
-        Quaternion originalRotation = transform.rotation; // Assuming you have declared this variable elsewhere if not, declare it.
+        Vector3 originalPosition = transform.position; 
+        Quaternion originalRotation = transform.rotation; 
 
-        foreach (var canvasGroup in buttonCanvasGroups) // Assuming buttonCanvasGroups is declared and initialized.
+        foreach (var canvasGroup in buttonCanvasGroups) 
         {
-            canvasGroup.alpha = 0f; // Turn off alpha in buttonCanvasGroups.
+            canvasGroup.alpha = 0f; // set alpha to 0 in buttonCanvasGroups.
         }
 
-        while (elapsedTime < transitionDuration) // Assuming transitionDuration is declared and initialized.
+        while (elapsedTime < transitionDuration) 
         {
             float t = elapsedTime / transitionDuration;
 
@@ -294,7 +294,7 @@ public class CameraTransition : MonoBehaviour
 
         foreach (var canvasGroup in buttonCanvasGroups)
         {
-            canvasGroup.alpha = 1f; // Turn on alpha in buttonCanvasGroups.
+            canvasGroup.alpha = 1f; // turn on alpha in buttonCanvasGroups.
         }
     }
 
