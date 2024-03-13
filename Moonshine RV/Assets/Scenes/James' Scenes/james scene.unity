@@ -617,6 +617,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: StillComplete
       objectReference: {fileID: 0}
+    - target: {fileID: 1160603086626467095, guid: d8b0b21a176219443918275d13740516,
+        type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1742792180179060970, guid: d8b0b21a176219443918275d13740516,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -631,6 +636,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5677361459978759693, guid: d8b0b21a176219443918275d13740516,
+        type: 3}
+      propertyPath: m_TagString
+      value: Still
       objectReference: {fileID: 0}
     - target: {fileID: 8804625046137572299, guid: d8b0b21a176219443918275d13740516,
         type: 3}
@@ -3877,6 +3887,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 425055194}
   m_CullTransparentMesh: 1
+--- !u!1 &431568192
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 431568193}
+  m_Layer: 0
+  m_Name: tablespawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &431568193
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 431568192}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.023, y: -0.9, z: 20.348}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &438317017
 GameObject:
   m_ObjectHideFlags: 0
@@ -5480,6 +5521,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 42e95b0a8623c444f84f4086792ebd04, type: 2}
+    - target: {fileID: 5639405848544218604, guid: 22a592d20a910c24397cde259e4ef354,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.0803
+      objectReference: {fileID: 0}
     - target: {fileID: 7750397243111347764, guid: 22a592d20a910c24397cde259e4ef354,
         type: 3}
       propertyPath: m_Name
@@ -6810,7 +6856,7 @@ MonoBehaviour:
         m_MethodName: StartStillTransition
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgument: {fileID: 1292776444}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -8274,7 +8320,7 @@ MonoBehaviour:
         m_MethodName: StartStillTransition
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgument: {fileID: 1292776444}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -9177,6 +9223,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameManager: {fileID: 951973121}
+  spawnSelectedGlassware: {fileID: 431568192}
   liquidEffect: {fileID: 11400000, guid: 91bfb016ec3b43942bb51a5a74ec7ef2, type: 2}
   material: {fileID: 2100000, guid: a515c987696f544488d42a3679dca449, type: 2}
   flavorImages:
@@ -10174,6 +10221,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameManager: {fileID: 951973121}
+  spawnSelectedGlassware: {fileID: 431568192}
   liquidEffect: {fileID: 11400000, guid: 74e26328039e225499993b6badf315dd, type: 2}
   material: {fileID: 2100000, guid: 42e95b0a8623c444f84f4086792ebd04, type: 2}
   flavorImages:
@@ -11516,6 +11564,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8569186034617799100, guid: af79589b36b5e424f82a59de38d94c75,
+        type: 3}
+      propertyPath: m_Name
+      value: table
+      objectReference: {fileID: 0}
+    - target: {fileID: -8569186034617799100, guid: af79589b36b5e424f82a59de38d94c75,
+        type: 3}
+      propertyPath: m_TagString
+      value: table
+      objectReference: {fileID: 0}
+    - target: {fileID: -407270333741487408, guid: af79589b36b5e424f82a59de38d94c75,
+        type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: af79589b36b5e424f82a59de38d94c75,
         type: 3}
       propertyPath: m_Name
@@ -11758,6 +11821,12 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1137796670}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1292776444 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1742792180179060970, guid: d8b0b21a176219443918275d13740516,
+    type: 3}
+  m_PrefabInstance: {fileID: 41740264}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1295776146
 GameObject:
   m_ObjectHideFlags: 0
@@ -26060,6 +26129,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameManager: {fileID: 951973121}
+  spawnSelectedGlassware: {fileID: 431568192}
   liquidEffect: {fileID: 11400000, guid: c8fef4300f5105140aec391c4303eb00, type: 2}
   material: {fileID: 2100000, guid: f723febe4dd16ba45b0d88e647295347, type: 2}
   flavorImages:
@@ -26521,6 +26591,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameManager: {fileID: 951973121}
+  spawnSelectedGlassware: {fileID: 431568192}
   liquidEffect: {fileID: 11400000, guid: d64982d7b8b94374486716adb08535e8, type: 2}
   material: {fileID: 2100000, guid: 9a245bac1739c7d47a2577f4d32d8ff6, type: 2}
   flavorImages:
@@ -27744,3 +27815,4 @@ SceneRoots:
   - {fileID: 1668999487}
   - {fileID: 1239603152}
   - {fileID: 1261020755}
+  - {fileID: 431568193}
