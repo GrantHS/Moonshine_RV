@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class CameraTransition : MonoBehaviour
 {
+    public GameObject table;
     public List<GameObject> buttons; // list of buttons to manipulate
     public CanvasGroup[] buttonCanvasGroups; // canvas groups associated with buttonsX
 
@@ -69,6 +70,8 @@ public class CameraTransition : MonoBehaviour
 
     public void ComputerTransition(Transform targetTransform)
     {
+        table.SetActive(true);
+
         foreach (GameObject obj in buttons)
         {
             obj.SetActive(false); // hide all buttons
@@ -126,6 +129,7 @@ public class CameraTransition : MonoBehaviour
 
     public void BackyardTransition(Transform targetTransform)
     {
+        table.SetActive(true); // Ensure the table reappears for the Computer transition.
         targetPos = targetTransform;
         originalPosition = transform.position;
         originalRotation = transform.rotation;
@@ -180,6 +184,7 @@ public class CameraTransition : MonoBehaviour
 
     public void orderWindowTransition(Transform targetTransform)
     {
+        table.SetActive(true);
         foreach (GameObject obj in buttons)
         {
             obj.SetActive(false); // hide all buttons
@@ -254,14 +259,13 @@ public class CameraTransition : MonoBehaviour
         originalRotation = transform.rotation;
 
         StopAllCoroutines(); 
-        StopAllCoroutines(); // stop any ongoing transitions
         StartCoroutine(StillTransition(targetTransform)); // start still transition coroutine
     }
 
     private IEnumerator StillTransition(Transform targetTransform)
     {
         float elapsedTime = 0.0f;
-        float zDistance = -5f; // z value distance
+        float zDistance = 7f; // z value distance
         float yIncrease = 4f; // y value distance
 
         // calculate vec3 target positionj for z and y value
@@ -288,6 +292,8 @@ public class CameraTransition : MonoBehaviour
             yield return null;
         }
 
+        table.SetActive(false);
+
         // After finishing the transition, ensure the final state is exactly as intended.
         transform.position = targetPosition;
         transform.rotation = Quaternion.identity;
@@ -302,6 +308,7 @@ public class CameraTransition : MonoBehaviour
 
     public void MainAreaTransition()
     {
+        table.SetActive(true); // Ensure the table reappears for the Computer transition.
         foreach (GameObject obj in buttons)
         {
             obj.SetActive(false); // hide all buttons

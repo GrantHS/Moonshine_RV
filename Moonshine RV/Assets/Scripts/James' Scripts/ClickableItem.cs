@@ -9,6 +9,7 @@ using static InventorySlot;
 public class ClickableItem : MonoBehaviour
 {
     public GameObject GameManager;
+    public GameObject spawnSelectedGlassware;
     public LiquidEffect liquidEffect;
     public Material material;
     public GameObject[] flavorImages; // array of flavor image game objects
@@ -29,6 +30,7 @@ public class ClickableItem : MonoBehaviour
     private enum SelectionState
     {
         Glassware,
+        PlaceOnTable,
         Color,
         Flavor,
         Finished
@@ -105,6 +107,16 @@ public class ClickableItem : MonoBehaviour
                         }
                         // this updates the selected glassware and move to the next state
                         selectedGlassware = hit.transform.tag;
+                        currentState = SelectionState.PlaceOnTable;
+                    }
+                }
+                else if (currentState == SelectionState.PlaceOnTable)
+                {
+                    // Existing block for handling the placement of glassware on a table
+                    if (hit.transform.CompareTag("table"))
+                    {
+                        SpawnGlassware(curGlass); // Make sure this uses the current glass type
+
                         currentState = SelectionState.Color;
                     }
                 }
@@ -406,6 +418,33 @@ public class ClickableItem : MonoBehaviour
             case InventorySlot.Glass.Decanter: return 3;
             default: return -1; // Unknown glassware
         }
+    }
+    private void SpawnGlassware(InventorySlot.Glass glassType)
+    {
+       /* GameObject glasswarePrefab = inventory.GetGlasswarePrefab(glassType); // Fetch the prefab for the selected glass type
+        if (glasswarePrefab != null && spawnSelectedGlassware != null)
+        {
+            // Instantiate the glassware prefab at the spawnSelectedGlassware's position and rotation
+            GameObject spawnedGlassware = Instantiate(glasswarePrefab, spawnSelectedGlassware.transform.position, Quaternion.identity);
+            UnityEngine.Debug.Log("Glassware spawned on table.");
+
+            // Optionally, you can parent the spawned glassware to the spawnSelectedGlassware if needed
+            // spawnedGlassware.transform.SetParent(spawnSelectedGlassware.transform, false);
+        }
+        else
+        {
+            UnityEngine.Debug.LogError("Failed to spawn glassware: Prefab or spawn location is missing.");
+        }*/
+    }
+
+    public GameObject GetGlasswarePrefab(InventorySlot.Glass glassType)
+    {
+        // Assuming you have a dictionary linking glass types to their prefabs
+        /*if (glasswarePrefabs.TryGetValue(glassType, out GameObject prefab))
+        {
+            return prefab;
+        }*/
+        return null;
     }
 
 }
