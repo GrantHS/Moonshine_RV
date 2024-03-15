@@ -74,11 +74,6 @@ public class ClickableItem : MonoBehaviour
                 // this current state handle's the glassware
                 if (currentState == SelectionState.Glassware)
                 {
-                    if (!HasGlasswareInInventory())
-                    {
-                        UnityEngine.Debug.Log("You need to acquire glassware first.");
-                        return; // player needs to have glassware to go further
-                    }
                     // checks if you hit the object that is one of the glassware options
                     if (hit.transform.CompareTag("shotglass") ||
                         hit.transform.CompareTag("masonjar") ||
@@ -95,6 +90,11 @@ public class ClickableItem : MonoBehaviour
                         {
                             curGlass = InventorySlot.Glass.Mason;
                             RemoveSelectedGlasswareFromInventory();
+                            if (!HasGlasswareInInventory())
+                            {
+                                UnityEngine.Debug.Log("You need to acquire glassware first.");
+                                return; // player needs to have glassware to go further
+                            }
                         }
                         else if (hit.transform.CompareTag("decanter"))
                         {
@@ -220,26 +220,35 @@ public class ClickableItem : MonoBehaviour
 
     private bool HasGlasswareInInventory()
     {
-        
         foreach (var slotGameObject in inventory.InventorySlots)
         {
-            // access the inventoryslot component of the gameobject
-            InventorySlot slot = slotGameObject.GetComponent<Item>().CurrentItem?.GetComponent<InventorySlot>();
+            InventorySlot slot = slotGameObject.GetComponent<InventorySlot>();
 
-            //checks if the glassware has a title with no falvor or color
             if (slot != null &&
                 (slot.GlassType == InventorySlot.Glass.Shot ||
                  slot.GlassType == InventorySlot.Glass.Mason ||
                  slot.GlassType == InventorySlot.Glass.Decanter ||
                  slot.GlassType == InventorySlot.Glass.Double) &&
-                slot.Coloring == InventorySlot.Color.None && 
-                slot.Flavoring == InventorySlot.Flavor.None)  
+                slot.Coloring == InventorySlot.Color.None &&
+                slot.Flavoring == InventorySlot.Flavor.None)
             {
-                return true; // found at least one glassware item with no color or flavor.
+                // Check if the selected glassware matches the current glass type by comparing tags
+                if (curGlass.ToString().ToLower() == slotGameObject.tag.ToLower())
+                {
+                    return true; // Found matching glassware
+                }
+                else
+                {
+                    UnityEngine.Debug.Log("Selected glassware does not match the current glass type.");
+                    return false; // Selected glassware does not match the current glass type
+                }
             }
         }
-        return false; // no glassware items found.
+        UnityEngine.Debug.Log("No glassware items found.");
+        return false; // No glassware items found
     }
+
+
 
     private GameObject GetSelectedGlasswareFromInventory()
     {
@@ -247,7 +256,7 @@ public class ClickableItem : MonoBehaviour
         foreach (var slotGameObject in inventory.InventorySlots)
         {
             // access the onventoryslot component of the gameobject
-            InventorySlot slot = slotGameObject.GetComponent<Item>().CurrentItem?.GetComponent<InventorySlot>();
+            InventorySlot slot = slotGameObject.GetComponent<InventorySlot>();
 
             
             if (slot != null && //checks if the glassware has a title with no falvor or color

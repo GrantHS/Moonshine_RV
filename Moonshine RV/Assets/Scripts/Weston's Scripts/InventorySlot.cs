@@ -34,6 +34,8 @@ public class InventorySlot : MonoBehaviour,IBeginDragHandler,IDragHandler,IEndDr
     [Header("Glass Settings")]
     public Glass GlassType;
 
+    private Item item;
+
     void Start()
     {
         Amount = 1;
