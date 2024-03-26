@@ -41,14 +41,16 @@ public class MenuManager : MonoBehaviour
     private int CherTreePrice, AppTreePrice, HonTreePrice, ShotGlassPrice, DoubleGlassPrice, MasonGlassPrice, CanterGlassPrice;
     [SerializeField]
     private GameObject CherryButton, AppleButton, HoneyButton;
-
+    [SerializeField]
     bool MenusOpen;
     [SerializeField]
     private GameObject LightTree, CherTree, AppTree, HonTree;
+    [SerializeField]
+    private GameObject LightningFruit, CherryFruit, AppleFruit, HoneyFruit;
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0) && !MenusOpen)
+        if (Input.GetMouseButtonDown(0))
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
@@ -122,23 +124,44 @@ public class MenuManager : MonoBehaviour
     //Tree Menu Buttons
     public void LightningTree()
     {
-        if (LightningHarvestable && !MenusOpen) LightningTreeMenu.SetActive(true);
-        MenusOpen = true;
+        if (LightningHarvestable)
+        {
+            LightningTreeMenu.SetActive(true);
+            LightningHarvestable = false;
+            LightningFruit.SetActive(false);
+        }
+        //MenusOpen = true;
+
     }
     public void CherryTree()
     {
-        if (CherryHarvestable && !MenusOpen) CherryTreeMenu.SetActive(true);
-        MenusOpen = true;
+        if (CherryHarvestable)
+        {
+            CherryTreeMenu.SetActive(true);
+            CherryHarvestable = false;
+            CherryFruit.SetActive(false);
+        }
+        //MenusOpen = true;
     }
     public void AppleTree()
     {
-        if (AppleHarvestable && !MenusOpen) AppleTreeMenu.SetActive(true);
-        MenusOpen = true;
+        if (AppleHarvestable)
+        {
+            AppleTreeMenu.SetActive(true);
+            AppleHarvestable = false;
+            AppleFruit.SetActive(false);
+        }
+        //MenusOpen = true;
     }
     public void HoneyTree()
     {
-        if (HoneyHarvestable && !MenusOpen) HoneyTreeMenu.SetActive(true);
-        MenusOpen = true;
+        if (HoneyHarvestable)
+        {
+            HoneyTreeMenu.SetActive(true);
+            HoneyHarvestable = false;
+            HoneyFruit.SetActive(false);
+        }
+        //MenusOpen = true;
     }
 
     public void HideHarvest()
@@ -158,7 +181,7 @@ public class MenuManager : MonoBehaviour
         GlassComputerMenu.SetActive(true);
         GlassMenuButton.SetActive(false);
         TreeMenuButton.SetActive(false);
-        MenusOpen = true;
+        //MenusOpen = true;
     }
 
     public void TreeMenu()
@@ -166,7 +189,7 @@ public class MenuManager : MonoBehaviour
         TreeComputerMenu.SetActive(true);
         TreeMenuButton.SetActive(false);
         GlassMenuButton.SetActive(false);
-        MenusOpen = true;
+        //MenusOpen = true;
     }
 
     public void CloseComputerMenus()
@@ -178,6 +201,7 @@ public class MenuManager : MonoBehaviour
         MenusOpen = false;
     }
 
+    //Checks if the player's money count is enough and lowers it while unlocking the Cherry Tree
     public void BuyCherryTree()
     {
         if (Currency >= CherTreePrice)
@@ -191,8 +215,7 @@ public class MenuManager : MonoBehaviour
         }
     }
 
-    
-
+    //Checks if the player's money count is enough and lowers it while unlocking the Apple Tree
     public void BuyAppleTree()
     {
         if (Currency >= AppTreePrice)
@@ -206,6 +229,7 @@ public class MenuManager : MonoBehaviour
         }
     }
 
+    //Checks if the player's money count is enough and lowers it while unlocking the Honey Tree
     public void BuyHoneyTree()
     {
         if (Currency >= HonTreePrice)
@@ -218,8 +242,8 @@ public class MenuManager : MonoBehaviour
             HoneyButton.GetComponent<Button>().interactable = false;
         }
     }
-
-    public void BuyShotGlass()
+    //Checks if the player has enough money for the shot glass and takes it from them.
+    public void BuyShotGlass(GameObject Item)
     {
         if (Currency >= ShotGlassPrice)
         {
@@ -227,10 +251,11 @@ public class MenuManager : MonoBehaviour
             MoneyText.text = "Money: " + Currency + "$";
             GlassShopMoneyText.text = "Money: " + Currency + "$";
             TreeShopMoneyText.text = "Money: " + Currency + "$";
+            gameObject.GetComponent<Inventory>().getButtonItem(Item);
         }
     }
 
-    public void BuyDoubleGlass()
+    public void BuyDoubleGlass(GameObject Item)
     {
         if (Currency >= DoubleGlassPrice)
         {
@@ -238,10 +263,11 @@ public class MenuManager : MonoBehaviour
             MoneyText.text = "Money: " + Currency + "$";
             GlassShopMoneyText.text = "Money: " + Currency + "$";
             TreeShopMoneyText.text = "Money: " + Currency + "$";
+            gameObject.GetComponent<Inventory>().getButtonItem(Item);
         }
     }
 
-    public void BuyMasonJar()
+    public void BuyMasonJar(GameObject Item)
     {
         if (Currency >= MasonGlassPrice)
         {
@@ -249,10 +275,11 @@ public class MenuManager : MonoBehaviour
             MoneyText.text = "Money: " + Currency + "$";
             GlassShopMoneyText.text = "Money: " + Currency + "$";
             TreeShopMoneyText.text = "Money: " + Currency + "$";
+            gameObject.GetComponent<Inventory>().getButtonItem(Item);
         }
     }
 
-    public void BuyDecanter()
+    public void BuyDecanter(GameObject Item)
     {
         if (Currency >= CanterGlassPrice)
         {
@@ -260,7 +287,28 @@ public class MenuManager : MonoBehaviour
             MoneyText.text = "Money: " + Currency + "$";
             GlassShopMoneyText.text = "Money: " + Currency + "$";
             TreeShopMoneyText.text = "Money: " + Currency + "$";
+            gameObject.GetComponent<Inventory>().getButtonItem(Item);
         }
     }
+
+
+
+    public void LightningGrown()
+    {
+        LightningHarvestable = true;
+    }
+    public void CherryGrown()
+    {
+        CherryHarvestable = true;
+    }
+    public void AppleGrown()
+    {
+        AppleHarvestable = true;
+    }
+    public void HoneyGrown()
+    {
+        HoneyHarvestable = true;
+    }
+
 
 }
