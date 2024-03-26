@@ -53,30 +53,97 @@ public class InventorySlot : MonoBehaviour,IBeginDragHandler,IDragHandler,IEndDr
 
     }
 
-    public void OnEndDrag(PointerEventData eventData)
+    public void OnEndDrag(PointerEventData eventData) //places item into slot
     {
-        transform.SetParent(parentAfterDrag);
-        image.raycastTarget = true;
-        if (PreviousSlot != null )
+        if (parentAfterDrag.GetComponent<Item>().SlotType == Item.SpecialSlot.None)
         {
-            if (PreviousSlot.childCount == 0)
+            transform.SetParent(parentAfterDrag);
+            image.raycastTarget = true;
+            if (PreviousSlot != null)
             {
-                PreviousSlot.GetComponent<Item>().Occupied = false;
-                PreviousSlot.GetComponent<Item>().CurrentItem = null;
+
+                //Clears types if the object was moved from SpecialSlots (Slots within the Still) 0=Color,1=Flavor,2=Glass,3=All
+                if (PreviousSlot.GetComponent<Item>().SlotType == Item.SpecialSlot.StillColor) PreviousSlot.GetComponent<Item>().ClearType(0);
+                if (PreviousSlot.GetComponent<Item>().SlotType == Item.SpecialSlot.StillFlavor) PreviousSlot.GetComponent<Item>().ClearType(1);
+                if (PreviousSlot.GetComponent<Item>().SlotType == Item.SpecialSlot.StillGlass) PreviousSlot.GetComponent<Item>().ClearType(2);
+                if (PreviousSlot.GetComponent<Item>().SlotType == Item.SpecialSlot.FinishedStill) PreviousSlot.GetComponent<Item>().ClearType(3);
+
+                if (PreviousSlot.childCount == 0)
+                {
+                    PreviousSlot.GetComponent<Item>().Occupied = false;
+                    PreviousSlot.GetComponent<Item>().CurrentItem = null;
+                }
             }
+            PreviousSlot = parentAfterDrag;
         }
-        PreviousSlot = parentAfterDrag;
+        else if (parentAfterDrag.GetComponent<Item>().SlotType == Item.SpecialSlot.StillColor && Coloring != Color.None && Flavoring == Flavor.None)
+        {
+            transform.SetParent(parentAfterDrag);
+            image.raycastTarget = true;
+            if (PreviousSlot != null)
+            {
+                if (PreviousSlot.childCount == 0)
+                {
+                    PreviousSlot.GetComponent<Item>().Occupied = false;
+                    PreviousSlot.GetComponent<Item>().CurrentItem = null;
+                }
+            }
+            PreviousSlot = parentAfterDrag;
+        }
+        else if (parentAfterDrag.GetComponent<Item>().SlotType == Item.SpecialSlot.StillFlavor && Flavoring != Flavor.None && Coloring == Color.None)
+        {
+            transform.SetParent(parentAfterDrag);
+            image.raycastTarget = true;
+            if (PreviousSlot != null)
+            {
+                if (PreviousSlot.childCount == 0)
+                {
+                    PreviousSlot.GetComponent<Item>().Occupied = false;
+                    PreviousSlot.GetComponent<Item>().CurrentItem = null;
+                }
+            }
+            PreviousSlot = parentAfterDrag;
+        }
+        else if (parentAfterDrag.GetComponent<Item>().SlotType == Item.SpecialSlot.StillGlass && GlassType != Glass.None && Coloring == Color.None)
+        {
+            transform.SetParent(parentAfterDrag);
+            image.raycastTarget = true;
+            if (PreviousSlot != null)
+            {
+                if (PreviousSlot.childCount == 0)
+                {
+                    PreviousSlot.GetComponent<Item>().Occupied = false;
+                    PreviousSlot.GetComponent<Item>().CurrentItem = null;
+                }
+            }
+            PreviousSlot = parentAfterDrag;
+        }
+        else if (parentAfterDrag.GetComponent<Item>().SlotType == Item.SpecialSlot.OrderWindow && GlassType != Glass.None && Coloring != Color.None && Flavoring != Flavor.None)
+        {
+            transform.SetParent(parentAfterDrag);
+            image.raycastTarget = true;
+            if (PreviousSlot != null)
+            {
+                if (PreviousSlot.childCount == 0)
+                {
+                    PreviousSlot.GetComponent<Item>().Occupied = false;
+                    PreviousSlot.GetComponent<Item>().CurrentItem = null;
+                }
+            }
+            PreviousSlot = parentAfterDrag;
+
+        }
     }
 
 
-    public void SwitchSlots()
+    public void SwitchSlots() //switches the slot of items if the slot being placed into is occupied
     {
         transform.SetParent(parentAfterDrag);
         image.raycastTarget = true;
         PreviousSlot = parentAfterDrag;
     }
 
-    public void ChangeText()
+    public void ChangeText() //Adds to the amount if a repeat is discovered
     {
         TextAmount.text = Amount.ToString();
     }

@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using UnityEngine;
 using UnityEngine.UI;
-using static InventorySlot;
 
 public class ClickableItem : MonoBehaviour
 {
@@ -36,7 +35,7 @@ public class ClickableItem : MonoBehaviour
 
     // current state of selection
     private SelectionState currentState = SelectionState.Glassware;
-    private UnityEngine.Color selectedColor = UnityEngine.Color.white;
+    private Color selectedColor = Color.white;
     private string selectedFlavor = "";
     private string selectedGlassware = "";
     private bool isSelecting = false;
@@ -261,20 +260,20 @@ public class ClickableItem : MonoBehaviour
 
 
     // gets color from tag
-    UnityEngine.Color GetColorFromTag(string tag)
+    Color GetColorFromTag(string tag)
     {
         switch (tag)
         {
             case "clear":
-                return UnityEngine.Color.white;
+                return Color.white;
             case "red":
-                return UnityEngine.Color.red;
+                return Color.red;
             case "green":
-                return UnityEngine.Color.green;
+                return Color.green;
             case "brown":
-                return new UnityEngine.Color(0.64f, 0.16f, 0.16f);
+                return new Color(0.64f, 0.16f, 0.16f);
             default:
-                return UnityEngine.Color.white;
+                return Color.white;
         }
     }
 
@@ -308,7 +307,7 @@ public class ClickableItem : MonoBehaviour
     {
         isSelecting = false;
         selectedGlassware = "";
-        selectedColor = UnityEngine.Color.white; //resets all variables
+        selectedColor = Color.white; //resets all variables
         selectedFlavor = ""; 
         currentState = SelectionState.Glassware; // go back to glassware selection state
     }
@@ -346,32 +345,32 @@ public class ClickableItem : MonoBehaviour
         int glassIndex = ConvertGlassToIndex(curGlass);
 
         // check if the player's selection matches the order
-        if (orderSlot.CheckOrder(flavorIndex, colorIndex, glassIndex))
-        {
-            UnityEngine.Debug.Log("Order is correct!");
+        //if (orderSlot.CheckOrder(flavorIndex, colorIndex, glassIndex))
+        //{
+        //    UnityEngine.Debug.Log("Order is correct!");
 
-            // Find the Customer instance dynamically
-            Customer customer = FindObjectOfType<Customer>();
-            if (customer != null)
-            {
-                customer.Leave(); // destroys the customer.
-            }
-            else
-            {
-                UnityEngine.Debug.LogError("No customer found to leave.");
-            }
-        }
-        else
-        {
-            UnityEngine.Debug.Log("Order is incorrect!");
-            // order not correct.
-        }
+        //    // Find the Customer instance dynamically
+        //    Customer customer = FindObjectOfType<Customer>();
+        //    if (customer != null)
+        //    {
+        //        customer.Leave(); // destroys the customer.
+        //    }
+        //    else
+        //    {
+        //        UnityEngine.Debug.LogError("No customer found to leave.");
+        //    }
+        //}
+        //else
+        //{
+        //    UnityEngine.Debug.Log("Order is incorrect!");
+        //    // order not correct.
+        //}
     }
 
-    // method to convert the player's selection to indexs
+    // Helper methods to convert the player's selection to indices
     private int ConvertFlavorToIndex(InventorySlot.Flavor flavor)
     {
-        // inventoryslot and ordermaker can talk to eachother for the order completion
+        // This mapping should match the one used in OrderMaker
         switch (flavor)
         {
             case InventorySlot.Flavor.Lightning: return 0;
@@ -384,20 +383,13 @@ public class ClickableItem : MonoBehaviour
 
     private int ConvertColorToIndex(InventorySlot.Color color)
     {
-        // inventoryslot and ordermaker can talk to eachother for the order completion
-        switch (color)
-        {
-            case InventorySlot.Color.Clear: return 0;
-            case InventorySlot.Color.Red: return 1;
-            case InventorySlot.Color.Green: return 2;
-            case InventorySlot.Color.Brown: return 3;
-            default: return -1; // Unknown glassware
-        }
+        // Since color is always clear for now, we return 0
+        return 0;
     }
 
     private int ConvertGlassToIndex(InventorySlot.Glass glass)
     {
-        // inventoryslot and ordermaker can talk to eachother for the order completion
+        // This mapping should match the one used in OrderMaker
         switch (glass)
         {
             case InventorySlot.Glass.Shot: return 0;

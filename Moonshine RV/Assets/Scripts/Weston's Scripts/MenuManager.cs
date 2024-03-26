@@ -41,8 +41,8 @@ public class MenuManager : MonoBehaviour
     private int CherTreePrice, AppTreePrice, HonTreePrice, ShotGlassPrice, DoubleGlassPrice, MasonGlassPrice, CanterGlassPrice;
     [SerializeField]
     private GameObject CherryButton, AppleButton, HoneyButton;
-    [SerializeField]
-    bool MenusOpen;
+    //[SerializeField]
+    //bool MenusOpen;
     [SerializeField]
     private GameObject LightTree, CherTree, AppTree, HonTree;
     [SerializeField]
@@ -82,6 +82,7 @@ public class MenuManager : MonoBehaviour
     {
         MainMenu.SetActive(false);
         this.GetComponent<Inventory>().StatusEnabled = true;
+        this.GetComponent<CameraShift>().MainArea();
     }
 
     public void OptionsMenu()
@@ -170,7 +171,7 @@ public class MenuManager : MonoBehaviour
         CherryTreeMenu.SetActive(false);
         AppleTreeMenu.SetActive(false);
         HoneyTreeMenu.SetActive(false);
-        MenusOpen = false;
+        //MenusOpen = false;
     }
 
 
@@ -198,7 +199,7 @@ public class MenuManager : MonoBehaviour
         TreeComputerMenu.SetActive(false);
         GlassMenuButton.SetActive(true);
         TreeMenuButton.SetActive(true);
-        MenusOpen = false;
+        //MenusOpen = false;
     }
 
     //Checks if the player's money count is enough and lowers it while unlocking the Cherry Tree
@@ -310,5 +311,13 @@ public class MenuManager : MonoBehaviour
         HoneyHarvestable = true;
     }
 
+
+    public void GainMoney(int Money)
+    {
+        Currency += Money;
+        MoneyText.text = "Money: " + Currency + "$";
+        GlassShopMoneyText.text = "Money: " + Currency + "$";
+        TreeShopMoneyText.text = "Money: " + Currency + "$";
+    }
 
 }
