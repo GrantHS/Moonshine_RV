@@ -345,26 +345,26 @@ public class ClickableItem : MonoBehaviour
         int glassIndex = ConvertGlassToIndex(curGlass);
 
         // check if the player's selection matches the order
-        if (orderSlot.CheckOrder(flavorIndex, colorIndex, glassIndex))
-        {
-            UnityEngine.Debug.Log("Order is correct!");
+        //if (orderSlot.CheckOrder(flavorIndex, colorIndex, glassIndex))
+        //{
+        //    UnityEngine.Debug.Log("Order is correct!");
 
-            // Find the Customer instance dynamically
-            Customer customer = FindObjectOfType<Customer>();
-            if (customer != null)
-            {
-                customer.Leave(); // destroys the customer.
-            }
-            else
-            {
-                UnityEngine.Debug.LogError("No customer found to leave.");
-            }
-        }
-        else
-        {
-            UnityEngine.Debug.Log("Order is incorrect!");
-            // order not correct.
-        }
+        //    // Find the Customer instance dynamically
+        //    Customer customer = FindObjectOfType<Customer>();
+        //    if (customer != null)
+        //    {
+        //        customer.Leave(); // destroys the customer.
+        //    }
+        //    else
+        //    {
+        //        UnityEngine.Debug.LogError("No customer found to leave.");
+        //    }
+        //}
+        //else
+        //{
+        //    UnityEngine.Debug.Log("Order is incorrect!");
+        //    // order not correct.
+        //}
     }
 
     // Helper methods to convert the player's selection to indices
