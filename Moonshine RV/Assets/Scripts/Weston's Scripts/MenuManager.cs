@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
@@ -48,6 +49,24 @@ public class MenuManager : MonoBehaviour
     [SerializeField]
     private GameObject LightningFruit, CherryFruit, AppleFruit, HoneyFruit;
 
+
+    [Header("Reputation Variables")]
+    [SerializeField]
+    private int Reputation;
+    [SerializeField]
+    private Text ReputationText;
+    [SerializeField]
+    private GameObject ReputationScaler;
+    private GameObject ReputationBar;
+
+    [Header("End of Game Variables")]
+    [SerializeField]
+    private int Points;
+    [SerializeField]
+    private GameObject GameOverScreen;
+    [SerializeField]
+    private Text ResultsText;
+
     private void Update()
     {
         if (Input.GetMouseButtonDown(0))
@@ -83,6 +102,8 @@ public class MenuManager : MonoBehaviour
         MainMenu.SetActive(false);
         this.GetComponent<Inventory>().StatusEnabled = true;
         this.GetComponent<CameraShift>().MainArea();
+        ReputationBar = ReputationScaler.transform.GetChild(0).gameObject;
+        ReputationFlavor();
     }
 
     public void OptionsMenu()
@@ -319,5 +340,51 @@ public class MenuManager : MonoBehaviour
         GlassShopMoneyText.text = "Money: " + Currency + "$";
         TreeShopMoneyText.text = "Money: " + Currency + "$";
     }
+
+    public void GainPoints(int points)
+    {
+        Points += points;
+    }
+
+    public void GainReputation(int Rep)
+    {
+        GainPoints(Rep * 5);
+        Reputation += Rep;
+        if (Reputation > 100) Reputation = 100;
+        ReputationText.text = "Reputation: " + Reputation;
+        ReputationFlavor();
+    }
+
+    public void LoseReputation(int Rep)
+    {
+        Reputation -= Rep;
+        ReputationText.text = "Reputation: " + Reputation;
+        ReputationFlavor();
+        if (Reputation <= 0) GameOver();
+    }
+
+    private void GameOver()
+    {
+        this.gameObject.GetComponent<OrderMaker>().GameEnded();
+        GameOverScreen.SetActive(true);
+        ResultsText.text = ("Points Earned: " + Points + "\n" + "Customers Served: " + this.gameObject.GetComponent<OrderMaker>().CompletedOrders);
+    }
+
+    public void BacktoMainMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
+
+    private void ReputationFlavor() //Changes the color of the reputation bar to let you know you're in trouble or doing ok.
+    {
+        float RepPercent = Reputation / 100;
+        //ReputationScaler.transform.localScale = new Vector3(RepPercent, 0f, 0f);
+        if (Reputation >= 75) ReputationBar.GetComponent<RawImage>().color = new Color(0f, 1f, 0f); //turns green if rep is high
+        if (Reputation < 75 && Reputation > 25) ReputationBar.GetComponent<RawImage>().color = new Color(0f, 0f, 1f); //sets it blue is reputation is doing ok
+        if (Reputation <= 25) ReputationBar.GetComponent<RawImage>().color = new Color(1f, 0f, 0f); //sets it red if reputaiton is low
+    }
+    
+
+
 
 }

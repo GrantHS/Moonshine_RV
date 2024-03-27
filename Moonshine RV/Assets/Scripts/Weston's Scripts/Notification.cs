@@ -14,7 +14,7 @@ public class Notification : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        visibility = visibility - 0.01f;
+        visibility = visibility - 0.005f;
         Marker.GetComponent<RawImage>().color = new Color(255f, 255f, 255f, visibility);
         Text.GetComponent<TMP_Text>().color = new Color(0f, 0f, 0f, visibility);
         if (visibility <= 0)

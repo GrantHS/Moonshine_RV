@@ -5,22 +5,10 @@ using UnityEngine;
 public class OrderMaker : MonoBehaviour
 {
     [SerializeField]
-    private float orderDelay;
+    [Tooltip("Determines the Delay between ordes.")]
+    private float orderDelay; 
 
-    [Header("Player Unlocks")]
-    [SerializeField]
-    private bool CherryTree;
-    [SerializeField]
-    private bool AppleTree;
-    [SerializeField]
-    private bool HoneyTree;
-    [SerializeField]
-    private bool MasonJar;
-    [SerializeField]
-    private bool Decanter;
-
-    
-    //public Order CurrentOrder { get; private set; }
+  
     [SerializeField]
     int unlockDetermined = 1;
     [SerializeField]
@@ -48,16 +36,13 @@ public class OrderMaker : MonoBehaviour
     [SerializeField]
     private int ClearEarning, RedEarning, GreenEarning, BrownEarning;
     private int Earnings;
+    //checks how many drinks you've finished, and if its enough, unlocks new ones.
+    public int CompletedOrders;
 
+    [SerializeField]
+    int OrderThreshold1, OrderThreshold2, OrderThreshold3; //Determines when each new set of ingredients can be ordered by customers.
 
-
-    // order structure for flavor, color and size
-    //public struct Order
-    //{
-    //    public int flavor;
-    //    public int color;
-    //    public int size;
-    //}
+    
 
     void Start()
     {
@@ -82,10 +67,10 @@ public class OrderMaker : MonoBehaviour
             GameObject Order = Instantiate(OrderPrefab, OrderBox.transform);
             // Flavor is random,  0=Lightning, 1=Cherry, 2=Apple, 3=Honey
             Order.GetComponent<OrderSlot>().flavor = Random.Range(0, unlockDetermined);
-            // color is always clear,  0=Clear 1=Red 2=Green 4=Brown
+            // color is random,  0=Clear 1=Red 2=Green 4=Brown
             Order.GetComponent<OrderSlot>().color = Random.Range(0, unlockDetermined);
             // glassware is random, 0=ShotGlass, 1=DoubleRocks, 2=MasonJar, 3=Decanter
-            Order.GetComponent<OrderSlot>().size = Random.Range(0, 4);
+            Order.GetComponent<OrderSlot>().size = Random.Range(0, unlockDetermined);
             Orders.Add(Order);
             Order.GetComponent<OrderSlot>().SetIcons();
 
@@ -168,11 +153,18 @@ public class OrderMaker : MonoBehaviour
 
                 }
                 GetComponent<MenuManager>().GainMoney(Earnings); //sends money to player
+                //Adds Points to the Player's score!!
+                this.gameObject.GetComponent<MenuManager>().GainPoints(Earnings);
+
                 Earnings = 0; //resets money
                 FinishedDrink.GetComponent<InventorySlot>().PreviousSlot.GetComponent<Item>().Occupied = false;
                 Destroy(FinishedDrink);
                 Orders[i].GetComponent<OrderSlot>().OrderCompleted();
                 i = Orders.Count + 1;
+                CompletedOrders++; //Adds to your complete orders.
+                if (CompletedOrders == OrderThreshold1) unlockDetermined++; //If you have enough complete orders, unlock new order types
+                if (CompletedOrders == OrderThreshold2) unlockDetermined++;
+                if (CompletedOrders == OrderThreshold3) unlockDetermined++;
             }
 
 
@@ -181,6 +173,13 @@ public class OrderMaker : MonoBehaviour
 
     }
 
-
+    public void GameEnded()
+    {
+        StopAllCoroutines();
+        for (int i = Orders.Count-1; i == 0; i--)
+        {
+            DeList(Orders[i]);
+        }
+    }
 
 }

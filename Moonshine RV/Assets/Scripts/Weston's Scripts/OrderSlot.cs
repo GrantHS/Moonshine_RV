@@ -31,7 +31,7 @@ public class OrderSlot : MonoBehaviour
         else
         {
             TimeRemaining = 0;
-            ReputationPenalty(5); //Removes 5 reputation if you fail an order
+            ReputationPenalty(20); //Removes 20 reputation if you fail an order
             for (int i = 0; i > GameManager.GetComponent<OrderMaker>().Orders.Count+1; i++)
             {
                if(GameManager.GetComponent<OrderMaker>().Orders[i] == this.gameObject)
@@ -136,18 +136,32 @@ public class OrderSlot : MonoBehaviour
 
     private void ReputationPenalty(int Rep)
     {
-        //GameManager.GetComponent<Inventory>();
+        GameManager.GetComponent<MenuManager>().LoseReputation(Rep);
     }
 
     private void ReputationReward(int Rep)
     {
-
+        GameManager.GetComponent<MenuManager>().GainReputation(Rep);
     }
 
     public void OrderCompleted()
     {
         
         ReputationReward(5);
+        GameManager.GetComponent<OrderMaker>().DeList(this.gameObject);
+    }
+
+    public void OrderCancelled()
+    {
+        ReputationPenalty(10);
+        for (int i = 0; i > GameManager.GetComponent<OrderMaker>().Orders.Count + 1; i++)
+        {
+            if (GameManager.GetComponent<OrderMaker>().Orders[i] == this.gameObject)
+            {
+                GameManager.GetComponent<OrderMaker>().Orders.Remove(GameManager.GetComponent<OrderMaker>().Orders[i]);
+                i = GameManager.GetComponent<OrderMaker>().Orders.Count + 1;
+            }
+        }
         GameManager.GetComponent<OrderMaker>().DeList(this.gameObject);
     }
 
