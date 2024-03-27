@@ -19,8 +19,8 @@ public class TreeManager : MonoBehaviour
 
 
     [Header("Sound Effects")]
-    [SerializeField] private AudioClip lightningSoundEffect; // Drag your lightning sound effect here in the Inspector
-    public AudioSource audioSource;
+    [SerializeField] private AudioClip lightningSoundEffect; //lightning sound
+    public AudioSource audioSource; //lightning tree
 
 
 
