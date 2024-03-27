@@ -18,7 +18,9 @@ public class TreeManager : MonoBehaviour
     private GameObject LightningTree, CherryTree, AppleTree, HoneyTree;
 
 
-
+    [Header("Sound Effects")]
+    [SerializeField] private AudioClip lightningSoundEffect; // Drag your lightning sound effect here in the Inspector
+    public AudioSource audioSource;
 
 
 
@@ -36,6 +38,7 @@ public class TreeManager : MonoBehaviour
         if (!LightningFruit.activeInHierarchy)
         {
             LightningFruit.SetActive(true);
+            PlayLightningSound();
             this.GetComponent<MenuManager>().LightningGrown();
         }
         if (!CherryFruit.activeInHierarchy && CherryRemain <= 0 && CherryTree.activeInHierarchy)
@@ -72,6 +75,12 @@ public class TreeManager : MonoBehaviour
 
 
     }
+    private void PlayLightningSound()
+    {
+        if (audioSource != null && lightningSoundEffect != null)
+        {
+            audioSource.PlayOneShot(lightningSoundEffect); // Play the sound effect
+        }
+    }
 
-    
 }
