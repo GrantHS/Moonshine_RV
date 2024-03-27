@@ -37,5 +37,9 @@ public class PauseMenu : MonoBehaviour
         isPaused = true;
     }
 
-    // Optionally, you can add more functions here to handle other menu actions, like quitting the game or loading other scenes.
+    public void Quit()
+    {
+        Quit(); 
+    }
+
 }
