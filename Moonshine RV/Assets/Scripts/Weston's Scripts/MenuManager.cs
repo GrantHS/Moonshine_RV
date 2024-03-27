@@ -104,6 +104,7 @@ public class MenuManager : MonoBehaviour
         this.GetComponent<CameraShift>().MainArea();
         ReputationBar = ReputationScaler.transform.GetChild(0).gameObject;
         ReputationFlavor();
+        this.GetComponent<OrderMaker>().BeginOrders(); //Starts Orders coming in after the player hits Start Button
     }
 
     public void OptionsMenu()

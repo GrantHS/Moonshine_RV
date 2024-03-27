@@ -47,6 +47,11 @@ public class OrderMaker : MonoBehaviour
     void Start()
     {
         //OrderUp();
+        
+    }
+
+    public void BeginOrders()
+    {
         InvokeRepeating("OrderUp", 10f, orderDelay);
         unlockDetermined = 1;
     }
