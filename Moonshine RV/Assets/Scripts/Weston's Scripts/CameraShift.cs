@@ -129,7 +129,9 @@ public class CameraShift : MonoBehaviour
             this.GetComponent<Inventory>().StatusPage.SetActive(false);
             OrderWindowSlot.SetActive(false);
             OrderWindowPreviews.SetActive(false);
+            this.gameObject.GetComponent<MenuManager>().CloseComputerMenus();
             ComputerButtons.SetActive(false);
+            this.gameObject.GetComponent<MenuManager>().HideHarvest();
             float u = (Time.time - timeStart) / timeDuration;
             if (u >= 1)
             {

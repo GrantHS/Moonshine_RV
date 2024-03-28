@@ -150,8 +150,6 @@ public class MenuManager : MonoBehaviour
         if (LightningHarvestable)
         {
             LightningTreeMenu.SetActive(true);
-            LightningHarvestable = false;
-            LightningFruit.SetActive(false);
         }
         //MenusOpen = true;
 
@@ -161,8 +159,6 @@ public class MenuManager : MonoBehaviour
         if (CherryHarvestable)
         {
             CherryTreeMenu.SetActive(true);
-            CherryHarvestable = false;
-            CherryFruit.SetActive(false);
         }
         //MenusOpen = true;
     }
@@ -171,8 +167,6 @@ public class MenuManager : MonoBehaviour
         if (AppleHarvestable)
         {
             AppleTreeMenu.SetActive(true);
-            AppleHarvestable = false;
-            AppleFruit.SetActive(false);
         }
         //MenusOpen = true;
     }
@@ -181,10 +175,31 @@ public class MenuManager : MonoBehaviour
         if (HoneyHarvestable)
         {
             HoneyTreeMenu.SetActive(true);
-            HoneyHarvestable = false;
-            HoneyFruit.SetActive(false);
         }
         //MenusOpen = true;
+    }
+
+    public void FruitHarvested(int type)
+    {
+        switch (type) //Lightning=0,Cherry=1,Apple=2,Honey=3;
+        {
+            case 0:
+                LightningHarvestable = false;
+                LightningFruit.SetActive(false);
+                break;
+            case 1:
+                CherryHarvestable = false;
+                CherryFruit.SetActive(false);
+                break;
+            case 2:
+                AppleHarvestable = false;
+                AppleFruit.SetActive(false);
+                break;
+            case 3:
+                HoneyHarvestable = false;
+                HoneyFruit.SetActive(false);
+                break;
+        }
     }
 
     public void HideHarvest()
