@@ -1206,6 +1206,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BlockOut (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8328609682262605455, guid: d3e1ff1131905544094dee01a1f6ce8a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 5440029384598635117, guid: d3e1ff1131905544094dee01a1f6ce8a, type: 3}
@@ -12325,7 +12330,7 @@ PrefabInstance:
     - target: {fileID: 3640369435795777803, guid: ba9ae95e849cca54780ff9f0d4849462,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3640369435795777803, guid: ba9ae95e849cca54780ff9f0d4849462,
         type: 3}
@@ -12420,7 +12425,7 @@ PrefabInstance:
     - target: {fileID: 5797219779937119198, guid: ba9ae95e849cca54780ff9f0d4849462,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5797219779937119198, guid: ba9ae95e849cca54780ff9f0d4849462,
         type: 3}
@@ -12460,7 +12465,7 @@ PrefabInstance:
     - target: {fileID: 8115348587016929881, guid: ba9ae95e849cca54780ff9f0d4849462,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8115348587016929881, guid: ba9ae95e849cca54780ff9f0d4849462,
         type: 3}
@@ -15058,8 +15063,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3, y: 5, z: 3}
-  m_Center: {x: -4.53, y: 4.1, z: 8.97}
+  m_Size: {x: 3.9547157, y: 5, z: 4.629307}
+  m_Center: {x: -4.582404, y: 4.1, z: 8.768822}
 --- !u!1 &1320141438
 GameObject:
   m_ObjectHideFlags: 0
