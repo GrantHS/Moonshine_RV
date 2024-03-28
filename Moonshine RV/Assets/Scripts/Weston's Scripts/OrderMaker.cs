@@ -21,7 +21,13 @@ public class OrderMaker : MonoBehaviour
     private GameObject OrderPrefab;
 
     [SerializeField]
+    private GameObject OrderPreview;
+
+    [SerializeField]
     private GameObject OrderBox;
+
+    [SerializeField]
+    private GameObject OrderPreviewBox;
 
     [SerializeField]
     private GameObject NotificationObject;
@@ -52,7 +58,7 @@ public class OrderMaker : MonoBehaviour
 
     public void BeginOrders()
     {
-        InvokeRepeating("OrderUp", 10f, orderDelay);
+        InvokeRepeating("OrderPreviews", 10f, orderDelay);
         unlockDetermined = 1;
     }
 
@@ -61,25 +67,59 @@ public class OrderMaker : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(orderDelay);
-            OrderUp();
+            OrderPreviews();
         }
     }
 
-   public void OrderUp()
+    public void OrderPreviews()
+    {
+        if (Orders.Count < 8 && OrderPreviewBox.transform.childCount < 2)
+        {
+            GameObject Order = Instantiate(OrderPreview, OrderPreviewBox.transform);
+            // Flavor is random,  0=Lightning, 1=Cherry, 2=Apple, 3=Honey
+            Order.GetComponent<OrderPreview>().flavor = Random.Range(0, unlockDetermined);
+            // color is random,  0=Clear 1=Red 2=Green 4=Brown
+            Order.GetComponent<OrderPreview>().color = Random.Range(0, unlockDetermined);
+            // glassware is random, 0=ShotGlass, 1=DoubleRocks, 2=MasonJar, 3=Decanter
+            Order.GetComponent<OrderPreview>().size = Random.Range(0, unlockDetermined);
+
+            Order.GetComponent<OrderPreview>().SetIcons();
+
+            NotificationObject.GetComponent<Notification>().Activate();
+
+        }
+        else
+        {
+
+        }
+    }
+
+
+
+   public void OrderUp(int flavor, int color, int size)
    {
         if (Orders.Count < 8)
         {
+            /* GameObject Order = Instantiate(OrderPrefab, OrderBox.transform);
+             // Flavor is random,  0=Lightning, 1=Cherry, 2=Apple, 3=Honey
+             Order.GetComponent<OrderSlot>().flavor = Random.Range(0, unlockDetermined);
+             // color is random,  0=Clear 1=Red 2=Green 4=Brown
+             Order.GetComponent<OrderSlot>().color = Random.Range(0, unlockDetermined);
+             // glassware is random, 0=ShotGlass, 1=DoubleRocks, 2=MasonJar, 3=Decanter
+             Order.GetComponent<OrderSlot>().size = Random.Range(0, unlockDetermined);
+             Orders.Add(Order);
+             Order.GetComponent<OrderSlot>().SetIcons();
+             */
             GameObject Order = Instantiate(OrderPrefab, OrderBox.transform);
-            // Flavor is random,  0=Lightning, 1=Cherry, 2=Apple, 3=Honey
-            Order.GetComponent<OrderSlot>().flavor = Random.Range(0, unlockDetermined);
-            // color is random,  0=Clear 1=Red 2=Green 4=Brown
-            Order.GetComponent<OrderSlot>().color = Random.Range(0, unlockDetermined);
-            // glassware is random, 0=ShotGlass, 1=DoubleRocks, 2=MasonJar, 3=Decanter
-            Order.GetComponent<OrderSlot>().size = Random.Range(0, unlockDetermined);
+            // Flavor is set to whatever was applied,  0=Lightning, 1=Cherry, 2=Apple, 3=Honey
+            Order.GetComponent<OrderSlot>().flavor = flavor;
+            // color is set to whatever was applied,  0=Clear 1=Red 2=Green 4=Brown
+            Order.GetComponent<OrderSlot>().color = color;
+            // glassware is set to whatever was applied, 0=ShotGlass, 1=DoubleRocks, 2=MasonJar, 3=Decanter
+            Order.GetComponent<OrderSlot>().size = size;
             Orders.Add(Order);
             Order.GetComponent<OrderSlot>().SetIcons();
-
-            NotificationObject.GetComponent<Notification>().Activate();
+            //NotificationObject.GetComponent<Notification>().Activate();
 
         }
         else

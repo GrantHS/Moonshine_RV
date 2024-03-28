@@ -23,6 +23,8 @@ public class CameraShift : MonoBehaviour
     private GameObject CameraObject;
     [SerializeField]
     private GameObject OrderWindowSlot;
+    [SerializeField]
+    private GameObject OrderWindowPreviews;
 
     // Start is called before the first frame update
     void Start()
@@ -73,6 +75,7 @@ public class CameraShift : MonoBehaviour
         OrderWindowButtons.SetActive(true);
         ComputerButtons.SetActive(false);
         OrderWindowSlot.SetActive(true);
+        OrderWindowPreviews.SetActive(true);
     }
 
     public void GoToBackyard()
@@ -125,6 +128,8 @@ public class CameraShift : MonoBehaviour
             this.GetComponent<Inventory>().StillScreen.SetActive(false);
             this.GetComponent<Inventory>().StatusPage.SetActive(false);
             OrderWindowSlot.SetActive(false);
+            OrderWindowPreviews.SetActive(false);
+            ComputerButtons.SetActive(false);
             float u = (Time.time - timeStart) / timeDuration;
             if (u >= 1)
             {

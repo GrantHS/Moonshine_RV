@@ -20,7 +20,7 @@ public class Customer : MonoBehaviour
     {
         if (orderMaker != null)
         {
-            orderMaker.OrderUp();
+            //orderMaker.OrderUp();
             //CurrentOrder = orderMaker.CurrentOrder; // store the current order for this customer
         }
     }
