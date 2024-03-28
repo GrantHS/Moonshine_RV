@@ -4,21 +4,21 @@ using UnityEngine;
 
 public class PauseMenu : MonoBehaviour
 {
-    public GameObject pauseMenuUI; // Reference to the pause menu UI
+    public GameObject pauseMenuUI;
     private bool isPaused = false;
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape)) // Checks if the Escape key is pressed
+        if (Input.GetKeyDown(KeyCode.Escape)) // checks if the Escape key is pressed
         {
             if (isPaused)
             {
-                Resume(); // If the game is paused, resume
+                Resume(); // if the game is paused, resume
             }
             else
             {
-                Pause(); // If the game is not paused, pause it
+                Pause(); // if the game is not paused, pause it
             }
         }
     }
@@ -26,17 +26,20 @@ public class PauseMenu : MonoBehaviour
     public void Resume()
     {
         pauseMenuUI.SetActive(false); // Deactivates the pause menu UI
-        Time.timeScale = 1f; // Resumes the game time
+        Time.timeScale = 1f; // resumes the game 
         isPaused = false;
     }
 
     void Pause()
     {
-        pauseMenuUI.SetActive(true); // Activates the pause menu UI
-        Time.timeScale = 0f; // Freezes the game time
+        pauseMenuUI.SetActive(true); // activates the pause menu UI
+        Time.timeScale = 0f; // freezes the game 
         isPaused = true;
     }
 
-    // Optionally, you can add more functions here to handle other menu actions, like quitting the game or loading other scenes.
+    public void Quit()
+    {
+        Application.Quit();
+    }
 }
           
