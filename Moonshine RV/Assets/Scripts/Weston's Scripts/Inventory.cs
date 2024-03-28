@@ -8,6 +8,8 @@ public class Inventory : MonoBehaviour
     [SerializeField]
     public GameObject StatusPage;
     public bool StatusEnabled;
+    public bool StillWindow;
+    public GameObject StillScreen; 
 
     [SerializeField]
     public List<GameObject> InventorySlots;
@@ -31,17 +33,32 @@ public class Inventory : MonoBehaviour
         {
             ToggleStatusPage();
         }
+        
     }
 
     private void ToggleStatusPage()
     {
-        if (StatusPage.activeInHierarchy)
+        if (!StillWindow)
         {
-            StatusPage.SetActive(false);
+            if (StatusPage.activeInHierarchy)
+            {
+                StatusPage.SetActive(false);
+            }
+            else
+            {
+                StatusPage.SetActive(true);
+            }
         }
-        else
+        if (StillWindow)
         {
-            StatusPage.SetActive(true);
+            if (StillScreen.activeInHierarchy)
+            {
+                StillScreen.SetActive(false);
+            }
+            else
+            {
+                StillScreen.SetActive(true);
+            }
         }
         
     }

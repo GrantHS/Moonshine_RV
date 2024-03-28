@@ -5,7 +5,7 @@ public class Customer : MonoBehaviour
     public CustomerSpawner Spawner { get; set; } // reference to the spawner
 
     private OrderMaker orderMaker;
-    public OrderMaker.Order CurrentOrder { get; private set; }
+    //public OrderMaker.Order CurrentOrder { get; private set; }
 
     private UnityEngine.AI.NavMeshAgent agent;
 
@@ -20,8 +20,8 @@ public class Customer : MonoBehaviour
     {
         if (orderMaker != null)
         {
-            orderMaker.OrderUp();
-            CurrentOrder = orderMaker.CurrentOrder; // store the current order for this customer
+            //orderMaker.OrderUp();
+            //CurrentOrder = orderMaker.CurrentOrder; // store the current order for this customer
         }
     }
 
