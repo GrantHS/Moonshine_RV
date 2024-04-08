@@ -2965,7 +2965,7 @@ GameObject:
   - component: {fileID: 334739221}
   - component: {fileID: 334739220}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: CubePlane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
