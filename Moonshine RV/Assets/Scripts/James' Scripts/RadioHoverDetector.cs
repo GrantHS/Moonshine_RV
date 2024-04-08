@@ -15,7 +15,6 @@ public class RadioHoverDetector : MonoBehaviour
         }
     }
 
-    // Function called when mouse exits the collider
     void OnMouseExit()
     {
         if (CompareTag("radio"))
