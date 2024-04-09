@@ -146,22 +146,14 @@ public class OrderSlot : MonoBehaviour
 
     public void OrderCompleted()
     {
-        
-        ReputationReward(5);
+
+        ReputationReward(0);
         GameManager.GetComponent<OrderMaker>().DeList(this.gameObject);
     }
 
     public void OrderCancelled()
     {
         ReputationPenalty(10);
-        for (int i = 0; i > GameManager.GetComponent<OrderMaker>().Orders.Count + 1; i++)
-        {
-            if (GameManager.GetComponent<OrderMaker>().Orders[i] == this.gameObject)
-            {
-                GameManager.GetComponent<OrderMaker>().Orders.Remove(GameManager.GetComponent<OrderMaker>().Orders[i]);
-                i = GameManager.GetComponent<OrderMaker>().Orders.Count + 1;
-            }
-        }
         GameManager.GetComponent<OrderMaker>().DeList(this.gameObject);
     }
 

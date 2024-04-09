@@ -67,6 +67,16 @@ public class MenuManager : MonoBehaviour
     [SerializeField]
     private Text ResultsText;
 
+    private void Start()
+    {
+        //print(Screen.currentResolution);
+        //Screen.SetResolution(900, 600, true);
+        if (Screen.currentResolution.width <= 1080)
+        {
+
+        } 
+    }
+
     private void Update()
     {
         if (Input.GetMouseButtonDown(0))
