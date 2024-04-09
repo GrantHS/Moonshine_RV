@@ -1341,7 +1341,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -13617,6 +13617,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1089398352}
+  - component: {fileID: 1089398353}
   m_Layer: 0
   m_Name: DrinkSlot
   m_TagString: Untagged
@@ -13639,6 +13640,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1089398353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1089398351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 441a189c2d719424eb9201e66726ecf0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Occupied: 0
 --- !u!1 &1091310711 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2040542448765327740, guid: 22a592d20a910c24397cde259e4ef354,
@@ -14491,6 +14505,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1153865354}
+  - component: {fileID: 1153865355}
   m_Layer: 0
   m_Name: DrinkSlot (3)
   m_TagString: Untagged
@@ -14513,6 +14528,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1153865355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1153865353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 441a189c2d719424eb9201e66726ecf0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Occupied: 0
 --- !u!1 &1157065295
 GameObject:
   m_ObjectHideFlags: 0
@@ -17529,7 +17557,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Money: 50$'
+  m_Text: 'Money: 100$'
 --- !u!222 &1431675484
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -18360,7 +18388,23 @@ MonoBehaviour:
   - {fileID: 1761478204}
   - {fileID: 1862114939}
   - {fileID: 1153865353}
-  DrinkPrefabs: []
+  DrinkPrefabs:
+  - {fileID: 6781832082348744427, guid: 4dd28e2306b94044eb5d7c52ddb2c88a, type: 3}
+  - {fileID: 6781832082348744427, guid: 1059a7d7085f9664a9342a455cd9422b, type: 3}
+  - {fileID: 6781832082348744427, guid: 3b6272624d4015b4f86eb2795d415f21, type: 3}
+  - {fileID: 6781832082348744427, guid: f5eb5d0b5b48dd44684edd40508bc146, type: 3}
+  - {fileID: 351290303478958565, guid: 9abaa2dd30ba2614889e741cd7114d78, type: 3}
+  - {fileID: 351290303478958565, guid: 8c7a636c65b3bf343a535b708fe42247, type: 3}
+  - {fileID: 351290303478958565, guid: f14c6312f49f4b54ea21c629943aaf2c, type: 3}
+  - {fileID: 351290303478958565, guid: 7bb4bc2284024af47a6f5e5a8ce0272b, type: 3}
+  - {fileID: 3544393315774333103, guid: 7e2cd74675fa91a4c86b2a2cd42dab05, type: 3}
+  - {fileID: 3544393315774333103, guid: 070bde2456aa07848a60832bb9eebc87, type: 3}
+  - {fileID: 3544393315774333103, guid: ae771a263896d4b42b0fef4bc410b0af, type: 3}
+  - {fileID: 3544393315774333103, guid: d4cb0fc7cea6b8b4ab41569e5b5d57a2, type: 3}
+  - {fileID: 7332722421247819580, guid: 0ae64a95e70e5424284fea6863051eae, type: 3}
+  - {fileID: 7332722421247819580, guid: 8b3949b52d7662f4ea52a7179443333d, type: 3}
+  - {fileID: 7332722421247819580, guid: 2a161d0d4e339414399946c8023fac83, type: 3}
+  - {fileID: 7332722421247819580, guid: c95ba36516b92df4f9fd331c355ddcf4, type: 3}
   DeCanterEarning: 80
   ShotGlassEarning: 20
   DoubleRocksEarning: 40
@@ -21257,7 +21301,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Money: 50$'
+  m_Text: 'Money: 100$'
 --- !u!222 &1726361808
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -21945,6 +21989,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1761478205}
+  - component: {fileID: 1761478206}
   m_Layer: 0
   m_Name: DrinkSlot (1)
   m_TagString: Untagged
@@ -21967,6 +22012,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1761478206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1761478204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 441a189c2d719424eb9201e66726ecf0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Occupied: 0
 --- !u!4 &1763410066 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 296012019585177129, guid: 33c3252375ebfc843bd3818c57a7052d,
@@ -23377,6 +23435,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1862114940}
+  - component: {fileID: 1862114941}
   m_Layer: 0
   m_Name: DrinkSlot (2)
   m_TagString: Untagged
@@ -23399,6 +23458,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1862114941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1862114939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 441a189c2d719424eb9201e66726ecf0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Occupied: 0
 --- !u!1 &1874402287
 GameObject:
   m_ObjectHideFlags: 0
@@ -27149,7 +27221,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Money: 50$'
+  m_Text: 'Money: 100$'
 --- !u!222 &2136189118
 CanvasRenderer:
   m_ObjectHideFlags: 0
