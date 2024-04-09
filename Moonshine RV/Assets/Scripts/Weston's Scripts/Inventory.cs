@@ -68,6 +68,7 @@ public class Inventory : MonoBehaviour
         for (int i = 0; i < 24; i++)
         {
             GameObject InvenSlot = Instantiate(InventoryItem, InventoryBox.transform);
+            
             InventorySlots.Add(InvenSlot);
         }
 
@@ -162,6 +163,11 @@ public class Inventory : MonoBehaviour
                 if (InvenSlot.GetComponent<Item>().Occupied == false)
                 {
                     GameObject NewItem = Instantiate(ItemGaining, Vector3.zero, new Quaternion(0f, 0f, 0f, 0f));
+                    var scale = NewItem.GetComponent<RectTransform>().localScale;
+                    scale.x = 1f;
+                    scale.y = 1f;
+                    scale.z = 1f;
+                    NewItem.GetComponent<RectTransform>().sizeDelta = scale;
                     NewItem.GetComponent<InventorySlot>().parentAfterDrag = InvenSlot.transform;
                     NewItem.GetComponent<InventorySlot>().SwitchSlots();
                     i = InventorySlots.Count;
