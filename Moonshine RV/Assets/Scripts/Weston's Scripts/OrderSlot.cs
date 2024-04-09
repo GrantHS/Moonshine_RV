@@ -167,6 +167,7 @@ public class OrderSlot : MonoBehaviour
     public void OrderCancelled()
     {
         ReputationPenalty(10);
+        GameManager.GetComponent<OrderMaker>().ComboBreaker();
         GameManager.GetComponent<OrderMaker>().DeList(this.gameObject);
     }
 
