@@ -49,6 +49,12 @@ public class OrderMaker : MonoBehaviour
     public int CompletedOrders;
 
     [SerializeField]
+    private float BonusTime; //Gives Players More Time for Orders At the Beginning
+
+    [SerializeField]
+    private int OrderCombo; //Tracks How Many Orders a player finishes in a row.
+
+    [SerializeField]
     int OrderThreshold1, OrderThreshold2, OrderThreshold3; //Determines when each new set of ingredients can be ordered by customers.
 
     
@@ -111,7 +117,7 @@ public class OrderMaker : MonoBehaviour
              // glassware is random, 0=ShotGlass, 1=DoubleRocks, 2=MasonJar, 3=Decanter
              Order.GetComponent<OrderSlot>().size = Random.Range(0, unlockDetermined);
              Orders.Add(Order);
-             Order.GetComponent<OrderSlot>().SetIcons();
+             Order.GetComponent<OrderSlot>().SetIcons(BonusTime);
             NotificationObject.GetComponent<Notification>().Activate();
              
              /*
@@ -212,9 +218,16 @@ public class OrderMaker : MonoBehaviour
                 Orders[i].GetComponent<OrderSlot>().OrderCompleted();
                 i = Orders.Count + 1;
                 CompletedOrders++; //Adds to your complete orders.
+                OrderCombo++;
+                if (OrderCombo % 5 == 0) gameObject.GetComponent<MenuManager>().GainReputation(5);
+                if (OrderCombo % 10 == 0) gameObject.GetComponent<MenuManager>().GainReputation(10);
                 if (CompletedOrders == OrderThreshold1) unlockDetermined++; //If you have enough complete orders, unlock new order types
                 if (CompletedOrders == OrderThreshold2) unlockDetermined++;
                 if (CompletedOrders == OrderThreshold3) unlockDetermined++;
+
+                if (CompletedOrders == 20) BonusTime -= 10;
+                if (CompletedOrders == 40) BonusTime -= 10;
+                if (CompletedOrders == 50) BonusTime = 0;
 
                 //Spawns Drinks On each Slot
                 for (int slot = 0; slot < CounterSpaces.Count; slot++) //Checks for Space for a drink

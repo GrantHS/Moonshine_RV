@@ -15507,6 +15507,7 @@ MonoBehaviour:
   GreenEarning: 0
   BrownEarning: 0
   CompletedOrders: 0
+  BonusTime: 40
   OrderThreshold1: 4
   OrderThreshold2: 15
   OrderThreshold3: 25

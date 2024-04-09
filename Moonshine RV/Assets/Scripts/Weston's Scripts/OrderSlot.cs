@@ -73,22 +73,26 @@ public class OrderSlot : MonoBehaviour
      */
 
 
-    public void SetIcons() //Sets the correct icons for the order
+    public void SetIcons(float bonus) //Sets the correct icons for the order
     {
 
         switch (color)
         {
             case 0:
                 Images[0].SetActive(true);
+                AddTime(10);
                 break;
             case 1:
                 Images[1].SetActive(true);
+                AddTime(20);
                 break;
             case 2:
                 Images[2].SetActive(true);
+                AddTime(30);
                 break;
             case 3:
                 Images[3].SetActive(true);
+                AddTime(40);
                 break;
         }
 
@@ -96,15 +100,19 @@ public class OrderSlot : MonoBehaviour
         {
             case 0:
                 Images[4].SetActive(true);
+                AddTime(10);
                 break;
             case 1:
                 Images[5].SetActive(true);
+                AddTime(20);
                 break;
             case 2:
                 Images[6].SetActive(true);
+                AddTime(30);
                 break;
             case 3:
                 Images[7].SetActive(true);
+                AddTime(30);
                 break;
         }
 
@@ -112,18 +120,23 @@ public class OrderSlot : MonoBehaviour
         {
             case 0:
                 Images[8].SetActive(true);
+                AddTime(10);
                 break;
             case 1:
                 Images[9].SetActive(true);
+                AddTime(25);
                 break;
             case 2:
                 Images[10].SetActive(true);
+                AddTime(30);
                 break;
             case 3:
                 Images[11].SetActive(true);
+                AddTime(40);
                 break;
         }
-        
+
+        AddTime(bonus);
 
 
     }

@@ -163,11 +163,14 @@ public class Inventory : MonoBehaviour
                 if (InvenSlot.GetComponent<Item>().Occupied == false)
                 {
                     GameObject NewItem = Instantiate(ItemGaining, Vector3.zero, new Quaternion(0f, 0f, 0f, 0f));
-                    var scale = NewItem.GetComponent<RectTransform>().localScale;
-                    scale.x = 1f;
-                    scale.y = 1f;
-                    scale.z = 1f;
-                    NewItem.GetComponent<RectTransform>().sizeDelta = scale;
+                    for (i = 0; NewItem.GetComponent<RectTransform>().localScale.x < 1; i++)
+                    {
+                        var scale = 1f;
+                        NewItem.GetComponent<RectTransform>().sizeDelta = new Vector3(NewItem.transform.localScale.x, scale, NewItem.transform.localScale.z);
+                        NewItem.GetComponent<RectTransform>().sizeDelta = new Vector3(scale, NewItem.transform.localScale.y, NewItem.transform.localScale.z);
+                        NewItem.GetComponent<RectTransform>().sizeDelta = new Vector3(NewItem.transform.localScale.x, NewItem.transform.localScale.y, scale);
+                    }
+                    
                     NewItem.GetComponent<InventorySlot>().parentAfterDrag = InvenSlot.transform;
                     NewItem.GetComponent<InventorySlot>().SwitchSlots();
                     i = InventorySlots.Count;
@@ -193,6 +196,9 @@ public class Inventory : MonoBehaviour
 
         this.gameObject.GetComponent<MenuManager>().HideHarvest();
     }
+
+    
+
 
     public void RemoveItem(GameObject itemToRemove)
     {
