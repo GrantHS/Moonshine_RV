@@ -98,7 +98,7 @@ public class OrderPreview : MonoBehaviour
     public void OrderAccepted()
     {
         ReputationReward(5);
-        GameManager.GetComponent<OrderMaker>().OrderUp(flavor, color, size);
+        GameManager.GetComponent<OrderMaker>().OrderUp();
         Destroy(this.gameObject);
     }
 

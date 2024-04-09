@@ -11,7 +11,6 @@ public class OrderMaker : MonoBehaviour
   
     [SerializeField]
     int unlockDetermined = 1;
-    [SerializeField]
     public List<GameObject> Orders;
 
     [SerializeField]
@@ -32,7 +31,11 @@ public class OrderMaker : MonoBehaviour
     [SerializeField]
     private GameObject NotificationObject;
 
-
+    [SerializeField]
+    private List<GameObject> CounterSpaces;
+    [SerializeField]
+    private List<GameObject> DrinkPrefabs;
+    private GameObject DrinkPrefab;
 
     //Code for Handling Finished Drinks and Serving Them
     [SerializeField]
@@ -58,7 +61,7 @@ public class OrderMaker : MonoBehaviour
 
     public void BeginOrders()
     {
-        InvokeRepeating("OrderPreviews", 10f, orderDelay);
+        InvokeRepeating("OrderUp", 10f, orderDelay);
         unlockDetermined = 1;
     }
 
@@ -96,11 +99,11 @@ public class OrderMaker : MonoBehaviour
 
 
 
-   public void OrderUp(int flavor, int color, int size)
+   public void OrderUp()
    {
         if (Orders.Count < 8)
         {
-            /* GameObject Order = Instantiate(OrderPrefab, OrderBox.transform);
+             GameObject Order = Instantiate(OrderPrefab, OrderBox.transform);
              // Flavor is random,  0=Lightning, 1=Cherry, 2=Apple, 3=Honey
              Order.GetComponent<OrderSlot>().flavor = Random.Range(0, unlockDetermined);
              // color is random,  0=Clear 1=Red 2=Green 4=Brown
@@ -109,7 +112,9 @@ public class OrderMaker : MonoBehaviour
              Order.GetComponent<OrderSlot>().size = Random.Range(0, unlockDetermined);
              Orders.Add(Order);
              Order.GetComponent<OrderSlot>().SetIcons();
-             */
+            NotificationObject.GetComponent<Notification>().Activate();
+             
+             /*
             GameObject Order = Instantiate(OrderPrefab, OrderBox.transform);
             // Flavor is set to whatever was applied,  0=Lightning, 1=Cherry, 2=Apple, 3=Honey
             Order.GetComponent<OrderSlot>().flavor = flavor;
@@ -120,7 +125,7 @@ public class OrderMaker : MonoBehaviour
             Orders.Add(Order);
             Order.GetComponent<OrderSlot>().SetIcons();
             //NotificationObject.GetComponent<Notification>().Activate();
-
+            */
         }
         else
         {
@@ -210,6 +215,122 @@ public class OrderMaker : MonoBehaviour
                 if (CompletedOrders == OrderThreshold1) unlockDetermined++; //If you have enough complete orders, unlock new order types
                 if (CompletedOrders == OrderThreshold2) unlockDetermined++;
                 if (CompletedOrders == OrderThreshold3) unlockDetermined++;
+
+                //Spawns Drinks On each Slot
+                for (int slot = 0; slot < CounterSpaces.Count; slot++) //Checks for Space for a drink
+                {
+                    if (!CounterSpaces[slot].GetComponent<CounterSpace>().Occupied)
+                    {
+                        int drink = 0;
+                        //Shot Glasses
+                        if (DrinkStats.GlassType == 0) //Checks all Shot Glasses
+                        {
+                            
+                            switch ((int)DrinkStats.Coloring) //Checks Color
+                            {
+                                case 0: //Clear
+                                    drink = 0;
+                                    DrinkPrefab = DrinkPrefabs[drink];
+                                    break;
+                                case 1: //Red
+                                    drink = 1;
+                                    DrinkPrefab = DrinkPrefabs[drink];
+                                    break;
+                                case 2: //Green
+                                    drink = 2;
+                                    DrinkPrefab = DrinkPrefabs[drink];
+                                    break;
+                                case 3: //Brown
+                                    drink = 3;
+                                    DrinkPrefab = DrinkPrefabs[drink];
+                                    break;
+                            }
+                            
+                        }
+                        //Double Rocks
+                        if ((int)DrinkStats.GlassType == 1) //Checks all Double Glasses
+                        {
+
+                            switch ((int)DrinkStats.Coloring) //Checks Color
+                            {
+                                case 0: //Clear
+                                    drink = 4;
+                                    DrinkPrefab = DrinkPrefabs[drink];
+                                    break;
+                                case 1: //Red
+                                    drink = 5;
+                                    DrinkPrefab = DrinkPrefabs[drink];
+                                    break;
+                                case 2: //Green
+                                    drink = 6;
+                                    DrinkPrefab = DrinkPrefabs[drink];
+                                    break;
+                                case 3: //Brown
+                                    drink = 7;
+                                    DrinkPrefab = DrinkPrefabs[drink];
+                                    break;
+                            }
+
+                        }
+                        //Mason Jar
+                        if ((int)DrinkStats.GlassType == 2) //Checks all Mason Jars
+                        {
+
+                            switch ((int)DrinkStats.Coloring) //Checks Color
+                            {
+                                case 0: //Clear
+                                    drink = 8;
+                                    DrinkPrefab = DrinkPrefabs[drink];
+                                    break;
+                                case 1: //Red
+                                    drink = 9;
+                                    DrinkPrefab = DrinkPrefabs[drink];
+                                    break;
+                                case 2: //Green
+                                    drink = 10;
+                                    DrinkPrefab = DrinkPrefabs[drink];
+                                    break;
+                                case 3: //Brown
+                                    drink = 11;
+                                    DrinkPrefab = DrinkPrefabs[drink];
+                                    break;
+                            }
+
+                        }
+                        //Decanter
+                        if ((int)DrinkStats.GlassType == 3) //Checks all Decanters
+                        {
+
+                            switch ((int)DrinkStats.Coloring) //Checks Color
+                            {
+                                case 0: //Clear
+                                    drink = 12;
+                                    DrinkPrefab = DrinkPrefabs[drink];
+                                    break;
+                                case 1: //Red
+                                    drink = 13;
+                                    DrinkPrefab = DrinkPrefabs[drink];
+                                    break;
+                                case 2: //Green
+                                    drink = 14;
+                                    DrinkPrefab = DrinkPrefabs[drink];
+                                    break;
+                                case 3: //Brown
+                                    drink = 15;
+                                    DrinkPrefab = DrinkPrefabs[drink];
+                                    break;
+                            }
+
+                        }
+
+
+                        Instantiate(DrinkPrefab, CounterSpaces[slot].transform.position, CounterSpaces[slot].transform.rotation, CounterSpaces[slot].transform);
+                        CounterSpaces[slot].GetComponent<CounterSpace>().Occupied = true;
+                        slot = CounterSpaces.Count + 1;
+                    }
+
+
+                }
             }
 
 
