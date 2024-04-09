@@ -112,3 +112,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CurrentItem: {fileID: 0}
   Occupied: 0
+  SlotType: 0
+  GameManager: {fileID: 0}
