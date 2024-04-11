@@ -20,17 +20,17 @@ public class CarSpawner : MonoBehaviour
 
     IEnumerator SpawnCars()
     {
-        while (true) // Infinite loop to keep spawning cars
+        while (true) // infinite loop to keep spawning cars
         {
-            if (currentCar == null) // If there is no current car, spawn a new one
+            if (currentCar == null) // if there is no current car, spawn a new one
             {
                 currentCar = Instantiate(carPrefabs[currentCarIndex % carPrefabs.Length], spawnPoint.position, Quaternion.identity);
-                currentWaypointIndex = 0; // Reset waypoint index
-                MoveToNextWaypoint(currentCar); // Start moving the car
+                currentWaypointIndex = 0; // reset the waypoint
+                MoveToNextWaypoint(currentCar); // this starts moving the car
 
-                currentCarIndex++; // Increment index for next car
+                currentCarIndex++; //add the index for the car
             }
-            yield return null; // Wait until next frame to check again
+            yield return null
         }
     }
 
@@ -46,7 +46,7 @@ public class CarSpawner : MonoBehaviour
         }
         else
         {
-            // After the last waypoint, set the car to move to the end point
+            // after the last waypoint, set the car to move to the end point
             NavMeshAgent agent = car.GetComponent<NavMeshAgent>();
             if (agent != null)
             {
@@ -59,7 +59,7 @@ public class CarSpawner : MonoBehaviour
     {
         if (currentCar != null)
         {
-            // Check if car has reached the current waypoint
+            //this checks if the car has reaches the curreny waypoint
             if (HasReachedDestination(currentCar))
             {
                 if (currentWaypointIndex < waypoints.Count)
@@ -69,11 +69,11 @@ public class CarSpawner : MonoBehaviour
                 }
                 else
                 {
-                    // If the car has no more waypoints, check if it has reached the end point
+                    // if the car has no more waypoints, check if it has reached the end point
                     if (HasReachedDestination(currentCar, true))
                     {
-                        Destroy(currentCar); // Optionally, destroy the car when the lap is complete
-                        currentCar = null; // Allow the next car to spawn
+                        Destroy(currentCar);
+                        currentCar = null; // this spawns the next car after it's reached the endpoint
                     }
                 }
             }
