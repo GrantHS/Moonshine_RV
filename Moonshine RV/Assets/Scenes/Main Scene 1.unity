@@ -26997,10 +26997,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 842181015}
     m_Modifications:
+    - target: {fileID: 1183445021756028806, guid: fc93c6dd16eeca6449f54de67013688a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1511155458}
+    - target: {fileID: 1183445021756028806, guid: fc93c6dd16eeca6449f54de67013688a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: BacktoMainMenu
+      objectReference: {fileID: 0}
     - target: {fileID: 4407940027962121861, guid: fc93c6dd16eeca6449f54de67013688a,
         type: 3}
       propertyPath: m_Name
       value: GameOverScreen
+      objectReference: {fileID: 0}
+    - target: {fileID: 4407940027962121861, guid: fc93c6dd16eeca6449f54de67013688a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5244198075470618387, guid: fc93c6dd16eeca6449f54de67013688a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6499359564507780890, guid: fc93c6dd16eeca6449f54de67013688a,
         type: 3}
@@ -27051,6 +27071,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6693938379406463834, guid: fc93c6dd16eeca6449f54de67013688a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1511155458}
+    - target: {fileID: 6693938379406463834, guid: fc93c6dd16eeca6449f54de67013688a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: QuitGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 6693938379406463834, guid: fc93c6dd16eeca6449f54de67013688a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MenuManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7231227945725227209, guid: fc93c6dd16eeca6449f54de67013688a,
+        type: 3}
+      propertyPath: m_text
+      value: Main Menu
+      objectReference: {fileID: 0}
+    - target: {fileID: 7231227945725227209, guid: fc93c6dd16eeca6449f54de67013688a,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 26.85
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
