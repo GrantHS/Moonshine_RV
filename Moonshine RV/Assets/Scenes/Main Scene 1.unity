@@ -5342,7 +5342,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Mason Jar
+  m_Text: 'Mason Jar: 50'
 --- !u!222 &518477710
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6846,7 +6846,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Crystal Decanter
+  m_Text: 'Crystal Decanter: 100'
 --- !u!222 &599257885
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -15146,7 +15146,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Double Rocks Glass
+  m_Text: 'Double Rocks Glass: 20'
 --- !u!222 &1179472509
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -19380,7 +19380,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Shot Glass
+  m_Text: 'Shot Glass: 10'
 --- !u!222 &1520886773
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -20200,7 +20200,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1588250925
 Transform:
   m_ObjectHideFlags: 0
