@@ -47980,10 +47980,10 @@ MonoBehaviour:
   FlavorSet: 0
   GlassSet: 0
   FlavorText: {fileID: 909947174}
-  ShotBrewTime: 20
-  DoubleBrewTime: 25
-  MasonBrewTime: 30
-  DecanterBrewTime: 40
+  ShotBrewTime: 3
+  DoubleBrewTime: 3
+  MasonBrewTime: 3
+  DecanterBrewTime: 3
   BrewingTime: 0
   ColorSlot: {fileID: 364000330}
   FlavorSlot: {fileID: 1329399649}
