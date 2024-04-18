@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class RadioCountryController : MonoBehaviour
 {
     public GameObject hipHopController;
+    public GameObject JazzController;
     public GameObject radioPanel;
     public Button playButton;
     public Button pauseButton;
@@ -106,6 +107,17 @@ public class RadioCountryController : MonoBehaviour
 
         //turn on the hiphop panel
         hipHopController.SetActive(true);
+        radioPanel.SetActive(false);
+    }
+
+    public void SwitchToJazz()
+    {
+        // turn off the country radio panel and stop the music
+        radioPanel.SetActive(false);
+        audioSource.Stop();
+
+        //turn on the hiphop panel
+        JazzController.SetActive(true);
         radioPanel.SetActive(false);
     }
 }

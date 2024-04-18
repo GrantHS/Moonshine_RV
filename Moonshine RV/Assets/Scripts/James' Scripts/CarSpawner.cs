@@ -30,7 +30,7 @@ public class CarSpawner : MonoBehaviour
 
                 currentCarIndex++; //add the index for the car
             }
-            yield return null
+            yield return null;
         }
     }
 
@@ -69,7 +69,7 @@ public class CarSpawner : MonoBehaviour
                 }
                 else
                 {
-                    // if the car has no more waypoints, check if it has reached the end point
+                    // if the car has no more waypoints, check if it has reached the endpoint
                     if (HasReachedDestination(currentCar, true))
                     {
                         Destroy(currentCar);
