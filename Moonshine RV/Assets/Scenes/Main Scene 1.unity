@@ -47753,10 +47753,10 @@ MonoBehaviour:
   - {fileID: 7332722421247819580, guid: 8b3949b52d7662f4ea52a7179443333d, type: 3}
   - {fileID: 7332722421247819580, guid: 2a161d0d4e339414399946c8023fac83, type: 3}
   - {fileID: 7332722421247819580, guid: c95ba36516b92df4f9fd331c355ddcf4, type: 3}
-  DeCanterEarning: 80
-  ShotGlassEarning: 20
-  DoubleRocksEarning: 40
-  MasonEarning: 60
+  DeCanterEarning: 100
+  ShotGlassEarning: 30
+  DoubleRocksEarning: 50
+  MasonEarning: 80
   LightningEarning: 0
   CherryEarning: 0
   AppleEarning: 0
@@ -47766,9 +47766,9 @@ MonoBehaviour:
   GreenEarning: 0
   BrownEarning: 0
   CompletedOrders: 0
-  OrderThreshold1: 0
-  OrderThreshold2: 0
-  OrderThreshold3: 0
+  OrderThreshold1: 10
+  OrderThreshold2: 28
+  OrderThreshold3: 50
 --- !u!114 &1511155457
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47823,9 +47823,9 @@ MonoBehaviour:
   GlassMenuButton: {fileID: 798850198}
   TreeMenuButton: {fileID: 508252961}
   Currency: 100
-  CherTreePrice: 200
-  AppTreePrice: 500
-  HonTreePrice: 1000
+  CherTreePrice: 150
+  AppTreePrice: 200
+  HonTreePrice: 300
   ShotGlassPrice: 10
   DoubleGlassPrice: 20
   MasonGlassPrice: 50
@@ -47841,7 +47841,7 @@ MonoBehaviour:
   CherryFruit: {fileID: 1273407289}
   AppleFruit: {fileID: 373720968}
   HoneyFruit: {fileID: 826626201}
-  Reputation: 0
+  Reputation: 100
   ReputationText: {fileID: 1159516966}
   ReputationScaler: {fileID: 1320141438}
   Points: 0
@@ -47945,7 +47945,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63f56f19917e49c45b10e23ea20735e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LightningTiming: 20
+  LightningTiming: 5
   CherryStrikes: 2
   AppleStrikes: 3
   HoneyStrikes: 4
@@ -47980,10 +47980,10 @@ MonoBehaviour:
   FlavorSet: 0
   GlassSet: 0
   FlavorText: {fileID: 909947174}
-  ShotBrewTime: 3
+  ShotBrewTime: 1
   DoubleBrewTime: 3
-  MasonBrewTime: 3
-  DecanterBrewTime: 3
+  MasonBrewTime: 5
+  DecanterBrewTime: 8
   BrewingTime: 0
   ColorSlot: {fileID: 364000330}
   FlavorSlot: {fileID: 1329399649}
@@ -77145,7 +77145,7 @@ PrefabInstance:
     - target: {fileID: 7585992606324981541, guid: 3489c8725190016418ae590e50178125,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -77856,7 +77856,7 @@ PrefabInstance:
     - target: {fileID: 7585992606324981541, guid: 3489c8725190016418ae590e50178125,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -78649,7 +78649,7 @@ PrefabInstance:
     - target: {fileID: 7585992606324981541, guid: 3489c8725190016418ae590e50178125,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
