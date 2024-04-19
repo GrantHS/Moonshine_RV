@@ -11,7 +11,7 @@ public class Item : MonoBehaviour,IDropHandler
     //Special Slots are the ones located in the Still
     //This will allow the game to detect and deny specific items from these slots.
 
-    public enum SpecialSlot { None,StillColor, StillFlavor, StillGlass, FinishedStill,OrderWindow } 
+    public enum SpecialSlot { None,StillColor, StillFlavor, StillGlass, FinishedStill,OrderWindow,SellBox }
     [Header("SpecialSlot")]
     [Tooltip("Changes the Slot to a Special Slot")]
     public SpecialSlot SlotType;
@@ -101,6 +101,22 @@ public class Item : MonoBehaviour,IDropHandler
                 GameManager.GetComponent<OrderMaker>().CheckOrder(dropped);
 
             }
+        }
+        else if (transform.childCount == 0 && SlotType == SpecialSlot.SellBox) //Allows you to sell items
+        {
+            GameObject dropped = eventData.pointerDrag;
+            //sells item and gives player money for the price of the item.
+            
+            InventorySlot inventorySlot = dropped.GetComponent<InventorySlot>();
+            int MoneyMade = 0;
+            if ((int)inventorySlot.GlassType == 4)
+            {
+
+            }
+
+            GameManager.GetComponent<MenuManager>().GainMoney(MoneyMade);
+
+            
         }
 
     }
