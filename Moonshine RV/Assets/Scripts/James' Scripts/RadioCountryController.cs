@@ -32,6 +32,11 @@ public class RadioCountryController : MonoBehaviour
         }
     }
 
+    public void Exit()
+    {
+        radioPanel.SetActive(false);
+    }
+
     // play functionality
     public void Play()
     {

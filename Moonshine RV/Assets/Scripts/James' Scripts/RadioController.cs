@@ -54,4 +54,9 @@ public class RadioController : MonoBehaviour
         radioPanel.SetActive(false);
         Jazz.SetActive(true);
     }
+
+    public void Exit()
+    {
+        radioPanel.SetActive(false);
+    }
 }
