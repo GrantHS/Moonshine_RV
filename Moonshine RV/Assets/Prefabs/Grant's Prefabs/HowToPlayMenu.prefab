@@ -514,7 +514,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 6858533794232510386}
   m_Direction: 0
   m_Value: 0
-  m_Size: 1
+  m_Size: 0.99999994
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -848,7 +848,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 7919525460832660779}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.10333693
+  m_Size: 0.10333692
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -4117,7 +4117,7 @@ MonoBehaviour:
   m_Elasticity: 0.1
   m_Inertia: 0
   m_DecelerationRate: 0.135
-  m_ScrollSensitivity: 12
+  m_ScrollSensitivity: 35
   m_Viewport: {fileID: 1287091485912254747}
   m_HorizontalScrollbar: {fileID: 7102239995435835152}
   m_VerticalScrollbar: {fileID: 2530398494905985958}
