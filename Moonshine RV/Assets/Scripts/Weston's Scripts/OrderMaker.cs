@@ -1,13 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class OrderMaker : MonoBehaviour
 {
     [SerializeField]
     [Tooltip("Determines the Delay between ordes.")]
-    private float orderDelay; 
+    private float orderDelay;
 
+    [SerializeField]
+    private GameObject CustomerMove;
   
     [SerializeField]
     int unlockDetermined = 1;
@@ -49,9 +52,22 @@ public class OrderMaker : MonoBehaviour
     public int CompletedOrders;
 
     [SerializeField]
+    private float BonusTime; //Gives Players More Time for Orders At the Beginning
+
+    [SerializeField]
+    private int OrderCombo; //Tracks How Many Orders a player finishes in a row.
+
+    [SerializeField]
     int OrderThreshold1, OrderThreshold2, OrderThreshold3; //Determines when each new set of ingredients can be ordered by customers.
 
-    
+    [SerializeField]
+    private TMP_Text OrderComboText;
+
+    [SerializeField]
+    private GameObject Tier2, Tier3, Tier4;
+
+    [SerializeField]
+    private AudioSource BellSound;
 
     void Start()
     {
@@ -111,8 +127,9 @@ public class OrderMaker : MonoBehaviour
              // glassware is random, 0=ShotGlass, 1=DoubleRocks, 2=MasonJar, 3=Decanter
              Order.GetComponent<OrderSlot>().size = Random.Range(0, unlockDetermined);
              Orders.Add(Order);
-             Order.GetComponent<OrderSlot>().SetIcons();
+             Order.GetComponent<OrderSlot>().SetIcons(BonusTime);
             NotificationObject.GetComponent<Notification>().Activate();
+            BellSound.Play();
              
              /*
             GameObject Order = Instantiate(OrderPrefab, OrderBox.transform);
@@ -212,9 +229,32 @@ public class OrderMaker : MonoBehaviour
                 Orders[i].GetComponent<OrderSlot>().OrderCompleted();
                 i = Orders.Count + 1;
                 CompletedOrders++; //Adds to your complete orders.
-                if (CompletedOrders == OrderThreshold1) unlockDetermined++; //If you have enough complete orders, unlock new order types
-                if (CompletedOrders == OrderThreshold2) unlockDetermined++;
-                if (CompletedOrders == OrderThreshold3) unlockDetermined++;
+                OrderCombo++;
+                if (OrderCombo % 5 == 0) gameObject.GetComponent<MenuManager>().GainReputation(5);
+                if (OrderCombo % 10 == 0) gameObject.GetComponent<MenuManager>().GainReputation(10);
+                OrderComboText.text = "Order Streak: " + OrderCombo + "x";
+                if (CompletedOrders == OrderThreshold1)
+                {
+                    unlockDetermined++; //If you have enough complete orders, unlock new order types
+                    Tier2.SetActive(true);
+                }
+                if (CompletedOrders == OrderThreshold2)
+                {
+                    unlockDetermined++;
+                    Tier3.SetActive(true);
+                }
+
+                if (CompletedOrders == OrderThreshold3)
+                {
+                    unlockDetermined++;
+                    Tier4.SetActive(true);
+                }
+
+
+
+                if (CompletedOrders == 20) BonusTime -= 10;
+                if (CompletedOrders == 40) BonusTime -= 10;
+                if (CompletedOrders == 50) BonusTime = 0;
 
                 //Spawns Drinks On each Slot
                 for (int slot = 0; slot < CounterSpaces.Count; slot++) //Checks for Space for a drink
@@ -323,6 +363,7 @@ public class OrderMaker : MonoBehaviour
 
                         }
 
+                        if (CustomerMove != null) CustomerMove.GetComponent<CustomerMover>().MoveToRV();
 
                         Instantiate(DrinkPrefab, CounterSpaces[slot].transform.position, CounterSpaces[slot].transform.rotation, CounterSpaces[slot].transform);
                         CounterSpaces[slot].GetComponent<CounterSpace>().Occupied = true;
@@ -337,6 +378,12 @@ public class OrderMaker : MonoBehaviour
         }
 
 
+    }
+
+    public void ComboBreaker()
+    {
+        OrderCombo = 0;
+        OrderComboText.text = "Order Streak: " + OrderCombo + "x";
     }
 
     public void GameEnded()
