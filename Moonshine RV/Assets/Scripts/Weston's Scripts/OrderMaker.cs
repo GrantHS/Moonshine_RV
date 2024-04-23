@@ -7,8 +7,10 @@ public class OrderMaker : MonoBehaviour
 {
     [SerializeField]
     [Tooltip("Determines the Delay between ordes.")]
-    private float orderDelay; 
+    private float orderDelay;
 
+    [SerializeField]
+    private GameObject CustomerMove;
   
     [SerializeField]
     int unlockDetermined = 1;
@@ -361,6 +363,7 @@ public class OrderMaker : MonoBehaviour
 
                         }
 
+                        if (CustomerMove != null) CustomerMove.GetComponent<CustomerMover>().MoveToRV();
 
                         Instantiate(DrinkPrefab, CounterSpaces[slot].transform.position, CounterSpaces[slot].transform.rotation, CounterSpaces[slot].transform);
                         CounterSpaces[slot].GetComponent<CounterSpace>().Occupied = true;
