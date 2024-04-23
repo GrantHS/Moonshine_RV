@@ -17200,6 +17200,94 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2244263242186923560}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &575867342
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 2bc697e4a98683d46944c678a4bc6668,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2bc697e4a98683d46944c678a4bc6668,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2bc697e4a98683d46944c678a4bc6668,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2bc697e4a98683d46944c678a4bc6668,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -5.66
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2bc697e4a98683d46944c678a4bc6668,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.126
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2bc697e4a98683d46944c678a4bc6668,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 7.742
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2bc697e4a98683d46944c678a4bc6668,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2bc697e4a98683d46944c678a4bc6668,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2bc697e4a98683d46944c678a4bc6668,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2bc697e4a98683d46944c678a4bc6668,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2bc697e4a98683d46944c678a4bc6668,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2bc697e4a98683d46944c678a4bc6668,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2bc697e4a98683d46944c678a4bc6668,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2bc697e4a98683d46944c678a4bc6668,
+        type: 3}
+      propertyPath: m_Name
+      value: MaleRiggedModel
+      objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: 2bc697e4a98683d46944c678a4bc6668,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 7e5baa99d25f09b46829c379dbe61522, type: 2}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2bc697e4a98683d46944c678a4bc6668, type: 3}
 --- !u!4 &579281861 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8381283432609091985, guid: 90adbbe73e8811c49a1833e4edea1898,
@@ -48118,6 +48206,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   countryController: {fileID: 2147427634}
+  JazzController: {fileID: 0}
   radioPanel: {fileID: 1585460482}
   playButton: {fileID: 1603385270}
   pauseButton: {fileID: 451040428}
@@ -48137,6 +48226,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hipHopController: {fileID: 1585460482}
+  JazzController: {fileID: 0}
   radioPanel: {fileID: 2147427634}
   playButton: {fileID: 2106330575}
   pauseButton: {fileID: 111308557}
@@ -48160,6 +48250,7 @@ MonoBehaviour:
   radioPanel: {fileID: 1540906122}
   Country: {fileID: 2147427634}
   HipHop: {fileID: 1585460482}
+  Jazz: {fileID: 0}
 --- !u!1 &1511286034
 GameObject:
   m_ObjectHideFlags: 0
@@ -80802,3 +80893,4 @@ SceneRoots:
   - {fileID: 985771140}
   - {fileID: 2080711260}
   - {fileID: 623902314}
+  - {fileID: 575867342}

@@ -7,10 +7,11 @@ public class RadioController : MonoBehaviour
     public GameObject radioPanel;
     public GameObject Country;
     public GameObject HipHop;
+    public GameObject Jazz;
 
     private void Start()
     {
-        radioPanel.SetActive(false);    
+        radioPanel.SetActive(false);
     }
 
     void Update()
@@ -28,7 +29,13 @@ public class RadioController : MonoBehaviour
                 }
             }
         }
+        else if (Input.GetKeyDown(KeyCode.R))
+        {
+            radioPanel.SetActive(false);
+        }
+
     }
+
 
     public void CountryMusic()
     {
@@ -40,5 +47,16 @@ public class RadioController : MonoBehaviour
     {
         radioPanel.SetActive(false);
         HipHop.SetActive(true);
+    }
+
+    public void JazzMusic()
+    {
+        radioPanel.SetActive(false);
+        Jazz.SetActive(true);
+    }
+
+    public void Exit()
+    {
+        radioPanel.SetActive(false);
     }
 }
