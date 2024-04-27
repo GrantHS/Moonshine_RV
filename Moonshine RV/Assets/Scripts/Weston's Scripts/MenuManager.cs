@@ -37,9 +37,9 @@ public class MenuManager : MonoBehaviour
     [SerializeField]
     private GameObject TreeMenuButton;
     [SerializeField]
-    private int Currency;
+    private int currency;
     [SerializeField]
-    private int CherTreePrice, AppTreePrice, HonTreePrice, ShotGlassPrice, DoubleGlassPrice, MasonGlassPrice, CanterGlassPrice;
+    private int cherTreePrice, appTreePrice, honTreePrice, shotGlassPrice, doubleGlassPrice, masonGlassPrice, canterGlassPrice;
     [SerializeField]
     private GameObject CherryButton, AppleButton, HoneyButton;
     //[SerializeField]
@@ -66,6 +66,15 @@ public class MenuManager : MonoBehaviour
     private GameObject GameOverScreen;
     [SerializeField]
     private Text ResultsText;
+
+    public int Currency { get => currency; private set => currency = value; }
+    public int CherTreePrice { get => cherTreePrice; private set => cherTreePrice = value; }
+    public int AppTreePrice { get => appTreePrice; private set => appTreePrice = value; }
+    public int HonTreePrice { get => honTreePrice; private set => honTreePrice = value; }
+    public int ShotGlassPrice { get => shotGlassPrice; private set => shotGlassPrice = value; }
+    public int DoubleGlassPrice { get => doubleGlassPrice; private set => doubleGlassPrice = value; }
+    public int MasonGlassPrice { get => masonGlassPrice; private set => masonGlassPrice = value; }
+    public int CanterGlassPrice { get => canterGlassPrice; private set => canterGlassPrice = value; }
 
     private void Start()
     {

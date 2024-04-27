@@ -341,9 +341,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1001847494}
+      - m_Target: {fileID: 1511155473}
         m_TargetAssemblyTypeName: PlayerFeedback, Assembly-CSharp
-        m_MethodName: CherryTreeBuy
+        m_MethodName: OnCherryTreeBuy
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -353,9 +353,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1001847494}
-        m_TargetAssemblyTypeName: PlayerFeedback, Assembly-CSharp
-        m_MethodName: CherryTreeBuy
+      - m_Target: {fileID: 1511155458}
+        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
+        m_MethodName: BuyCherryTree
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -714,7 +714,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1001847494}
+      - m_Target: {fileID: 1511155473}
         m_TargetAssemblyTypeName: PlayerFeedback, Assembly-CSharp
         m_MethodName: BrownCollected
         m_Mode: 1
@@ -2405,6 +2405,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1511155473}
+        m_TargetAssemblyTypeName: PlayerFeedback, Assembly-CSharp
+        m_MethodName: ClearCollected
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1511155457}
         m_TargetAssemblyTypeName: Inventory, Assembly-CSharp
         m_MethodName: getButtonItem
@@ -2421,18 +2433,6 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
         m_MethodName: FruitHarvested
         m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1001847494}
-        m_TargetAssemblyTypeName: PlayerFeedback, Assembly-CSharp
-        m_MethodName: ClearCollected
-        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -5391,6 +5391,31 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2496667626966938577, guid: b62769171098a9f41aad0eb27fc5608c,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2496667626966938577, guid: b62769171098a9f41aad0eb27fc5608c,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1511155465}
+    - target: {fileID: 2496667626966938577, guid: b62769171098a9f41aad0eb27fc5608c,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: MainArea
+      objectReference: {fileID: 0}
+    - target: {fileID: 2496667626966938577, guid: b62769171098a9f41aad0eb27fc5608c,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: CameraShift, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2496667626966938577, guid: b62769171098a9f41aad0eb27fc5608c,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 3025839983592087657, guid: b62769171098a9f41aad0eb27fc5608c,
         type: 3}
       propertyPath: m_Color.b
@@ -5440,6 +5465,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8774830607793641107, guid: b62769171098a9f41aad0eb27fc5608c,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1511155465}
+    - target: {fileID: 8774830607793641107, guid: b62769171098a9f41aad0eb27fc5608c,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Still
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -16744,9 +16779,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1001847494}
+      - m_Target: {fileID: 1511155473}
         m_TargetAssemblyTypeName: PlayerFeedback, Assembly-CSharp
-        m_MethodName: AppleTreeBuy
+        m_MethodName: OnAppleTreeBuy
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -16756,9 +16791,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1001847494}
-        m_TargetAssemblyTypeName: PlayerFeedback, Assembly-CSharp
-        m_MethodName: AppleTreeBuy
+      - m_Target: {fileID: 1511155458}
+        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
+        m_MethodName: BuyAppleTree
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -27507,6 +27542,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1511155473}
+        m_TargetAssemblyTypeName: PlayerFeedback, Assembly-CSharp
+        m_MethodName: CherryCollected
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1511155457}
         m_TargetAssemblyTypeName: Inventory, Assembly-CSharp
         m_MethodName: getButtonItem
@@ -27527,18 +27574,6 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 1
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1001847494}
-        m_TargetAssemblyTypeName: PlayerFeedback, Assembly-CSharp
-        m_MethodName: CherryCollected
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -31941,7 +31976,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1001847494}
+      - m_Target: {fileID: 1511155473}
         m_TargetAssemblyTypeName: PlayerFeedback, Assembly-CSharp
         m_MethodName: AppleCollected
         m_Mode: 1
@@ -33334,7 +33369,6 @@ GameObject:
   - component: {fileID: 1001847493}
   - component: {fileID: 1001847496}
   - component: {fileID: 1001847495}
-  - component: {fileID: 1001847494}
   m_Layer: 5
   m_Name: FeedbackPanel
   m_TagString: Untagged
@@ -33362,18 +33396,6 @@ RectTransform:
   m_AnchoredPosition: {x: -20, y: -10}
   m_SizeDelta: {x: 251.2, y: 50}
   m_Pivot: {x: 1, y: 1}
---- !u!114 &1001847494
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1001847492}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f24c0fe895accdc489206ecad4160329, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1001847495
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34733,7 +34755,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1001847494}
+      - m_Target: {fileID: 1511155473}
         m_TargetAssemblyTypeName: PlayerFeedback, Assembly-CSharp
         m_MethodName: HoneyCollected
         m_Mode: 1
@@ -44979,7 +45001,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1001847494}
+      - m_Target: {fileID: 1511155473}
         m_TargetAssemblyTypeName: PlayerFeedback, Assembly-CSharp
         m_MethodName: RedCollected
         m_Mode: 1
@@ -51241,6 +51263,7 @@ GameObject:
   - component: {fileID: 1511155463}
   - component: {fileID: 1511155464}
   - component: {fileID: 1511155465}
+  - component: {fileID: 1511155473}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -51370,14 +51393,14 @@ MonoBehaviour:
   MainComputerMenu: {fileID: 151349235}
   GlassMenuButton: {fileID: 1652532919}
   TreeMenuButton: {fileID: 1331729206}
-  Currency: 100
-  CherTreePrice: 150
-  AppTreePrice: 200
-  HonTreePrice: 300
-  ShotGlassPrice: 10
-  DoubleGlassPrice: 20
-  MasonGlassPrice: 50
-  CanterGlassPrice: 100
+  currency: 100
+  cherTreePrice: 200
+  appTreePrice: 500
+  honTreePrice: 1000
+  shotGlassPrice: 10
+  doubleGlassPrice: 20
+  masonGlassPrice: 50
+  canterGlassPrice: 100
   CherryButton: {fileID: 3276117}
   AppleButton: {fileID: 531940500}
   HoneyButton: {fileID: 2124402079}
@@ -51732,6 +51755,19 @@ MonoBehaviour:
   songs:
   - {fileID: 8300000, guid: 9686ae0f5af1567478e7dcfae0a06dcd, type: 3}
   audioSource: {fileID: 1017206646}
+--- !u!114 &1511155473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1511155455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f24c0fe895accdc489206ecad4160329, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _feedbackPanel: {fileID: 1001847492}
 --- !u!1 &1511286034
 GameObject:
   m_ObjectHideFlags: 0
@@ -51839,7 +51875,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1001847494}
+      - m_Target: {fileID: 1511155473}
         m_TargetAssemblyTypeName: PlayerFeedback, Assembly-CSharp
         m_MethodName: GreenCollected
         m_Mode: 1
@@ -51972,18 +52008,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1511155458}
-        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
-        m_MethodName: BuyMasonJar
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 1013353934}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 127358840}
         m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
         m_MethodName: Play
@@ -51996,13 +52020,25 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1001847494}
+      - m_Target: {fileID: 1511155473}
         m_TargetAssemblyTypeName: PlayerFeedback, Assembly-CSharp
-        m_MethodName: MasonJarCollected
+        m_MethodName: OnMasonJarClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1511155458}
+        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
+        m_MethodName: BuyMasonJar
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1013353934}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -62946,18 +62982,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1511155458}
-        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
-        m_MethodName: BuyDecanter
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 1979651382}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 127358840}
         m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
         m_MethodName: Play
@@ -62970,13 +62994,25 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1001847494}
+      - m_Target: {fileID: 1511155473}
         m_TargetAssemblyTypeName: PlayerFeedback, Assembly-CSharp
-        m_MethodName: DecanterCollected
+        m_MethodName: OnDecanterClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1511155458}
+        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
+        m_MethodName: BuyDecanter
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1979651382}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -64886,6 +64922,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1511155473}
+        m_TargetAssemblyTypeName: PlayerFeedback, Assembly-CSharp
+        m_MethodName: LightingCollected
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1511155457}
         m_TargetAssemblyTypeName: Inventory, Assembly-CSharp
         m_MethodName: getButtonItem
@@ -64902,18 +64950,6 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
         m_MethodName: FruitHarvested
         m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1001847494}
-        m_TargetAssemblyTypeName: PlayerFeedback, Assembly-CSharp
-        m_MethodName: LightingCollected
-        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -65390,18 +65426,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1511155458}
-        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
-        m_MethodName: BuyShotGlass
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 1936686945}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 127358840}
         m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
         m_MethodName: Play
@@ -65414,13 +65438,25 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1001847494}
+      - m_Target: {fileID: 1511155473}
         m_TargetAssemblyTypeName: PlayerFeedback, Assembly-CSharp
-        m_MethodName: ShotGlassCollected
+        m_MethodName: OnShotGlassClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1511155458}
+        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
+        m_MethodName: BuyShotGlass
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1936686945}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -73384,9 +73420,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1001847494}
+      - m_Target: {fileID: 1511155473}
         m_TargetAssemblyTypeName: PlayerFeedback, Assembly-CSharp
-        m_MethodName: HoneyTreeBuy
+        m_MethodName: OnHoneyTreeBuy
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -73396,9 +73432,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1001847494}
-        m_TargetAssemblyTypeName: PlayerFeedback, Assembly-CSharp
-        m_MethodName: HoneyTreeBuy
+      - m_Target: {fileID: 1511155458}
+        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
+        m_MethodName: BuyHoneyTree
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -73574,18 +73610,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1511155458}
-        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
-        m_MethodName: BuyDoubleGlass
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 130543031}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 127358840}
         m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
         m_MethodName: Play
@@ -73598,13 +73622,25 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1001847494}
+      - m_Target: {fileID: 1511155473}
         m_TargetAssemblyTypeName: PlayerFeedback, Assembly-CSharp
-        m_MethodName: RocksGlassCollected
+        m_MethodName: OnRocksGlassClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1511155458}
+        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
+        m_MethodName: BuyDoubleGlass
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 130543031}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -73976,6 +74012,18 @@ MonoBehaviour:
       - m_Target: {fileID: 127358840}
         m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
         m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1511155473}
+        m_TargetAssemblyTypeName: PlayerFeedback, Assembly-CSharp
+        m_MethodName: OnLightingClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
