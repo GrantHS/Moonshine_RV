@@ -9,9 +9,9 @@ public class MenuManager : MonoBehaviour
     [SerializeField]
     private GameObject MainMenu;
     [SerializeField]
-    private GameObject OptionsMenuObject;
-    [SerializeField]
     private GameObject CreditsMenu;
+    [SerializeField]
+    private GameObject HowToMenu;
 
     bool Tutorial = true;
     [SerializeField]
@@ -126,10 +126,11 @@ public class MenuManager : MonoBehaviour
         this.GetComponent<OrderMaker>().BeginOrders(); //Starts Orders coming in after the player hits Start Button
     }
 
-    public void OptionsMenu()
+
+    public void OpenHowToMenu()
     {
         MainMenu.SetActive(false);
-        OptionsMenuObject.SetActive(true);
+        HowToMenu.SetActive(true);
     }
 
     public void Credits()
@@ -158,7 +159,7 @@ public class MenuManager : MonoBehaviour
 
     public void BacktoMenu()
     {
-        OptionsMenuObject.SetActive(false);
+        HowToMenu.SetActive(false);
         CreditsMenu.SetActive(false);
         MainMenu.SetActive(true);
     }
