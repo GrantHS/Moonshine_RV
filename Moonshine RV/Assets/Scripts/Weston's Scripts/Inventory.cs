@@ -67,7 +67,7 @@ public class Inventory : MonoBehaviour
 
     void CreateInventory()
     {
-        for (int i = 0; i < 24; i++)
+        for (int i = 0; i < 16; i++)
         {
             GameObject InvenSlot = Instantiate(InventoryItem, InventoryBox.transform);
             
