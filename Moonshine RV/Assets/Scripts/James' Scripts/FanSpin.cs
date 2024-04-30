@@ -14,10 +14,7 @@ public class FanSpin : MonoBehaviour
 
     void Update()
     {
-        // scale the fan as before
-        Fan.transform.localScale = originalScale * 1.5f;
-
-        // rotate the fan around its up axis at a constant rate
+        // rotate the fan around
         Fan.transform.Rotate(Vector3.up, rotationSpeed * Time.deltaTime);
     }
 }

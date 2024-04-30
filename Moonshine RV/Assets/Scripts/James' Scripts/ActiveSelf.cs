@@ -8,7 +8,7 @@ public class ActiveSelf : MonoBehaviour
 
     private void Start()
     {
-        InvokeRepeating("activateSelf", 3f, 7f);
+        InvokeRepeating("activateSelf", 7f, 3f);
     }
 
     void activateSelf()
