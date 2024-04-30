@@ -4348,7 +4348,7 @@ MonoBehaviour:
   PreviousSlot: {fileID: 0}
   TextAmount: {fileID: 374969177}
   SlotFilled: 0
-  Amount: 0
+  Amount: 1
   Flavoring: 4
   Coloring: 4
   GlassType: 1
@@ -4616,6 +4616,7 @@ MonoBehaviour:
   SpawnPoint: {fileID: 485904628}
   ExitPoint: {fileID: 1320407331}
   CustomerObject: {fileID: 613526167}
+  OrderObject: {fileID: 1971649826}
 --- !u!4 &316275901
 Transform:
   m_ObjectHideFlags: 0
@@ -5229,7 +5230,7 @@ MonoBehaviour:
   PreviousSlot: {fileID: 0}
   TextAmount: {fileID: 2138319137}
   SlotFilled: 0
-  Amount: 0
+  Amount: 1
   Flavoring: 4
   Coloring: 4
   GlassType: 2
@@ -12085,6 +12086,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ArmAnim
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 11ddc969c54171b40a1e42d37491ba69,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4960953469155413087, guid: 11ddc969c54171b40a1e42d37491ba69,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -14708,7 +14714,7 @@ MonoBehaviour:
   PreviousSlot: {fileID: 0}
   TextAmount: {fileID: 1608555579}
   SlotFilled: 0
-  Amount: 0
+  Amount: 1
   Flavoring: 4
   Coloring: 2
   GlassType: 4
@@ -15325,7 +15331,7 @@ MonoBehaviour:
   PreviousSlot: {fileID: 0}
   TextAmount: {fileID: 570437016}
   SlotFilled: 0
-  Amount: 0
+  Amount: 1
   Flavoring: 3
   Coloring: 4
   GlassType: 4
@@ -15420,7 +15426,7 @@ MonoBehaviour:
   PreviousSlot: {fileID: 0}
   TextAmount: {fileID: 176290914}
   SlotFilled: 0
-  Amount: 0
+  Amount: 1
   Flavoring: 2
   Coloring: 4
   GlassType: 4
@@ -18099,7 +18105,7 @@ GameObject:
   m_Layer: 0
   m_Name: DrinkSlot
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 8418204508859773708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -18114,7 +18120,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.897, y: -1.83, z: 13.842}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -18991,7 +18997,7 @@ MonoBehaviour:
   PreviousSlot: {fileID: 0}
   TextAmount: {fileID: 520257759}
   SlotFilled: 0
-  Amount: 0
+  Amount: 1
   Flavoring: 1
   Coloring: 4
   GlassType: 4
@@ -19184,7 +19190,7 @@ GameObject:
   m_Layer: 0
   m_Name: DrinkSlot (3)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 8418204508859773708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -19199,7 +19205,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.897, y: -1.83, z: 14.898}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -21369,7 +21375,7 @@ MonoBehaviour:
   PreviousSlot: {fileID: 0}
   TextAmount: {fileID: 1246070540}
   SlotFilled: 0
-  Amount: 0
+  Amount: 1
   Flavoring: 4
   Coloring: 4
   GlassType: 3
@@ -22765,7 +22771,7 @@ MonoBehaviour:
   PreviousSlot: {fileID: 0}
   TextAmount: {fileID: 823036893}
   SlotFilled: 0
-  Amount: 0
+  Amount: 1
   Flavoring: 4
   Coloring: 3
   GlassType: 4
@@ -23644,7 +23650,7 @@ MonoBehaviour:
   PreviousSlot: {fileID: 0}
   TextAmount: {fileID: 2041522186}
   SlotFilled: 0
-  Amount: 0
+  Amount: 1
   Flavoring: 4
   Coloring: 1
   GlassType: 4
@@ -28504,7 +28510,7 @@ GameObject:
   m_Layer: 0
   m_Name: DrinkSlot (1)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 8418204508859773708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -28519,7 +28525,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.897, y: -1.83, z: 14.177}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -29760,7 +29766,7 @@ GameObject:
   m_Layer: 0
   m_Name: DrinkSlot (2)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 8418204508859773708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -29775,7 +29781,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.897, y: -1.83, z: 14.538}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -31561,8 +31567,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MainMenu: {fileID: 134163323}
-  OptionsMenuObject: {fileID: 2102362828}
   CreditsMenu: {fileID: 1376194774}
+  HowToMenu: {fileID: 0}
   TutorialText: {fileID: 296582387}
   MoneyText: {fileID: 1105925008}
   TreeShopMoneyText: {fileID: 560735307}
@@ -31580,14 +31586,14 @@ MonoBehaviour:
   MainComputerMenu: {fileID: 0}
   GlassMenuButton: {fileID: 1262793261}
   TreeMenuButton: {fileID: 362301941}
-  Currency: 100
-  CherTreePrice: 200
-  AppTreePrice: 500
-  HonTreePrice: 1000
-  ShotGlassPrice: 10
-  DoubleGlassPrice: 20
-  MasonGlassPrice: 50
-  CanterGlassPrice: 100
+  currency: 0
+  cherTreePrice: 0
+  appTreePrice: 0
+  honTreePrice: 0
+  shotGlassPrice: 0
+  doubleGlassPrice: 0
+  masonGlassPrice: 0
+  canterGlassPrice: 0
   CherryButton: {fileID: 862842278}
   AppleButton: {fileID: 786496253}
   HoneyButton: {fileID: 1892878395}
@@ -31814,7 +31820,7 @@ MonoBehaviour:
   - {fileID: 1089398351}
   - {fileID: 1862114939}
   - {fileID: 1153865353}
-  - {fileID: 1089398351}
+  - {fileID: 1761478204}
   DrinkPrefabs:
   - {fileID: 6781832082348744427, guid: 4dd28e2306b94044eb5d7c52ddb2c88a, type: 3}
   - {fileID: 6781832082348744427, guid: 1059a7d7085f9664a9342a455cd9422b, type: 3}
@@ -32517,7 +32523,7 @@ MonoBehaviour:
   PreviousSlot: {fileID: 0}
   TextAmount: {fileID: 384555724}
   SlotFilled: 0
-  Amount: 0
+  Amount: 1
   Flavoring: 4
   Coloring: 0
   GlassType: 4
@@ -33446,7 +33452,7 @@ MonoBehaviour:
   PreviousSlot: {fileID: 0}
   TextAmount: {fileID: 1582760645}
   SlotFilled: 0
-  Amount: 0
+  Amount: 1
   Flavoring: 0
   Coloring: 4
   GlassType: 4
@@ -33889,7 +33895,7 @@ MonoBehaviour:
   PreviousSlot: {fileID: 0}
   TextAmount: {fileID: 1734715697}
   SlotFilled: 0
-  Amount: 0
+  Amount: 1
   Flavoring: 4
   Coloring: 4
   GlassType: 0

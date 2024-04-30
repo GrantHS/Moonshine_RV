@@ -363,35 +363,61 @@ public class OrderMaker : MonoBehaviour
 
                         }
 
-                        if (CustomerMove != null) CustomerMove.GetComponent<CustomerMover>().MoveToRV();
+                        if (CustomerMove != null)
+                        {
+
+                            if (CustomerMove.GetComponent<CustomerMover>().Moving == false) CustomerMove.GetComponent<CustomerMover>().MoveToRV();
+                        }
 
                         Instantiate(DrinkPrefab, CounterSpaces[slot].transform.position, CounterSpaces[slot].transform.rotation, CounterSpaces[slot].transform);
                         CounterSpaces[slot].GetComponent<CounterSpace>().Occupied = true;
                         slot = CounterSpaces.Count + 1;
                     }
-
-
                 }
             }
-
-
         }
-
-
     }
 
-    public void ComboBreaker()
+    public void ComboBreaker() //resets the order combo.
     {
         OrderCombo = 0;
         OrderComboText.text = "Order Streak: " + OrderCombo + "x";
     }
 
-    public void GameEnded()
+    public void GameEnded() //shuts off flow of orders for the player.
     {
         CancelInvoke("OrderUp");
         for (int i = Orders.Count-1; i == 0; i--)
         {
             DeList(Orders[i]);
+        }
+    }
+
+    public bool DrinkCheck()
+    {
+        for (int i = 0; i < CounterSpaces.Count; i++)
+        {
+            if (CounterSpaces[i].GetComponent<CounterSpace>().Occupied)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public void ExtractDrink(GameObject Customer)
+    {
+        for (int i = 0; i < CounterSpaces.Count; i++)
+        {
+            if (CounterSpaces[i].GetComponent<CounterSpace>().Occupied)
+            {
+                GameObject CurrentCounter = CounterSpaces[i];
+                Transform Drink = CurrentCounter.transform.GetChild(0);
+                Drink.SetParent(Customer.transform);
+                CurrentCounter.GetComponent<CounterSpace>().Occupied = false;
+                CustomerMove.GetComponent<CustomerMover>().Drink = Drink.gameObject;
+                i = CounterSpaces.Count + 1;
+            }
         }
     }
 
