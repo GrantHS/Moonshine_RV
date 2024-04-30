@@ -36,7 +36,7 @@ public class InventorySlot : MonoBehaviour,IBeginDragHandler,IDragHandler,IEndDr
 
     void Start()
     {
-        Amount = 1;
+        //Amount = 1;
     }
 
     public void OnBeginDrag(PointerEventData eventData)

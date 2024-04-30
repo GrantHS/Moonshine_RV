@@ -148,8 +148,8 @@ public class Inventory : MonoBehaviour
                 if (ItemGaining.GetComponent<InventorySlot>().Flavoring == ExistingObject.GetComponent<InventorySlot>().Flavoring && ItemGaining.GetComponent<InventorySlot>().Coloring == ExistingObject.GetComponent<InventorySlot>().Coloring && ItemGaining.GetComponent<InventorySlot>().GlassType == ExistingObject.GetComponent<InventorySlot>().GlassType)
                 {
                     Debug.Log("Match Identified");
-                    InvenSlot.GetComponent<Item>().CurrentItem.GetComponent<InventorySlot>().Amount++;
-                    InvenSlot.GetComponent<Item>().CurrentItem.GetComponent<InventorySlot>().ChangeText();
+                    ExistingObject.GetComponent<InventorySlot>().Amount += 1;
+                    ExistingObject.GetComponent<InventorySlot>().ChangeText();
                     i = InventorySlots.Count;
                     Stacked = true;
                 }
