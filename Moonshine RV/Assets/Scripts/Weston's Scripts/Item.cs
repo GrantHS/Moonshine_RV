@@ -113,10 +113,10 @@ public class Item : MonoBehaviour,IDropHandler
             {
                 MoneyMade = 5;
             }
-            switch ((int)inventorySlot.GlassType)
+            switch (inventorySlot.GlassType)
             {
                 case 0:
-
+                    
                     break;
             }
 

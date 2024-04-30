@@ -196,6 +196,7 @@ public class StillManager : MonoBehaviour
                 if (CurrentDrink != null)
                 {
                     Instantiate(CurrentDrink, FinishedSlot.transform);
+                    CurrentDrink.GetComponent<InventorySlot>().PreviousSlot = FinishedSlot.transform;
                 }
                 else
                 {

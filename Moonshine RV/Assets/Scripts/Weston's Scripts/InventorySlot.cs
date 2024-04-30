@@ -55,7 +55,7 @@ public class InventorySlot : MonoBehaviour,IBeginDragHandler,IDragHandler,IEndDr
 
     public void OnEndDrag(PointerEventData eventData) //places item into slot
     {
-        if (parentAfterDrag.GetComponent<Item>().SlotType == Item.SpecialSlot.None)
+        if (parentAfterDrag.GetComponent<Item>().SlotType == Item.SpecialSlot.None || parentAfterDrag.GetComponent<Item>().SlotType == Item.SpecialSlot.FinishedStill) 
         {
             transform.SetParent(parentAfterDrag);
             image.raycastTarget = true;
