@@ -109,13 +109,15 @@ public class Item : MonoBehaviour,IDropHandler
             
             InventorySlot inventorySlot = dropped.GetComponent<InventorySlot>();
             int MoneyMade = 0;
-            if ((int)inventorySlot.GlassType == 4)
+            if ((int)inventorySlot.GlassType < 4) //checks for flavors and colors
             {
-                MoneyMade = 40;
+                MoneyMade = 5;
             }
-            if ((int)inventorySlot.GlassType == 0)
+            switch ((int)inventorySlot.GlassType)
             {
-                MoneyMade = 10;
+                case 0:
+
+                    break;
             }
 
             GameManager.GetComponent<MenuManager>().GainMoney(MoneyMade);
