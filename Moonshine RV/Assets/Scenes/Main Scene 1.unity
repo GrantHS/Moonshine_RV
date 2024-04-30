@@ -44617,9 +44617,9 @@ MonoBehaviour:
   CompletedOrders: 0
   BonusTime: 0
   OrderCombo: 0
-  OrderThreshold1: 10
-  OrderThreshold2: 28
-  OrderThreshold3: 50
+  OrderThreshold1: 5
+  OrderThreshold2: 15
+  OrderThreshold3: 25
   OrderComboText: {fileID: 1323852667}
   Tier2: {fileID: 0}
   Tier3: {fileID: 0}
@@ -44681,8 +44681,8 @@ MonoBehaviour:
   TreeMenuButton: {fileID: 1331729206}
   currency: 100
   cherTreePrice: 200
-  appTreePrice: 500
-  honTreePrice: 1000
+  appTreePrice: 300
+  honTreePrice: 600
   shotGlassPrice: 10
   doubleGlassPrice: 20
   masonGlassPrice: 50
