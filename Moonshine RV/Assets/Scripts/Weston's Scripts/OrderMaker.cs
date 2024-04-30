@@ -388,7 +388,7 @@ public class OrderMaker : MonoBehaviour
 
     public void GameEnded()
     {
-        StopAllCoroutines();
+        CancelInvoke("OrderUp");
         for (int i = Orders.Count-1; i == 0; i--)
         {
             DeList(Orders[i]);

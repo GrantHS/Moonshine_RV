@@ -111,12 +111,17 @@ public class Item : MonoBehaviour,IDropHandler
             int MoneyMade = 0;
             if ((int)inventorySlot.GlassType == 4)
             {
-
+                MoneyMade = 40;
+            }
+            if ((int)inventorySlot.GlassType == 0)
+            {
+                MoneyMade = 10;
             }
 
             GameManager.GetComponent<MenuManager>().GainMoney(MoneyMade);
+            inventorySlot.GetComponent<InventorySlot>().PreviousSlot.GetComponent<Item>().Occupied = false;
+            Destroy(inventorySlot.gameObject);
 
-            
         }
 
     }
