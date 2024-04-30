@@ -51416,6 +51416,7 @@ MonoBehaviour:
   pauseButton: {fileID: 82043983}
   songs:
   - {fileID: 8300000, guid: 9686ae0f5af1567478e7dcfae0a06dcd, type: 3}
+  - {fileID: 8300000, guid: 7b971058f209f6042a987637b810afc7, type: 3}
   audioSource: {fileID: 1541038957727606655}
 --- !u!1 &1511286034
 GameObject:
