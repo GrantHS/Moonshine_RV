@@ -252,9 +252,9 @@ public class OrderMaker : MonoBehaviour
 
 
 
-                if (CompletedOrders == 20) BonusTime -= 10;
-                if (CompletedOrders == 40) BonusTime -= 10;
-                if (CompletedOrders == 50) BonusTime = 0;
+                if (CompletedOrders == 15) BonusTime -= 20;
+                if (CompletedOrders == 20) BonusTime -= 20;
+                if (CompletedOrders == 25) BonusTime -= 20;
 
                 //Spawns Drinks On each Slot
                 for (int slot = 0; slot < CounterSpaces.Count; slot++) //Checks for Space for a drink
