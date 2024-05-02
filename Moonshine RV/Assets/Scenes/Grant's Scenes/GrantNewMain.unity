@@ -3467,7 +3467,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &117198066
 Transform:
   m_ObjectHideFlags: 0
@@ -40361,6 +40361,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 842181015}
     m_Modifications:
+    - target: {fileID: 276631561862317262, guid: ec8a71b2eaff08f4d8373a718acf44e2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 464513315864048195, guid: ec8a71b2eaff08f4d8373a718acf44e2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 503864119527869474, guid: ec8a71b2eaff08f4d8373a718acf44e2,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -40390,6 +40400,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: JazzMusic
+      objectReference: {fileID: 0}
+    - target: {fileID: 1604838010220352240, guid: ec8a71b2eaff08f4d8373a718acf44e2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2100777131446020865, guid: ec8a71b2eaff08f4d8373a718acf44e2,
         type: 3}
@@ -40666,6 +40681,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: Play
       objectReference: {fileID: 0}
+    - target: {fileID: 8943965984154054743, guid: ec8a71b2eaff08f4d8373a718acf44e2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8988293393653050269, guid: ec8a71b2eaff08f4d8373a718acf44e2,
         type: 3}
       propertyPath: m_Pivot.x
@@ -40749,7 +40769,7 @@ PrefabInstance:
     - target: {fileID: 8988293393653050269, guid: ec8a71b2eaff08f4d8373a718acf44e2,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -131
+      value: -66.06
       objectReference: {fileID: 0}
     - target: {fileID: 8988293393653050269, guid: ec8a71b2eaff08f4d8373a718acf44e2,
         type: 3}
@@ -46036,7 +46056,6 @@ MonoBehaviour:
   MainMenu: {fileID: 117198065}
   CreditsMenu: {fileID: 876205703}
   HowToMenu: {fileID: 6149478735287947317}
-  Tutorial: 1
   TutorialText: {fileID: 0}
   MoneyText: {fileID: 1726361807}
   TreeShopMoneyText: {fileID: 1431675483}
