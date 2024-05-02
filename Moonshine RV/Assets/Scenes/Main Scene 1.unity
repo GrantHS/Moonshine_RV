@@ -24422,12 +24422,12 @@ RectTransform:
   - {fileID: 463518872}
   - {fileID: 1672633116}
   - {fileID: 1888498401}
+  - {fileID: 151349236}
   - {fileID: 2124896519}
   - {fileID: 104139329}
   - {fileID: 37094387}
   - {fileID: 973668051}
   - {fileID: 817136982}
-  - {fileID: 151349236}
   - {fileID: 1808714135}
   - {fileID: 584075242}
   - {fileID: 927163422}
@@ -29214,7 +29214,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 0.47843137}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
