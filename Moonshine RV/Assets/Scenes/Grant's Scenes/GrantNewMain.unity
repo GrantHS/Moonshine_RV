@@ -3467,7 +3467,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &117198066
 Transform:
   m_ObjectHideFlags: 0
@@ -43558,6 +43558,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5578636487794366843, guid: 1f2e2824c2ff4c24d8a4a46ec382a8d4,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.058
+      objectReference: {fileID: 0}
     - target: {fileID: 6686986723423061031, guid: 1f2e2824c2ff4c24d8a4a46ec382a8d4,
         type: 3}
       propertyPath: m_IsActive
@@ -46036,7 +46041,6 @@ MonoBehaviour:
   MainMenu: {fileID: 117198065}
   CreditsMenu: {fileID: 876205703}
   HowToMenu: {fileID: 6149478735287947317}
-  Tutorial: 1
   TutorialText: {fileID: 0}
   MoneyText: {fileID: 1726361807}
   TreeShopMoneyText: {fileID: 1431675483}
