@@ -14,11 +14,14 @@ public class CustomerMover : MonoBehaviour
     private float timeDuration;
     private float timeStart;
     [SerializeField]
-    private bool Moving;
+    public bool Moving;
     [SerializeField]
     private Transform RVPoint, SpawnPoint, ExitPoint;
     [SerializeField]
     private GameObject CustomerObject;
+    [SerializeField]
+    private GameObject OrderObject;
+    public GameObject Drink;
     
     // Start is called before the first frame update
     void Start()
@@ -39,6 +42,7 @@ public class CustomerMover : MonoBehaviour
                 if (p1 == RVPoint)
                 {
                     StartCoroutine("WaitingTime");
+                    GiveDrink();
                 }
                 if (p0 == RVPoint)
                 {
@@ -75,6 +79,7 @@ public class CustomerMover : MonoBehaviour
         timeDuration = 3f;
         timeStart = Time.time;
         Moving = true;
+        
     }
 
     IEnumerator WaitingTime()
@@ -88,6 +93,21 @@ public class CustomerMover : MonoBehaviour
     {
         CustomerObject.SetActive(false);
         CustomerObject.transform.position = SpawnPoint.position;
+        if (Drink != null) Destroy(Drink);
+        if (OrderObject.GetComponent<OrderMaker>().DrinkCheck())
+        {
+            MoveToRV();
+        }
+    }
+
+    private void GiveDrink()
+    {
+        if (OrderObject != null)
+        {
+            OrderObject.GetComponent<OrderMaker>().ExtractDrink(CustomerObject);
+        }
+
+        
     }
 
 

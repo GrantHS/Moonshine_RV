@@ -11,17 +11,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: ec9486d7563d7b44abdb17057a5d8663,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ec9486d7563d7b44abdb17057a5d8663,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ec9486d7563d7b44abdb17057a5d8663,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ec9486d7563d7b44abdb17057a5d8663,
         type: 3}
@@ -81,7 +81,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: ec9486d7563d7b44abdb17057a5d8663,
         type: 3}
       propertyPath: m_Name
-      value: ShotGlass
+      value: RedShotGlass
       objectReference: {fileID: 0}
     - target: {fileID: 4253280567622488715, guid: ec9486d7563d7b44abdb17057a5d8663,
         type: 3}

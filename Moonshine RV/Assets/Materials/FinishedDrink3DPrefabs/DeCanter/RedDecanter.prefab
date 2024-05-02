@@ -11,17 +11,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 53a86133e48051949be5a1f31d9e7717,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.041036
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 53a86133e48051949be5a1f31d9e7717,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.041036
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 53a86133e48051949be5a1f31d9e7717,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.041036
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 53a86133e48051949be5a1f31d9e7717,
         type: 3}
@@ -73,6 +73,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 53a86133e48051949be5a1f31d9e7717,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -6442298374534657108, guid: 53a86133e48051949be5a1f31d9e7717,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -81,7 +86,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 53a86133e48051949be5a1f31d9e7717,
         type: 3}
       propertyPath: m_Name
-      value: Decanter (1)
+      value: RedDecanter
       objectReference: {fileID: 0}
     - target: {fileID: 6589126927893049898, guid: 53a86133e48051949be5a1f31d9e7717,
         type: 3}
