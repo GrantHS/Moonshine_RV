@@ -39173,6 +39173,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 842181015}
     m_Modifications:
+    - target: {fileID: 276631561862317262, guid: ec8a71b2eaff08f4d8373a718acf44e2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 464513315864048195, guid: ec8a71b2eaff08f4d8373a718acf44e2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 503864119527869474, guid: ec8a71b2eaff08f4d8373a718acf44e2,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -39202,6 +39212,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: JazzMusic
+      objectReference: {fileID: 0}
+    - target: {fileID: 1604838010220352240, guid: ec8a71b2eaff08f4d8373a718acf44e2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2100777131446020865, guid: ec8a71b2eaff08f4d8373a718acf44e2,
         type: 3}
@@ -39478,6 +39493,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: Play
       objectReference: {fileID: 0}
+    - target: {fileID: 8943965984154054743, guid: ec8a71b2eaff08f4d8373a718acf44e2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8988293393653050269, guid: ec8a71b2eaff08f4d8373a718acf44e2,
         type: 3}
       propertyPath: m_Pivot.x
@@ -39561,7 +39581,7 @@ PrefabInstance:
     - target: {fileID: 8988293393653050269, guid: ec8a71b2eaff08f4d8373a718acf44e2,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -131
+      value: -102.25
       objectReference: {fileID: 0}
     - target: {fileID: 8988293393653050269, guid: ec8a71b2eaff08f4d8373a718acf44e2,
         type: 3}
@@ -42330,6 +42350,46 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5578636487794366843, guid: 1f2e2824c2ff4c24d8a4a46ec382a8d4,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.789
+      objectReference: {fileID: 0}
+    - target: {fileID: 5578636487794366843, guid: 1f2e2824c2ff4c24d8a4a46ec382a8d4,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -35.729
+      objectReference: {fileID: 0}
+    - target: {fileID: 6260707715577166486, guid: 1f2e2824c2ff4c24d8a4a46ec382a8d4,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 23.089
+      objectReference: {fileID: 0}
+    - target: {fileID: 6260707715577166486, guid: 1f2e2824c2ff4c24d8a4a46ec382a8d4,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.555
+      objectReference: {fileID: 0}
+    - target: {fileID: 6260707715577166486, guid: 1f2e2824c2ff4c24d8a4a46ec382a8d4,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -34.677
+      objectReference: {fileID: 0}
+    - target: {fileID: 6260707715577166486, guid: 1f2e2824c2ff4c24d8a4a46ec382a8d4,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.63590336
+      objectReference: {fileID: 0}
+    - target: {fileID: 6260707715577166486, guid: 1f2e2824c2ff4c24d8a4a46ec382a8d4,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7717688
+      objectReference: {fileID: 0}
+    - target: {fileID: 6260707715577166486, guid: 1f2e2824c2ff4c24d8a4a46ec382a8d4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 258.974
       objectReference: {fileID: 0}
     - target: {fileID: 6686986723423061031, guid: 1f2e2824c2ff4c24d8a4a46ec382a8d4,
         type: 3}
