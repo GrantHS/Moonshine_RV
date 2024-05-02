@@ -6,9 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Weston's Scenes/WesteScene.unity
-    guid: ec1ccb583ad18fa4295a61c09d8c08aa
-  - enabled: 1
     path: Assets/Scenes/Main Scene 1.unity
     guid: e129b92d655217a4ca8c373724a777c7
   m_configObjects: {}

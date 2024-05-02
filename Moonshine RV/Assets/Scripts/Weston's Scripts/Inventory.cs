@@ -67,7 +67,7 @@ public class Inventory : MonoBehaviour
 
     void CreateInventory()
     {
-        for (int i = 0; i < 24; i++)
+        for (int i = 0; i < 16; i++)
         {
             GameObject InvenSlot = Instantiate(InventoryItem, InventoryBox.transform);
             
@@ -148,8 +148,8 @@ public class Inventory : MonoBehaviour
                 if (ItemGaining.GetComponent<InventorySlot>().Flavoring == ExistingObject.GetComponent<InventorySlot>().Flavoring && ItemGaining.GetComponent<InventorySlot>().Coloring == ExistingObject.GetComponent<InventorySlot>().Coloring && ItemGaining.GetComponent<InventorySlot>().GlassType == ExistingObject.GetComponent<InventorySlot>().GlassType)
                 {
                     Debug.Log("Match Identified");
-                    InvenSlot.GetComponent<Item>().CurrentItem.GetComponent<InventorySlot>().Amount++;
-                    InvenSlot.GetComponent<Item>().CurrentItem.GetComponent<InventorySlot>().ChangeText();
+                    ExistingObject.GetComponent<InventorySlot>().Amount += 1;
+                    ExistingObject.GetComponent<InventorySlot>().ChangeText();
                     i = InventorySlots.Count;
                     Stacked = true;
                 }

@@ -3,14 +3,21 @@ using UnityEngine;
 public class RadioHoverDetector : MonoBehaviour
 {
     public AudioSource staticNoiseAudioSource;
-    private bool isHovering = false;
+    public GameObject Antenna;
+    private Vector3 originalScale;
+
+    void Start()
+    {
+        originalScale = Antenna.transform.localScale;
+    }
 
     void OnMouseEnter()
     {
         if (CompareTag("radio"))
         {
-            isHovering = true;
-            // when you hover your mouse pointer over the radio it plays a static noise
+            // scale of the antenna increases
+            Antenna.transform.localScale = originalScale * 1.5f;
+            // play the static noise
             staticNoiseAudioSource.Play();
         }
     }
@@ -19,8 +26,9 @@ public class RadioHoverDetector : MonoBehaviour
     {
         if (CompareTag("radio"))
         {
-            isHovering = false;
-            // when you stop hovering your mouse pointer over the radio it stops playing the static noise
+            // scale of the antenna resets
+            Antenna.transform.localScale = originalScale;
+            // stop playing the static noise
             staticNoiseAudioSource.Stop();
         }
     }

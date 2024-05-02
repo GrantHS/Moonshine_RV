@@ -36,7 +36,7 @@ public class InventorySlot : MonoBehaviour,IBeginDragHandler,IDragHandler,IEndDr
 
     void Start()
     {
-        Amount = 1;
+        //Amount = 1;
     }
 
     public void OnBeginDrag(PointerEventData eventData)
@@ -55,7 +55,7 @@ public class InventorySlot : MonoBehaviour,IBeginDragHandler,IDragHandler,IEndDr
 
     public void OnEndDrag(PointerEventData eventData) //places item into slot
     {
-        if (parentAfterDrag.GetComponent<Item>().SlotType == Item.SpecialSlot.None)
+        if (parentAfterDrag.GetComponent<Item>().SlotType == Item.SpecialSlot.None || parentAfterDrag.GetComponent<Item>().SlotType == Item.SpecialSlot.FinishedStill) 
         {
             transform.SetParent(parentAfterDrag);
             image.raycastTarget = true;

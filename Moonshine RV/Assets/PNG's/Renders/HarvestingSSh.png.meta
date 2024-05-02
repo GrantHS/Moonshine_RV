@@ -1,0 +1,1227 @@
+fileFormatVersion: 2
+guid: ca6f1d6d4f9b51b4c87b06149be701a7
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: HarvestingSSh_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1197
+        width: 236
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f99e8fc0b31a924b9cd6dd096ad695f
+      internalID: 545831787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HarvestingSSh_1
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 1197
+        width: 236
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75147f92358e4c94f9abfdcd8c1fe790
+      internalID: -1664855213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HarvestingSSh_2
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 1197
+        width: 236
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06a223bef175171488a8e4813cc9bf6b
+      internalID: 1183142908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HarvestingSSh_3
+      rect:
+        serializedVersion: 2
+        x: 708
+        y: 1197
+        width: 236
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79b6f57fe68e49d4c8b5a633c57ba5dd
+      internalID: 1146636021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HarvestingSSh_4
+      rect:
+        serializedVersion: 2
+        x: 944
+        y: 1197
+        width: 236
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36b601e8258a86045b0f7343b2b652f7
+      internalID: -1580607297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HarvestingSSh_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1064
+        width: 236
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3222770583f942442aac42233e32b9a4
+      internalID: -1229822594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HarvestingSSh_6
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 1064
+        width: 236
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83162d16f96ab794bb7464c9cb552633
+      internalID: -983501412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HarvestingSSh_7
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 1064
+        width: 236
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94a8ec2818360ab48b4c53f3e46be3ce
+      internalID: -102134110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HarvestingSSh_8
+      rect:
+        serializedVersion: 2
+        x: 708
+        y: 1064
+        width: 236
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 889a46a6cf8be4045a2e664fedcbc542
+      internalID: 453113203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HarvestingSSh_9
+      rect:
+        serializedVersion: 2
+        x: 944
+        y: 1064
+        width: 236
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b19f569cfb47aa94eb6211a16c1ccb80
+      internalID: 1837264896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HarvestingSSh_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 931
+        width: 236
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eaefb3c0d02ee2d4d9bd924a31a4e2e4
+      internalID: 1391900681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HarvestingSSh_11
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 931
+        width: 236
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 087e6df40ce6c1e498842aebf0bb225e
+      internalID: -1852500294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HarvestingSSh_12
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 931
+        width: 236
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0332c91535c6b634f88fad740b350a3b
+      internalID: -1496018280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HarvestingSSh_13
+      rect:
+        serializedVersion: 2
+        x: 708
+        y: 931
+        width: 236
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f26d3630eb46aa4da07fb00ece853f1
+      internalID: 905193568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HarvestingSSh_14
+      rect:
+        serializedVersion: 2
+        x: 944
+        y: 931
+        width: 236
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ced827d5c4fb11e4987d6c9e8781c57d
+      internalID: -1306518051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HarvestingSSh_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 798
+        width: 236
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0dcc9da4e3298ce4388157f2c6233bee
+      internalID: -104844611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HarvestingSSh_16
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 798
+        width: 236
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4712ef2c856ae34f973de3c04c611a1
+      internalID: -968101483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HarvestingSSh_17
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 798
+        width: 236
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1a6456745a39b44086146353b0af24e
+      internalID: -1108517231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HarvestingSSh_18
+      rect:
+        serializedVersion: 2
+        x: 708
+        y: 798
+        width: 236
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa7d9f1fe6dcfe547a39f878bf45cf11
+      internalID: 379979204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HarvestingSSh_19
+      rect:
+        serializedVersion: 2
+        x: 944
+        y: 798
+        width: 236
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e496c3a62ac7ff34eb53336ab22d8472
+      internalID: -438331495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HarvestingSSh_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 665
+        width: 236
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a8534e0a6de2874bbbc51be79ac8f27
+      internalID: -1968218028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HarvestingSSh_21
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 665
+        width: 236
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e4345e905809494f9bb55b8029c7bc2
+      internalID: -919473095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HarvestingSSh_22
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 665
+        width: 236
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7621f42c7af37d34abcfc29c812d2aa7
+      internalID: 1633455814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HarvestingSSh_23
+      rect:
+        serializedVersion: 2
+        x: 708
+        y: 665
+        width: 236
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 921cbed33bfbe1445b11a621a4fbdffa
+      internalID: 2076537429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HarvestingSSh_24
+      rect:
+        serializedVersion: 2
+        x: 944
+        y: 665
+        width: 236
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05fc09807bde0e64cbf4fe662a68f7ce
+      internalID: -1387908167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HarvestingSSh_25
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 532
+        width: 236
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b190bc66493894a4289e71610b16106a
+      internalID: 1961234521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HarvestingSSh_26
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 532
+        width: 236
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a4a6125b590ce14aafd074398813b82
+      internalID: 1243114224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HarvestingSSh_27
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 532
+        width: 236
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc2051e93b9f9de47adf0bf72ecf71ab
+      internalID: 1433644297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HarvestingSSh_28
+      rect:
+        serializedVersion: 2
+        x: 708
+        y: 532
+        width: 236
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1af94654eef8bf549a38c98ac7de7f13
+      internalID: -888681334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HarvestingSSh_29
+      rect:
+        serializedVersion: 2
+        x: 944
+        y: 532
+        width: 236
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8266b6303809a34081ddba87ce4ac0f
+      internalID: 297667505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HarvestingSSh_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 399
+        width: 236
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f219cdf5e9c600d47a37f9ce66bf4942
+      internalID: 1476722432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HarvestingSSh_31
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 399
+        width: 236
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80b35e59f2c8bc64f87a812aaa6df55e
+      internalID: -21484242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HarvestingSSh_32
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 399
+        width: 236
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d68dc1569ab422749a8cbc8d92ee49a9
+      internalID: 1548701788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HarvestingSSh_33
+      rect:
+        serializedVersion: 2
+        x: 708
+        y: 399
+        width: 236
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4cc7bc651272f7642b9f9a101239db72
+      internalID: 751448102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HarvestingSSh_34
+      rect:
+        serializedVersion: 2
+        x: 944
+        y: 399
+        width: 236
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca82dfe426168f64cbae05994f2fc59d
+      internalID: 1267693126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HarvestingSSh_35
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 266
+        width: 236
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd7cc0b9ca29a9549a14d280eac91569
+      internalID: 1807194230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HarvestingSSh_36
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 266
+        width: 236
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0f5be9051e651e4d9946d43aec6872c
+      internalID: 1496699703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HarvestingSSh_37
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 266
+        width: 236
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4797f0dd58a1ddf4191cc574f3d0df90
+      internalID: -1973121293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HarvestingSSh_38
+      rect:
+        serializedVersion: 2
+        x: 708
+        y: 266
+        width: 236
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08ccb31053386504eb23d0854cf22836
+      internalID: 1579027847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HarvestingSSh_39
+      rect:
+        serializedVersion: 2
+        x: 944
+        y: 266
+        width: 236
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 611d53f8cdece4f44af82e744903a712
+      internalID: 859030002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HarvestingSSh_40
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 133
+        width: 236
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7195a2103e3c390428632fddba294028
+      internalID: 1727372169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HarvestingSSh_41
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 133
+        width: 236
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7bd2cfc6e7cf7a74799c15dabcaab38e
+      internalID: 360764709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HarvestingSSh_42
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 133
+        width: 236
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c45f1042752991d4a9a47891a6a202dc
+      internalID: -483690501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HarvestingSSh_43
+      rect:
+        serializedVersion: 2
+        x: 708
+        y: 133
+        width: 236
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7dcb36f0eed5cf8428ef1910876717f3
+      internalID: -1171846113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HarvestingSSh_44
+      rect:
+        serializedVersion: 2
+        x: 944
+        y: 133
+        width: 236
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1164c14d45839824e9301e8ab65ee77f
+      internalID: -529166716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HarvestingSSh_45
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 236
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64f7ef342b93aac43a3afeaff72c451f
+      internalID: 1818744092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HarvestingSSh_46
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 0
+        width: 236
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fe47b227a10de54898af1f7dfaa6299
+      internalID: -128738300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HarvestingSSh_47
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 0
+        width: 236
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5beaa2b8b30bcef4b9c9aaead737c4d6
+      internalID: 2101911096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HarvestingSSh_48
+      rect:
+        serializedVersion: 2
+        x: 708
+        y: 0
+        width: 236
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4973a5ce80029a4ea157b361c19f0af
+      internalID: -216163130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HarvestingSSh_49
+      rect:
+        serializedVersion: 2
+        x: 944
+        y: 0
+        width: 236
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c75dd26ba2f16541abf54fcbb901772
+      internalID: 725510907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 68396ef9fe60f5f4dbfe6605f1dfec17
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      HarvestingSSh_0: 545831787
+      HarvestingSSh_1: -1664855213
+      HarvestingSSh_10: 1391900681
+      HarvestingSSh_11: -1852500294
+      HarvestingSSh_12: -1496018280
+      HarvestingSSh_13: 905193568
+      HarvestingSSh_14: -1306518051
+      HarvestingSSh_15: -104844611
+      HarvestingSSh_16: -968101483
+      HarvestingSSh_17: -1108517231
+      HarvestingSSh_18: 379979204
+      HarvestingSSh_19: -438331495
+      HarvestingSSh_2: 1183142908
+      HarvestingSSh_20: -1968218028
+      HarvestingSSh_21: -919473095
+      HarvestingSSh_22: 1633455814
+      HarvestingSSh_23: 2076537429
+      HarvestingSSh_24: -1387908167
+      HarvestingSSh_25: 1961234521
+      HarvestingSSh_26: 1243114224
+      HarvestingSSh_27: 1433644297
+      HarvestingSSh_28: -888681334
+      HarvestingSSh_29: 297667505
+      HarvestingSSh_3: 1146636021
+      HarvestingSSh_30: 1476722432
+      HarvestingSSh_31: -21484242
+      HarvestingSSh_32: 1548701788
+      HarvestingSSh_33: 751448102
+      HarvestingSSh_34: 1267693126
+      HarvestingSSh_35: 1807194230
+      HarvestingSSh_36: 1496699703
+      HarvestingSSh_37: -1973121293
+      HarvestingSSh_38: 1579027847
+      HarvestingSSh_39: 859030002
+      HarvestingSSh_4: -1580607297
+      HarvestingSSh_40: 1727372169
+      HarvestingSSh_41: 360764709
+      HarvestingSSh_42: -483690501
+      HarvestingSSh_43: -1171846113
+      HarvestingSSh_44: -529166716
+      HarvestingSSh_45: 1818744092
+      HarvestingSSh_46: -128738300
+      HarvestingSSh_47: 2101911096
+      HarvestingSSh_48: -216163130
+      HarvestingSSh_49: 725510907
+      HarvestingSSh_5: -1229822594
+      HarvestingSSh_6: -983501412
+      HarvestingSSh_7: -102134110
+      HarvestingSSh_8: 453113203
+      HarvestingSSh_9: 1837264896
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

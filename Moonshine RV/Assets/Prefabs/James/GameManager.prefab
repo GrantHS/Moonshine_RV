@@ -1,0 +1,517 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7789502351451020064
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 193713266225940886}
+  - component: {fileID: 6336082070002212628}
+  - component: {fileID: 1850593342179933005}
+  - component: {fileID: 2690061354443957133}
+  - component: {fileID: 8315827125959016836}
+  - component: {fileID: 5558669440907731269}
+  - component: {fileID: 338027947223343059}
+  - component: {fileID: 7624150090456608169}
+  - component: {fileID: 6668627215722442011}
+  - component: {fileID: 8545389114355431809}
+  - component: {fileID: 5037042271558258000}
+  - component: {fileID: 9084014152452973004}
+  - component: {fileID: 8058388645004723360}
+  - component: {fileID: 9137935558637265710}
+  - component: {fileID: 1027345095844503751}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &193713266225940886
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7789502351451020064}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -6.71}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &6336082070002212628
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7789502351451020064}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &1850593342179933005
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7789502351451020064}
+  m_Enabled: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &2690061354443957133
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7789502351451020064}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8315827125959016836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7789502351451020064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: faa9611e697b7a145b001bc7ae9102dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radioPanel: {fileID: 0}
+  Country: {fileID: 0}
+  HipHop: {fileID: 0}
+  Jazz: {fileID: 0}
+--- !u!114 &5558669440907731269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7789502351451020064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9126c183ffc8a074e99ae4ab541ca813, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  countryController: {fileID: 0}
+  JazzController: {fileID: 0}
+  radioPanel: {fileID: 0}
+  playButton: {fileID: 0}
+  pauseButton: {fileID: 0}
+  songs:
+  - {fileID: 8300000, guid: 9686ae0f5af1567478e7dcfae0a06dcd, type: 3}
+  - {fileID: 8300000, guid: 7b971058f209f6042a987637b810afc7, type: 3}
+  audioSource: {fileID: 0}
+--- !u!114 &338027947223343059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7789502351451020064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d72c32c25311c2348b2adee63ea1e80f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hipHopController: {fileID: 0}
+  JazzController: {fileID: 0}
+  radioPanel: {fileID: 0}
+  playButton: {fileID: 0}
+  pauseButton: {fileID: 0}
+  songs:
+  - {fileID: 8300000, guid: 5bd0d83c212e17143b6d31c2259a2a8f, type: 3}
+  - {fileID: 8300000, guid: d035845296c888a48b506ac9336c96c2, type: 3}
+  - {fileID: 8300000, guid: 7781d62e88e17404c8fa0c691eb8fc44, type: 3}
+  audioSource: {fileID: 0}
+--- !u!114 &7624150090456608169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7789502351451020064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 271416c162fb03c49b7f7c291fa637bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  countryController: {fileID: 0}
+  HipHopController: {fileID: 0}
+  radioPanel: {fileID: 0}
+  playButton: {fileID: 0}
+  pauseButton: {fileID: 0}
+  songs:
+  - {fileID: 8300000, guid: 9a959e77ab22934478ddab0bc75c7653, type: 3}
+  - {fileID: 8300000, guid: 835458094a168ef4a904221fc6dcc124, type: 3}
+  audioSource: {fileID: 0}
+--- !u!114 &6668627215722442011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7789502351451020064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e1fc81eaaa981c4e87ea0e73a104d89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseMenuUI: {fileID: 0}
+--- !u!114 &8545389114355431809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7789502351451020064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6882b67767d010f48a24b152d57cc160, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MainMenu: {fileID: 0}
+  OptionsMenuObject: {fileID: 0}
+  CreditsMenu: {fileID: 0}
+  TutorialText: {fileID: 0}
+  MoneyText: {fileID: 0}
+  TreeShopMoneyText: {fileID: 0}
+  GlassShopMoneyText: {fileID: 0}
+  LightningHarvestable: 1
+  CherryHarvestable: 1
+  AppleHarvestable: 1
+  HoneyHarvestable: 1
+  LightningTreeMenu: {fileID: 0}
+  CherryTreeMenu: {fileID: 0}
+  AppleTreeMenu: {fileID: 0}
+  HoneyTreeMenu: {fileID: 0}
+  GlassComputerMenu: {fileID: 0}
+  TreeComputerMenu: {fileID: 0}
+  MainComputerMenu: {fileID: 0}
+  GlassMenuButton: {fileID: 0}
+  TreeMenuButton: {fileID: 0}
+  Currency: 100
+  CherTreePrice: 150
+  AppTreePrice: 200
+  HonTreePrice: 300
+  ShotGlassPrice: 10
+  DoubleGlassPrice: 20
+  MasonGlassPrice: 50
+  CanterGlassPrice: 100
+  CherryButton: {fileID: 0}
+  AppleButton: {fileID: 0}
+  HoneyButton: {fileID: 0}
+  LightTree: {fileID: 0}
+  CherTree: {fileID: 0}
+  AppTree: {fileID: 0}
+  HonTree: {fileID: 0}
+  LightningFruit: {fileID: 0}
+  CherryFruit: {fileID: 0}
+  AppleFruit: {fileID: 0}
+  HoneyFruit: {fileID: 0}
+  Reputation: 100
+  ReputationText: {fileID: 0}
+  ReputationScaler: {fileID: 0}
+  Points: 0
+  GameOverScreen: {fileID: 0}
+  ResultsText: {fileID: 0}
+--- !u!114 &5037042271558258000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7789502351451020064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87ea8658e8328244785b9d9c1d7708e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StatusPage: {fileID: 0}
+  StatusEnabled: 0
+  StillWindow: 0
+  StillScreen: {fileID: 0}
+  InventorySlots: []
+  InventoryItem: {fileID: 4258859497603405915, guid: a813cbc6dfd000a47a2654d95cba4c83,
+    type: 3}
+  InventoryBox: {fileID: 0}
+  Stacked: 0
+  CanvasObject: {fileID: 0}
+--- !u!114 &9084014152452973004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7789502351451020064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 266154e5b14056a46b44bd19f360c64f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  orderDelay: 35
+  CustomerMove: {fileID: 0}
+  unlockDetermined: 3
+  Orders: []
+  DrinkImages: []
+  OrderPrefab: {fileID: 7018514367457812645, guid: aacd520d98d49b24587529bc5f4ed259,
+    type: 3}
+  OrderPreview: {fileID: 0}
+  OrderBox: {fileID: 0}
+  OrderPreviewBox: {fileID: 0}
+  NotificationObject: {fileID: 0}
+  CounterSpaces:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  DrinkPrefabs:
+  - {fileID: 6781832082348744427, guid: 4dd28e2306b94044eb5d7c52ddb2c88a, type: 3}
+  - {fileID: 6781832082348744427, guid: 1059a7d7085f9664a9342a455cd9422b, type: 3}
+  - {fileID: 6781832082348744427, guid: 3b6272624d4015b4f86eb2795d415f21, type: 3}
+  - {fileID: 6781832082348744427, guid: f5eb5d0b5b48dd44684edd40508bc146, type: 3}
+  - {fileID: 351290303478958565, guid: 9abaa2dd30ba2614889e741cd7114d78, type: 3}
+  - {fileID: 351290303478958565, guid: 8c7a636c65b3bf343a535b708fe42247, type: 3}
+  - {fileID: 351290303478958565, guid: f14c6312f49f4b54ea21c629943aaf2c, type: 3}
+  - {fileID: 351290303478958565, guid: 7bb4bc2284024af47a6f5e5a8ce0272b, type: 3}
+  - {fileID: 3544393315774333103, guid: 7e2cd74675fa91a4c86b2a2cd42dab05, type: 3}
+  - {fileID: 3544393315774333103, guid: 070bde2456aa07848a60832bb9eebc87, type: 3}
+  - {fileID: 3544393315774333103, guid: ae771a263896d4b42b0fef4bc410b0af, type: 3}
+  - {fileID: 3544393315774333103, guid: d4cb0fc7cea6b8b4ab41569e5b5d57a2, type: 3}
+  - {fileID: 7332722421247819580, guid: 0ae64a95e70e5424284fea6863051eae, type: 3}
+  - {fileID: 7332722421247819580, guid: 8b3949b52d7662f4ea52a7179443333d, type: 3}
+  - {fileID: 7332722421247819580, guid: 2a161d0d4e339414399946c8023fac83, type: 3}
+  - {fileID: 7332722421247819580, guid: c95ba36516b92df4f9fd331c355ddcf4, type: 3}
+  DeCanterEarning: 100
+  ShotGlassEarning: 30
+  DoubleRocksEarning: 50
+  MasonEarning: 80
+  LightningEarning: 0
+  CherryEarning: 0
+  AppleEarning: 0
+  HoneyEarning: 0
+  ClearEarning: 0
+  RedEarning: 0
+  GreenEarning: 0
+  BrownEarning: 0
+  CompletedOrders: 0
+  BonusTime: 0
+  OrderCombo: 0
+  OrderThreshold1: 10
+  OrderThreshold2: 28
+  OrderThreshold3: 50
+  OrderComboText: {fileID: 0}
+  Tier2: {fileID: 0}
+  Tier3: {fileID: 0}
+  Tier4: {fileID: 0}
+  BellSound: {fileID: 0}
+--- !u!114 &8058388645004723360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7789502351451020064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63f56f19917e49c45b10e23ea20735e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LightningTiming: 5
+  CherryStrikes: 2
+  AppleStrikes: 3
+  HoneyStrikes: 4
+  LightningFruit: {fileID: 0}
+  CherryFruit: {fileID: 0}
+  AppleFruit: {fileID: 0}
+  HoneyFruit: {fileID: 0}
+  LightningTree: {fileID: 0}
+  CherryTree: {fileID: 0}
+  AppleTree: {fileID: 0}
+  HoneyTree: {fileID: 0}
+  lightningSoundEffect: {fileID: 8300000, guid: e029291fa096df64796faf2e12f06597,
+    type: 3}
+  audioSource: {fileID: 0}
+--- !u!114 &9137935558637265710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7789502351451020064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7742b8d56446c2849b397764258bfca7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BrewTimeVisual: {fileID: 0}
+  Color: 0
+  Flavor: 0
+  Glass: 0
+  ColorSet: 0
+  FlavorSet: 0
+  GlassSet: 0
+  FlavorText: {fileID: 0}
+  ShotBrewTime: 1
+  DoubleBrewTime: 3
+  MasonBrewTime: 5
+  DecanterBrewTime: 8
+  BrewingTime: 0
+  ColorSlot: {fileID: 0}
+  FlavorSlot: {fileID: 0}
+  GlassSlot: {fileID: 0}
+  FinishedSlot: {fileID: 0}
+  BrewingShield: {fileID: 0}
+  ClearDrinks:
+  - {fileID: 1150616823591125439, guid: 3a80bbe8b292bd34ca4ef5fe42bf5019, type: 3}
+  - {fileID: 1150616823591125439, guid: de1a1011ca438f44d98bcd0e32e39f81, type: 3}
+  - {fileID: 1150616823591125439, guid: 416e52518549eaf4098d10d2acd7c71c, type: 3}
+  - {fileID: 1150616823591125439, guid: e760567b8fae0d2439ec5a360cd4301b, type: 3}
+  - {fileID: 1150616823591125439, guid: 1fda4c4ebe6b5c847b90c68883260201, type: 3}
+  - {fileID: 1150616823591125439, guid: b4429a63680af4a4d9853c84c8c86a8a, type: 3}
+  - {fileID: 1150616823591125439, guid: 1697d816267bbc34db7276fdd7cf63a5, type: 3}
+  - {fileID: 1150616823591125439, guid: ed0ab839db8c8394980594b364200772, type: 3}
+  - {fileID: 1150616823591125439, guid: 28a9e8a506170d845b3c161faf1832ba, type: 3}
+  - {fileID: 1150616823591125439, guid: b570d1d6a0ae2fb4c9732c30c2fa72c2, type: 3}
+  - {fileID: 1150616823591125439, guid: 4918fc312fa95084a86fa2c0207cc559, type: 3}
+  - {fileID: 1150616823591125439, guid: 9bae8519c6f8d7041bd0944d9def6e73, type: 3}
+  - {fileID: 1150616823591125439, guid: 451d7b3ccf488d8459fa02cdd27e1085, type: 3}
+  - {fileID: 1150616823591125439, guid: 518a7d328870f6a46a2806c8bfe982b5, type: 3}
+  - {fileID: 1150616823591125439, guid: 97a4dc09267196e4984a9be34f122ecd, type: 3}
+  - {fileID: 1150616823591125439, guid: 9cc91d05ad8f6af43835a593efc0ae66, type: 3}
+  RedDrinks:
+  - {fileID: 1150616823591125439, guid: 8747c3423d765cb429bfafc3a293a22d, type: 3}
+  - {fileID: 1150616823591125439, guid: 83e7e445b7798b241946b879770bacb3, type: 3}
+  - {fileID: 1150616823591125439, guid: ce51721749ba5c04bba0a8a6a13079c7, type: 3}
+  - {fileID: 1150616823591125439, guid: 5652682f2b677cf4a9481f7162aeca86, type: 3}
+  - {fileID: 1150616823591125439, guid: aea4b43ae4be50e4890727373782b2be, type: 3}
+  - {fileID: 1150616823591125439, guid: 51c798df16c9e35458f767c9f81f2eef, type: 3}
+  - {fileID: 1150616823591125439, guid: 17153501e03e3d04bb87258e7befaec7, type: 3}
+  - {fileID: 1150616823591125439, guid: 008e1bbe94a146e4387f4a5274eee558, type: 3}
+  - {fileID: 1150616823591125439, guid: 66a8b47c920a6cf4a9aae603b785a8cc, type: 3}
+  - {fileID: 1150616823591125439, guid: 0cee5c981b97b1243abfc333fddddd0b, type: 3}
+  - {fileID: 1150616823591125439, guid: b330f6030278aa7438ab65b44dc6bb47, type: 3}
+  - {fileID: 1150616823591125439, guid: 5e833ef7708d821418634b67f46392ed, type: 3}
+  - {fileID: 1150616823591125439, guid: 8bfcd790b26e4d24d9bba6446449bafe, type: 3}
+  - {fileID: 1150616823591125439, guid: f9c3b6ad011667540b319a03fb068219, type: 3}
+  - {fileID: 1150616823591125439, guid: 48ae46d75d674ae458e56c022b1f97ef, type: 3}
+  - {fileID: 1150616823591125439, guid: d6246f3ba3e19a74eaa93a3356c69bff, type: 3}
+  GreenDrinks:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  BrownDrinks:
+  - {fileID: 1150616823591125439, guid: 9531b01206807f3408b905508f7d38e1, type: 3}
+  - {fileID: 1150616823591125439, guid: 22b527797e7e4604b8687368c513209a, type: 3}
+  - {fileID: 1150616823591125439, guid: a9c67e0b1bde0b040ac108ca593ecd1b, type: 3}
+  - {fileID: 1150616823591125439, guid: 15757899aae91d24eb9664e28380ea97, type: 3}
+  - {fileID: 1150616823591125439, guid: f91e72d7a38ecfe4cbe712116d105e20, type: 3}
+  - {fileID: 1150616823591125439, guid: c49f081d6d2e3674db1f15ff9f9847a1, type: 3}
+  - {fileID: 1150616823591125439, guid: 2f882c848214e534189c153f879a92a5, type: 3}
+  - {fileID: 1150616823591125439, guid: 295d35d256e95654cbb390ff01f12e0a, type: 3}
+  - {fileID: 1150616823591125439, guid: 57924ae3e59b6bb4d8672220d3fcfed8, type: 3}
+  - {fileID: 1150616823591125439, guid: 370b116e80346a0469d9b4095c5fa7ef, type: 3}
+  - {fileID: 1150616823591125439, guid: 5b5751ebab5474642acb2fe6ffa4662f, type: 3}
+  - {fileID: 1150616823591125439, guid: 6000520ddcb19284e969adb650ac27c7, type: 3}
+  - {fileID: 1150616823591125439, guid: ea4a0a0798d5aef488506d09ff27637b, type: 3}
+  - {fileID: 1150616823591125439, guid: 0b7e5604bcbedff4bab0b6fe1e0a4b08, type: 3}
+  - {fileID: 1150616823591125439, guid: 4d8e31ac5568534479677524ee0f5a57, type: 3}
+  - {fileID: 1150616823591125439, guid: ff6e844e27df65d4ab0171ee3926efbc, type: 3}
+--- !u!114 &1027345095844503751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7789502351451020064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef455313daa348a43a481a776938e98a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MainAreaButtons: {fileID: 0}
+  StillButtons: {fileID: 0}
+  BackyardButtons: {fileID: 0}
+  OrderWindowButtons: {fileID: 0}
+  ComputerButtons: {fileID: 0}
+  ComputerPoint: {fileID: 0}
+  StillPoint: {fileID: 0}
+  MainAreaPoint: {fileID: 0}
+  OrderWindowPoint: {fileID: 0}
+  BackyardPoint: {fileID: 0}
+  p0: {fileID: 0}
+  p1: {fileID: 0}
+  r0: {fileID: 0}
+  r1: {fileID: 0}
+  timeDuration: 1
+  timeStart: 0
+  CameraMoving: 0
+  p01: {x: 0, y: 0, z: 0}
+  r01: {x: 0, y: 0, z: 0, w: 0}
+  CameraObject: {fileID: 0}
+  OrderWindowSlot: {fileID: 0}
+  OrderWindowPreviews: {fileID: 0}

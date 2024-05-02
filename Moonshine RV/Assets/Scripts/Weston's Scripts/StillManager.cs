@@ -78,7 +78,7 @@ public class StillManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GlassSet && FlavorSet && ColorSet && !Brewing)
+        if (GlassSet && FlavorSet && ColorSet && !Brewing && FinishedSlot.transform.childCount < 5) 
         {
             switch (Glass)
             {
@@ -113,18 +113,46 @@ public class StillManager : MonoBehaviour
                 CancelInvoke("TextEffect");
                 BrewingShield.SetActive(false);
                 //Destroy all of the ingredients used
-                Destroy(GlassSlot.GetComponent<Item>().CurrentItem);
-                GlassSlot.GetComponent<Item>().Occupied = false;
+                if (GlassSlot.GetComponent<Item>().CurrentItem.GetComponent<InventorySlot>().Amount > 1)
+                {
+                    //Debug.Log("Glass Removed");
+                    GameObject GlassObject = GlassSlot.GetComponent<Item>().CurrentItem;
+                    GlassObject.GetComponent<InventorySlot>().Amount -= 1;
+                    GlassObject.GetComponent<InventorySlot>().ChangeText();
+                }
+                else
+                {
+                    Destroy(GlassSlot.GetComponent<Item>().CurrentItem);
+                    GlassSlot.GetComponent<Item>().Occupied = false;
+                    GlassSet = false;
+                }
+                if (ColorSlot.GetComponent<Item>().CurrentItem.GetComponent<InventorySlot>().Amount > 1)
+                {
+                    GameObject ColorObject = ColorSlot.GetComponent<Item>().CurrentItem;
+                    ColorObject.GetComponent<InventorySlot>().Amount -= 1;
+                    ColorObject.GetComponent<InventorySlot>().ChangeText();
+                }
+                else
+                {
+                    Destroy(ColorSlot.GetComponent<Item>().CurrentItem);
+                    ColorSlot.GetComponent<Item>().Occupied = false;
+                    ColorSet = false;
+                }
+                if (FlavorSlot.GetComponent<Item>().CurrentItem.GetComponent<InventorySlot>().Amount > 1)
+                {
+                    GameObject FlavorObject = FlavorSlot.GetComponent<Item>().CurrentItem;
+                    FlavorObject.GetComponent<InventorySlot>().Amount -= 1;
+                    FlavorObject.GetComponent<InventorySlot>().ChangeText();
+                }
+                else
+                {
+                    Destroy(FlavorSlot.GetComponent<Item>().CurrentItem);
+                    FlavorSlot.GetComponent<Item>().Occupied = false;
 
-                Destroy(ColorSlot.GetComponent<Item>().CurrentItem);
-                ColorSlot.GetComponent<Item>().Occupied = false;
-
-                Destroy(FlavorSlot.GetComponent<Item>().CurrentItem);
-                FlavorSlot.GetComponent<Item>().Occupied = false;
-
-                FlavorSet = false;
-                ColorSet = false;
-                GlassSet = false;
+                    FlavorSet = false;
+                }
+               
+                
 
                 //finish the drink and put it in the finished drink slot
 
@@ -150,7 +178,17 @@ public class StillManager : MonoBehaviour
                             i = RedDrinks.Count + 1;
                         }
                     }
-
+                }
+                if (Color == 2)//Search through Green Drinks
+                {
+                    for (int i = 0; i < GreenDrinks.Count + 1; i++)
+                    {
+                        if ((int)GreenDrinks[i].GetComponent<InventorySlot>().Flavoring == Flavor && (int)GreenDrinks[i].GetComponent<InventorySlot>().GlassType == Glass)
+                        {
+                            CurrentDrink = GreenDrinks[i];
+                            i = GreenDrinks.Count + 1;
+                        }
+                    }
                 }
                 if (Color == 3)//Search through Brown Drinks
                 {
@@ -168,6 +206,7 @@ public class StillManager : MonoBehaviour
                 if (CurrentDrink != null)
                 {
                     Instantiate(CurrentDrink, FinishedSlot.transform);
+                    CurrentDrink.GetComponent<InventorySlot>().PreviousSlot = FinishedSlot.transform;
                 }
                 else
                 {
