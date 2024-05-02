@@ -178,7 +178,17 @@ public class StillManager : MonoBehaviour
                             i = RedDrinks.Count + 1;
                         }
                     }
-
+                }
+                if (Color == 2)//Search through Green Drinks
+                {
+                    for (int i = 0; i < GreenDrinks.Count + 1; i++)
+                    {
+                        if ((int)GreenDrinks[i].GetComponent<InventorySlot>().Flavoring == Flavor && (int)GreenDrinks[i].GetComponent<InventorySlot>().GlassType == Glass)
+                        {
+                            CurrentDrink = GreenDrinks[i];
+                            i = GreenDrinks.Count + 1;
+                        }
+                    }
                 }
                 if (Color == 3)//Search through Brown Drinks
                 {
