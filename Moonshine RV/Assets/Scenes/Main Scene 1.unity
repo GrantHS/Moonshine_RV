@@ -12384,7 +12384,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'Audio Engineer
 
-    Kylien  Le'
+    Kai  Le'
 --- !u!222 &420475411
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -24963,8 +24963,8 @@ RectTransform:
   - {fileID: 817136982}
   - {fileID: 1808714135}
   - {fileID: 584075242}
-  - {fileID: 927163422}
   - {fileID: 537714063}
+  - {fileID: 927163422}
   - {fileID: 828260512}
   - {fileID: 1001847493}
   - {fileID: 1356988605}
@@ -56261,6 +56261,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1958476411699170516, guid: 35bc5eddbdf87d44cae70d10bf025413,
+        type: 3}
+      propertyPath: m_Size
+      value: 0.10333692
+      objectReference: {fileID: 0}
     - target: {fileID: 2087449366143318858, guid: 35bc5eddbdf87d44cae70d10bf025413,
         type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -56454,7 +56459,7 @@ PrefabInstance:
     - target: {fileID: 5154493080393584338, guid: 35bc5eddbdf87d44cae70d10bf025413,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5364586308556583010, guid: 35bc5eddbdf87d44cae70d10bf025413,
         type: 3}
