@@ -39512,7 +39512,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -39901,6 +39901,16 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: Skip
       objectReference: {fileID: 0}
+    - target: {fileID: 823380533503114444, guid: ec8a71b2eaff08f4d8373a718acf44e2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 851257248458807242, guid: ec8a71b2eaff08f4d8373a718acf44e2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1076747819473672141, guid: ec8a71b2eaff08f4d8373a718acf44e2,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -40016,6 +40026,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: GoBack
       objectReference: {fileID: 0}
+    - target: {fileID: 3795091433222413258, guid: ec8a71b2eaff08f4d8373a718acf44e2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4160475189947626462, guid: ec8a71b2eaff08f4d8373a718acf44e2,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -40045,6 +40060,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: SwitchToHipHop
+      objectReference: {fileID: 0}
+    - target: {fileID: 4393288609014743737, guid: ec8a71b2eaff08f4d8373a718acf44e2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5103372412757705684, guid: ec8a71b2eaff08f4d8373a718acf44e2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5966884807859739395, guid: ec8a71b2eaff08f4d8373a718acf44e2,
         type: 3}
@@ -40080,6 +40105,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: Skip
+      objectReference: {fileID: 0}
+    - target: {fileID: 6498641696088037803, guid: ec8a71b2eaff08f4d8373a718acf44e2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6773209761781446413, guid: ec8a71b2eaff08f4d8373a718acf44e2,
         type: 3}
@@ -56259,7 +56289,7 @@ PrefabInstance:
     - target: {fileID: 1870411152527992311, guid: 35bc5eddbdf87d44cae70d10bf025413,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: 3.2
       objectReference: {fileID: 0}
     - target: {fileID: 2087449366143318858, guid: 35bc5eddbdf87d44cae70d10bf025413,
         type: 3}
@@ -56444,7 +56474,11 @@ PrefabInstance:
 
 
         -
-        The Main Area section acts as a hub in between all sections'
+        The Main Area section acts as a hub in between all sections
+
+
+        - Press
+        ESC in any section to pause the game'
       objectReference: {fileID: 0}
     - target: {fileID: 5154493080393584338, guid: 35bc5eddbdf87d44cae70d10bf025413,
         type: 3}
@@ -56459,7 +56493,7 @@ PrefabInstance:
     - target: {fileID: 5364586308556583010, guid: 35bc5eddbdf87d44cae70d10bf025413,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -288.3
+      value: -262.64
       objectReference: {fileID: 0}
     - target: {fileID: 5456911018181242023, guid: 35bc5eddbdf87d44cae70d10bf025413,
         type: 3}
@@ -64215,10 +64249,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 842181015}
     m_Modifications:
+    - target: {fileID: 1183445021756028806, guid: fc93c6dd16eeca6449f54de67013688a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1511155458}
+    - target: {fileID: 1183445021756028806, guid: fc93c6dd16eeca6449f54de67013688a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: BacktoMainMenu
+      objectReference: {fileID: 0}
     - target: {fileID: 4407940027962121861, guid: fc93c6dd16eeca6449f54de67013688a,
         type: 3}
       propertyPath: m_Name
       value: GameOverScreen
+      objectReference: {fileID: 0}
+    - target: {fileID: 4407940027962121861, guid: fc93c6dd16eeca6449f54de67013688a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6499359564507780890, guid: fc93c6dd16eeca6449f54de67013688a,
         type: 3}
@@ -64269,6 +64318,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6693938379406463834, guid: fc93c6dd16eeca6449f54de67013688a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1511155458}
+    - target: {fileID: 6693938379406463834, guid: fc93c6dd16eeca6449f54de67013688a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: QuitGame
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
