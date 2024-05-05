@@ -13244,8 +13244,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.37, y: 3.05, z: 4.49}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.37, y: 3.05, z: 6.5092516}
+  m_Center: {x: 0, y: 0, z: -1.0096259}
 --- !u!4 &475446896
 Transform:
   m_ObjectHideFlags: 0
@@ -56256,6 +56256,44 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 842181015}
     m_Modifications:
+    - target: {fileID: 1870411152527992311, guid: 35bc5eddbdf87d44cae70d10bf025413,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2087449366143318858, guid: 35bc5eddbdf87d44cae70d10bf025413,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -293
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795254720384503540, guid: 35bc5eddbdf87d44cae70d10bf025413,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -524.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2853814717613129308, guid: 35bc5eddbdf87d44cae70d10bf025413,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -3359
+      objectReference: {fileID: 0}
+    - target: {fileID: 3459397935260247999, guid: 35bc5eddbdf87d44cae70d10bf025413,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -267
+      objectReference: {fileID: 0}
+    - target: {fileID: 3587382815709647026, guid: 35bc5eddbdf87d44cae70d10bf025413,
+        type: 3}
+      propertyPath: m_text
+      value: '- Harvest coloring and flavor in the Backyard section by clicking on
+        their respective tree
+
+
+        -Trees have a cooldown period before being
+        harvestable again
+
+
+        -Only one component can be harvested at a time'
+      objectReference: {fileID: 0}
     - target: {fileID: 3947870828478234922, guid: 35bc5eddbdf87d44cae70d10bf025413,
         type: 3}
       propertyPath: m_Pivot.x
@@ -56356,6 +56394,35 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4686443574157941335, guid: 35bc5eddbdf87d44cae70d10bf025413,
+        type: 3}
+      propertyPath: m_text
+      value: '- Buy various glass types from the Mick''s Quality Glassware website
+
+
+        -
+        Buy one of each tree type from the Garden of Ralph website
+
+
+        - Trees
+        purchased are automatically planted in the backyard section
+
+
+        - Lighting
+        tree cannot be bought as it is already planted in the backyard'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4849174490036633276, guid: 35bc5eddbdf87d44cae70d10bf025413,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -285
+      objectReference: {fileID: 0}
+    - target: {fileID: 4900267417288267874, guid: 35bc5eddbdf87d44cae70d10bf025413,
+        type: 3}
+      propertyPath: m_text
+      value: "- 3 components needed to brew Sunshine\n    -Coloring, Flavor, and
+        Glass type\n\n-Brewing automatically starts when the still has all 3 components\n\n-Different
+        component combinations make various drinks"
+      objectReference: {fileID: 0}
     - target: {fileID: 4919000050859028360, guid: 35bc5eddbdf87d44cae70d10bf025413,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -56366,6 +56433,19 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4936742307192524650, guid: 35bc5eddbdf87d44cae70d10bf025413,
+        type: 3}
+      propertyPath: m_text
+      value: '- Click on the buttons on the screen to move to its respective section
+
+
+        -
+        Each section correlates with a step required to brew Sunshine
+
+
+        -
+        The Main Area section acts as a hub in between all sections'
+      objectReference: {fileID: 0}
     - target: {fileID: 5154493080393584338, guid: 35bc5eddbdf87d44cae70d10bf025413,
         type: 3}
       propertyPath: m_Name
@@ -56374,7 +56454,46 @@ PrefabInstance:
     - target: {fileID: 5154493080393584338, guid: 35bc5eddbdf87d44cae70d10bf025413,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5364586308556583010, guid: 35bc5eddbdf87d44cae70d10bf025413,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -288.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5456911018181242023, guid: 35bc5eddbdf87d44cae70d10bf025413,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1511155458}
+    - target: {fileID: 5456911018181242023, guid: 35bc5eddbdf87d44cae70d10bf025413,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: BacktoMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 6358425919429983176, guid: 35bc5eddbdf87d44cae70d10bf025413,
+        type: 3}
+      propertyPath: m_text
+      value: '- RIGHT CLICK to toggle the status window while in any section to view
+        orders in place and current inventory
+
+
+        - Sell drinks by dragging
+        them from your inventory to the sell box in the order window
+
+
+        -
+        Play music by LEFT CLICKING the radio in the order window section'
+      objectReference: {fileID: 0}
+    - target: {fileID: 6391189886600367227, guid: 35bc5eddbdf87d44cae70d10bf025413,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -310
+      objectReference: {fileID: 0}
+    - target: {fileID: 6416268861548108790, guid: 35bc5eddbdf87d44cae70d10bf025413,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -256.7
       objectReference: {fileID: 0}
     - target: {fileID: 6519263726780634251, guid: 35bc5eddbdf87d44cae70d10bf025413,
         type: 3}
@@ -56390,6 +56509,24 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMin.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6775526370518669128, guid: 35bc5eddbdf87d44cae70d10bf025413,
+        type: 3}
+      propertyPath: m_text
+      value: '- Run out of business by hitting 0 reputation
+
+
+        - Reputation
+        is lost when orders are canceled or run out of time
+
+
+        - Gain reputation
+        by consecutively selling Sunshine'
+      objectReference: {fileID: 0}
+    - target: {fileID: 6879132493975842559, guid: 35bc5eddbdf87d44cae70d10bf025413,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -818.1
       objectReference: {fileID: 0}
     - target: {fileID: 7209877333032178253, guid: 35bc5eddbdf87d44cae70d10bf025413,
         type: 3}
