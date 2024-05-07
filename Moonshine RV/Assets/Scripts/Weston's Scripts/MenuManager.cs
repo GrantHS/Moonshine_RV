@@ -78,12 +78,7 @@ public class MenuManager : MonoBehaviour
 
     private void Start()
     {
-        //print(Screen.currentResolution);
-        //Screen.SetResolution(900, 600, true);
-        if (Screen.currentResolution.width <= 1080)
-        {
-
-        } 
+       
     }
 
     private void Update()
@@ -122,7 +117,7 @@ public class MenuManager : MonoBehaviour
         this.GetComponent<Inventory>().StatusEnabled = true;
         this.GetComponent<CameraShift>().MainArea();
         ReputationBar = ReputationScaler.transform.GetChild(0).gameObject;
-        ReputationFlavor();
+        GainReputation(0);
         this.GetComponent<OrderMaker>().BeginOrders(); //Starts Orders coming in after the player hits Start Button
     }
 
