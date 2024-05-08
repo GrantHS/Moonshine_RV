@@ -31,11 +31,15 @@ public class MenuManager : MonoBehaviour
     [SerializeField]
     private GameObject TreeComputerMenu;
     [SerializeField]
+    private GameObject SellComputerMenu;
+    [SerializeField]
     private GameObject MainComputerMenu;
     [SerializeField]
     private GameObject GlassMenuButton;
     [SerializeField]
     private GameObject TreeMenuButton;
+    [SerializeField]
+    private GameObject SellMenuButton;
     [SerializeField]
     private int currency;
     [SerializeField]
@@ -234,6 +238,7 @@ public class MenuManager : MonoBehaviour
         GlassComputerMenu.SetActive(true);
         GlassMenuButton.SetActive(false);
         TreeMenuButton.SetActive(false);
+        SellMenuButton.SetActive(false);
         //MenusOpen = true;
     }
 
@@ -242,15 +247,28 @@ public class MenuManager : MonoBehaviour
         TreeComputerMenu.SetActive(true);
         TreeMenuButton.SetActive(false);
         GlassMenuButton.SetActive(false);
+        SellMenuButton.SetActive(false);
         //MenusOpen = true;
+    }
+
+    public void SellMenu()
+    {
+        SellComputerMenu.SetActive(true);
+        TreeMenuButton.SetActive(false);
+        GlassMenuButton.SetActive(false);
+        SellMenuButton.SetActive(false);
+        this.GetComponent<Inventory>().SellWebsite = true;
     }
 
     public void CloseComputerMenus()
     {
         GlassComputerMenu.SetActive(false);
         TreeComputerMenu.SetActive(false);
+        SellComputerMenu.SetActive(false);
         GlassMenuButton.SetActive(true);
         TreeMenuButton.SetActive(true);
+        SellMenuButton.SetActive(true);
+        this.GetComponent<Inventory>().SellWebsite = false;
         //MenusOpen = false;
     }
 
