@@ -137,8 +137,38 @@ public class Item : MonoBehaviour,IDropHandler
             int MoneyMade = 0;
             if ((int)inventorySlot.GlassType == 4) //checks for flavors and colors
             {
-                
-                MoneyMade = 5 * inventorySlot.Amount;
+                if ((int)inventorySlot.Coloring == 4) //checks for Flavor
+                switch (inventorySlot.Flavoring)
+                {
+                        case 0:
+                            MoneyMade = 1 * inventorySlot.Amount;
+                            break;
+                        case InventorySlot.Flavor.Cherry:
+                            MoneyMade = 2 * inventorySlot.Amount;
+                            break;
+                        case InventorySlot.Flavor.Apple:
+                            MoneyMade = 5 * inventorySlot.Amount;
+                            break;
+                        case InventorySlot.Flavor.Honey:
+                            MoneyMade = 10 * inventorySlot.Amount;
+                            break;
+                }
+                if ((int)inventorySlot.Flavoring == 4) //checks for Color
+                    switch (inventorySlot.Coloring)
+                    {
+                        case 0:
+                            MoneyMade = 1 * inventorySlot.Amount;
+                            break;
+                        case InventorySlot.Color.Red:
+                            MoneyMade = 2 * inventorySlot.Amount;
+                            break;
+                        case InventorySlot.Color.Green:
+                            MoneyMade = 5 * inventorySlot.Amount;
+                            break;
+                        case InventorySlot.Color.Brown:
+                            MoneyMade = 10 * inventorySlot.Amount;
+                            break;
+                    }
             }
             switch (inventorySlot.GlassType)
             {
