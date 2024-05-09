@@ -137,9 +137,10 @@ public class Item : MonoBehaviour,IDropHandler
             int MoneyMade = 0;
             if ((int)inventorySlot.GlassType == 4) //checks for flavors and colors
             {
-                if ((int)inventorySlot.Coloring == 4) //checks for Flavor
-                switch (inventorySlot.Flavoring)
+                if ((int)inventorySlot.Coloring == 4)//checks for Flavor
                 {
+                    switch (inventorySlot.Flavoring)
+                    {
                         case 0:
                             MoneyMade = 1 * inventorySlot.Amount;
                             break;
@@ -152,8 +153,11 @@ public class Item : MonoBehaviour,IDropHandler
                         case InventorySlot.Flavor.Honey:
                             MoneyMade = 10 * inventorySlot.Amount;
                             break;
+                    }
                 }
-                if ((int)inventorySlot.Flavoring == 4) //checks for Color
+                if ((int)inventorySlot.Flavoring == 4)//checks for Color
+                {
+
                     switch (inventorySlot.Coloring)
                     {
                         case 0:
@@ -169,22 +173,31 @@ public class Item : MonoBehaviour,IDropHandler
                             MoneyMade = 10 * inventorySlot.Amount;
                             break;
                     }
+                }
             }
-            switch (inventorySlot.GlassType)
+            else if ((int)inventorySlot.GlassType < 4) 
             {
-                case 0:
-                    MoneyMade = 10 * inventorySlot.Amount;
-                    break;
-                case InventorySlot.Glass.Double:
-                    MoneyMade = 20 * inventorySlot.Amount;
-                    break;
-                case InventorySlot.Glass.Mason:
-                    MoneyMade = 30 * inventorySlot.Amount;
-                    break;
-                case InventorySlot.Glass.Decanter:
-                    MoneyMade = 40 * inventorySlot.Amount;
-                    break;
+                switch (inventorySlot.GlassType)
+                {
+                    case 0:
+                        MoneyMade = 10 * inventorySlot.Amount;
+                        if (inventorySlot.Amount == 0) MoneyMade = 10;
+                        break;
+                    case InventorySlot.Glass.Double:
+                        MoneyMade = 20 * inventorySlot.Amount;
+                        if (inventorySlot.Amount == 0) MoneyMade = 20;
+                        break;
+                    case InventorySlot.Glass.Mason:
+                        MoneyMade = 30 * inventorySlot.Amount;
+                        if (inventorySlot.Amount == 0) MoneyMade = 30;
+                        break;
+                    case InventorySlot.Glass.Decanter:
+                        MoneyMade = 40 * inventorySlot.Amount;
+                        if (inventorySlot.Amount == 0) MoneyMade = 40;
+                        break;
+                }
             }
+            
 
             GameManager.GetComponent<MenuManager>().GainMoney(MoneyMade);
             inventorySlot.GetComponent<InventorySlot>().PreviousSlot.GetComponent<Item>().Occupied = false;
