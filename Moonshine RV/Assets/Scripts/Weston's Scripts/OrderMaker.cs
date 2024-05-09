@@ -369,7 +369,7 @@ public class OrderMaker : MonoBehaviour
                             if (CustomerMove.GetComponent<CustomerMover>().Moving == false) CustomerMove.GetComponent<CustomerMover>().MoveToRV();
                         }
 
-                        Instantiate(DrinkPrefab, CounterSpaces[slot].transform.position, CounterSpaces[slot].transform.rotation, CounterSpaces[slot].transform);
+                        //Instantiate(DrinkPrefab, CounterSpaces[slot].transform.position, CounterSpaces[slot].transform.rotation, CounterSpaces[slot].transform);
                         CounterSpaces[slot].GetComponent<CounterSpace>().Occupied = true;
                         slot = CounterSpaces.Count + 1;
                     }

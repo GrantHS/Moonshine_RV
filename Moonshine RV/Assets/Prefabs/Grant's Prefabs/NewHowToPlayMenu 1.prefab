@@ -378,9 +378,9 @@ RectTransform:
   m_Father: {fileID: 1051343901481657367}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -17, y: 20}
+  m_SizeDelta: {x: 0, y: 20}
   m_Pivot: {x: 0, y: 0}
 --- !u!222 &147806043109557638
 CanvasRenderer:
@@ -703,17 +703,15 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'When you enter the backyard, you have access to all the trees that you
-    have bought at the Garden of Ralph website from the computer section. Each tree
-    takes a fixed amount of time to yield a harvest and, when it is ready, you can
-    either harvest the coloring or flavoring from the tree. But never both. When
-    you harvest a tree, you must wait before being able to harvest it again. The
-    lighting tree yields lighting flavoring and clear coloring, the cherry tree yields
-    cherry flavoring and red coloring, the apple tree yields apple flavoring and
-    green coloring, and the honey tree yields honey flavoring and brown coloring.
-    When the lighting tree is ready to harvest, a lighting strike can be heard to
-    notify you that it is ready to harvest. Every consecutive strike that is heard
-    correlates that another tree is also ready to be harvested. '
+  m_text: '- Harvest coloring and flavor in the Backyard section by clicking on their
+    respective tree
+
+
+    - Trees have a cooldown period before being harvestable
+    again
+
+
+    - Only one component can be harvested at a time'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -947,8 +945,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 864732828104991124}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.89666307}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1025,9 +1023,9 @@ RectTransform:
   m_Father: {fileID: 1051343901481657367}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -17, y: -17}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &1465348143304812276
 CanvasRenderer:
@@ -1210,7 +1208,7 @@ RectTransform:
   m_Father: {fileID: 5472215378318371929}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1630,13 +1628,19 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Never ran a business of your own? Don't worry, you're in the right place.
-    There are four sections apart from the main section and each of them correlate
-    with a step that needs to be taken in brewing and selling Sunshine. To move to
-    each of these sections, simply press the correlating buttons on the side of the
-    screen to move to the section you want to move to. The main section acts as a
-    hub, connecting all the sections together so you can go to any section from the
-    main section. Alternatively, you can access sections from their adjacent sections.
+  m_text: '- Click on the buttons on the screen to move to their respective sections
+
+
+    -
+    Each section correlates with a step required to brew Sunshine
+
+
+    - The Main
+    Area section acts as a hub in between all sections
+
+
+    - Press ESC in any section
+    to pause the game'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1939,16 +1943,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: There are several websites you can access from the computer section to
-    perform various tasks. One website, Mick's Quality Glassware, is used to buy
-    the shot glasses, double rocks glasses, mason jars, and liquor decanters that
-    will be needed on some orders. The other website is Garden of Ralph which is
-    where you can buy different trees. At the start, you are already given a lighting
-    tree but you can still buy cherry, apple, and honey trees from the website. Once
-    you purchase a tree, it is immediately placed in the backyard section. The last
-    website you can access is Bill's Surplus website which is a website you created
-    to sell incorrect drinks, glass types, flavoring, and coloring for when you need
-    the extra cash.
+  m_text: "- Buy various glass types from the Mick's Quality Glassware website\n\n-
+    Buy one of each tree type from the Garden of Ralph website\n\n- Trees purchased
+    are automatically planted in the backyard section \n\n- Lighting tree cannot
+    be bought as it isalready planted in the backyard"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2486,13 +2484,16 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: From the order window section, you can sell drinks that match the orders
-    that the customers have given you. To do so, open the status window in the order
-    window section by pressing RIGHT CLICK to toggle your inventory and the orders
-    that have been placed. By dragging completed drinks from your inventory to the
-    finished drink slot, you are able to sell drinks if they match the description
-    on the order you have. If not, you are unable to sell the drink at the order
-    window.
+  m_text: '- RIGHT CLICK to toggle the status window in any section to view the orders
+    in place and current inventory
+
+
+    - Sell drinks by dragging the from your
+    inventory to the sell box in the order window
+
+
+    - Play music by LEFT CLICKING
+    the radio in the order window section'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2692,7 +2693,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0.88}
   m_SizeDelta: {x: 0, y: 3716}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &5154493080393584338
@@ -3110,13 +3111,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'In order to make Sunshine, you need to bring 3 components to the Sunshine
-    still. One component is a glass type which can be bought from the computer section.
-    The next 2 components, flavoring and coloring, are harvested from the trees that
-    are also bought from the computer section and planted in the backyard section.
-    Once you have all 3 components needed to make Sunshine, make sure the orders
-    you have match the components requested in the order you want to make or you
-    will end up brewing the wrong glass of Sunshine. '
+  m_text: "- 3 components needed to brew Sunshine\n    - Coloring, Flavor, and Glass
+    type\n\n- Brewing automatically starts when the still has all 3 components\n\n-
+    Different component combinations make various drinks"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3389,9 +3386,9 @@ RectTransform:
   m_Father: {fileID: 1051343901481657367}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 20, y: -17}
+  m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 1, y: 1}
 --- !u!222 &743911936522186191
 CanvasRenderer:
@@ -3474,8 +3471,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4806443570416554791}
   m_HandleRect: {fileID: 6519263726780634251}
   m_Direction: 2
-  m_Value: 1
-  m_Size: 0.10333693
+  m_Value: 0.99973595
+  m_Size: 0.10333692
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -3545,11 +3542,15 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Your business runs on reputation. Reputation is based on how you perform
-    with your customers'' orders. It is decreased when you run out of time to make
-    the orders or cancel the orders in progress and it is increased when you make
-    5 consecutive drinks correcctly. If your reputation falls to zero, you run out
-    of business. '
+  m_text: '- Run out of business by reaching 0 reputation
+
+
+    - Reputation is lost
+    when orders are canceled or run out of time
+
+
+    - Gain reputation by consecutively
+    selling sunshine to customers'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

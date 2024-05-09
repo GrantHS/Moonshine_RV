@@ -9,7 +9,9 @@ public class Inventory : MonoBehaviour
     public GameObject StatusPage;
     public bool StatusEnabled;
     public bool StillWindow;
-    public GameObject StillScreen; 
+    public GameObject StillScreen;
+    public bool SellWebsite;
+    public GameObject SellScreen;
 
     [SerializeField]
     public List<GameObject> InventorySlots;
@@ -36,6 +38,11 @@ public class Inventory : MonoBehaviour
             ToggleStatusPage();
         }
         
+    }
+
+    public void PublicToggle()
+    {
+        ToggleStatusPage();
     }
 
     private void ToggleStatusPage()

@@ -37,6 +37,7 @@ public class InventorySlot : MonoBehaviour,IBeginDragHandler,IDragHandler,IEndDr
     void Start()
     {
         //Amount = 1;
+        if (GlassType != Glass.None && Flavoring != Flavor.None && Coloring != Color.None) TextAmount.text = " ";
     }
 
     public void OnBeginDrag(PointerEventData eventData)

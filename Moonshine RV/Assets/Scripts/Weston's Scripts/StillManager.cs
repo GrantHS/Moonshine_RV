@@ -50,26 +50,17 @@ public class StillManager : MonoBehaviour
 
     public void ClearColor()
     {
-        ColorSet = false;
+        if(ColorSlot.transform.childCount==0) ColorSet = false;
     }
 
     public void ClearFlavor()
     {
-        FlavorSet = false;
+        if (FlavorSlot.transform.childCount == 0) FlavorSet = false;
     }
 
     public void ClearGlass()
     {
-        GlassSet = false;
-    }
-
-
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+        if (GlassSlot.transform.childCount == 0) GlassSet = false;
     }
 
     

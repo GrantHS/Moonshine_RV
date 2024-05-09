@@ -31,11 +31,15 @@ public class MenuManager : MonoBehaviour
     [SerializeField]
     private GameObject TreeComputerMenu;
     [SerializeField]
+    private GameObject SellComputerMenu;
+    [SerializeField]
     private GameObject MainComputerMenu;
     [SerializeField]
     private GameObject GlassMenuButton;
     [SerializeField]
     private GameObject TreeMenuButton;
+    [SerializeField]
+    private GameObject SellMenuButton;
     [SerializeField]
     private int currency;
     [SerializeField]
@@ -78,12 +82,7 @@ public class MenuManager : MonoBehaviour
 
     private void Start()
     {
-        //print(Screen.currentResolution);
-        //Screen.SetResolution(900, 600, true);
-        if (Screen.currentResolution.width <= 1080)
-        {
-
-        } 
+       
     }
 
     private void Update()
@@ -122,7 +121,7 @@ public class MenuManager : MonoBehaviour
         this.GetComponent<Inventory>().StatusEnabled = true;
         this.GetComponent<CameraShift>().MainArea();
         ReputationBar = ReputationScaler.transform.GetChild(0).gameObject;
-        ReputationFlavor();
+        GainReputation(0);
         this.GetComponent<OrderMaker>().BeginOrders(); //Starts Orders coming in after the player hits Start Button
     }
 
@@ -239,6 +238,7 @@ public class MenuManager : MonoBehaviour
         GlassComputerMenu.SetActive(true);
         GlassMenuButton.SetActive(false);
         TreeMenuButton.SetActive(false);
+        SellMenuButton.SetActive(false);
         //MenusOpen = true;
     }
 
@@ -247,15 +247,30 @@ public class MenuManager : MonoBehaviour
         TreeComputerMenu.SetActive(true);
         TreeMenuButton.SetActive(false);
         GlassMenuButton.SetActive(false);
+        SellMenuButton.SetActive(false);
         //MenusOpen = true;
+    }
+
+    public void SellMenu()
+    {
+        SellComputerMenu.SetActive(true);
+        TreeMenuButton.SetActive(false);
+        GlassMenuButton.SetActive(false);
+        SellMenuButton.SetActive(false);
+        this.GetComponent<Inventory>().PublicToggle();
+        this.GetComponent<Inventory>().StatusEnabled = false;
     }
 
     public void CloseComputerMenus()
     {
         GlassComputerMenu.SetActive(false);
         TreeComputerMenu.SetActive(false);
+        SellComputerMenu.SetActive(false);
+        this.GetComponent<Inventory>().StatusEnabled = true;
         GlassMenuButton.SetActive(true);
         TreeMenuButton.SetActive(true);
+        SellMenuButton.SetActive(true);
+        this.GetComponent<Inventory>().SellWebsite = false;
         //MenusOpen = false;
     }
 

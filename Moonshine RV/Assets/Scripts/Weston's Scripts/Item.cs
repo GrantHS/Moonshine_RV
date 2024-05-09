@@ -36,14 +36,40 @@ public class Item : MonoBehaviour,IDropHandler
         }
         else if (transform.childCount == 1 && SlotType == SpecialSlot.None)
         {
+            
             GameObject dropped = eventData.pointerDrag;
             InventorySlot inventorySlot = dropped.GetComponent<InventorySlot>();
-            inventorySlot.parentAfterDrag = transform;
-            CurrentItem.GetComponent<InventorySlot>().parentAfterDrag = inventorySlot.PreviousSlot;
-            CurrentItem.GetComponent<InventorySlot>().SwitchSlots();
-            inventorySlot.PreviousSlot.GetComponent<Item>().CurrentItem = CurrentItem;
-            CurrentItem = dropped;
-            Occupied = true;
+            InventorySlot CurrentSlot = CurrentItem.GetComponent<InventorySlot>();
+            if (CurrentSlot.GlassType == inventorySlot.GlassType && CurrentSlot.Flavoring == inventorySlot.Flavoring && CurrentSlot.Coloring == inventorySlot.Coloring && inventorySlot.PreviousSlot.GetComponent<Item>().SlotType == SpecialSlot.None)
+            {
+                if(inventorySlot.GlassType == InventorySlot.Glass.None || inventorySlot.Coloring == InventorySlot.Color.None)
+                {
+                    CurrentSlot.Amount += inventorySlot.Amount;
+                    CurrentSlot.ChangeText();
+                    inventorySlot.GetComponent<InventorySlot>().PreviousSlot.GetComponent<Item>().Occupied = false;
+                    Destroy(inventorySlot.gameObject);
+                }
+                else
+                {
+                    inventorySlot.parentAfterDrag = transform;
+                    CurrentItem.GetComponent<InventorySlot>().parentAfterDrag = inventorySlot.PreviousSlot;
+                    CurrentItem.GetComponent<InventorySlot>().SwitchSlots();
+                    inventorySlot.PreviousSlot.GetComponent<Item>().CurrentItem = CurrentItem;
+                    CurrentItem = dropped;
+                    Occupied = true;
+                }
+                
+            }
+            else
+            {
+                inventorySlot.parentAfterDrag = transform;
+                CurrentItem.GetComponent<InventorySlot>().parentAfterDrag = inventorySlot.PreviousSlot;
+                CurrentItem.GetComponent<InventorySlot>().SwitchSlots();
+                inventorySlot.PreviousSlot.GetComponent<Item>().CurrentItem = CurrentItem;
+                CurrentItem = dropped;
+                Occupied = true;
+            }
+           
         }
         else if (transform.childCount == 0 && SlotType == SpecialSlot.StillColor) 
         {
@@ -109,21 +135,74 @@ public class Item : MonoBehaviour,IDropHandler
             
             InventorySlot inventorySlot = dropped.GetComponent<InventorySlot>();
             int MoneyMade = 0;
-            if ((int)inventorySlot.GlassType < 4) //checks for flavors and colors
+            if ((int)inventorySlot.GlassType == 4) //checks for flavors and colors
             {
-                MoneyMade = 5;
+                if ((int)inventorySlot.Coloring == 4)//checks for Flavor
+                {
+                    switch (inventorySlot.Flavoring)
+                    {
+                        case 0:
+                            MoneyMade = 1 * inventorySlot.Amount;
+                            break;
+                        case InventorySlot.Flavor.Cherry:
+                            MoneyMade = 2 * inventorySlot.Amount;
+                            break;
+                        case InventorySlot.Flavor.Apple:
+                            MoneyMade = 5 * inventorySlot.Amount;
+                            break;
+                        case InventorySlot.Flavor.Honey:
+                            MoneyMade = 10 * inventorySlot.Amount;
+                            break;
+                    }
+                }
+                if ((int)inventorySlot.Flavoring == 4)//checks for Color
+                {
+
+                    switch (inventorySlot.Coloring)
+                    {
+                        case 0:
+                            MoneyMade = 1 * inventorySlot.Amount;
+                            break;
+                        case InventorySlot.Color.Red:
+                            MoneyMade = 2 * inventorySlot.Amount;
+                            break;
+                        case InventorySlot.Color.Green:
+                            MoneyMade = 5 * inventorySlot.Amount;
+                            break;
+                        case InventorySlot.Color.Brown:
+                            MoneyMade = 10 * inventorySlot.Amount;
+                            break;
+                    }
+                }
             }
-            switch (inventorySlot.GlassType)
+            else if ((int)inventorySlot.GlassType < 4) 
             {
-                case 0:
-                    
-                    break;
+                switch (inventorySlot.GlassType)
+                {
+                    case 0:
+                        MoneyMade = 10 * inventorySlot.Amount;
+                        if (inventorySlot.Amount == 0) MoneyMade = 10;
+                        break;
+                    case InventorySlot.Glass.Double:
+                        MoneyMade = 20 * inventorySlot.Amount;
+                        if (inventorySlot.Amount == 0) MoneyMade = 20;
+                        break;
+                    case InventorySlot.Glass.Mason:
+                        MoneyMade = 30 * inventorySlot.Amount;
+                        if (inventorySlot.Amount == 0) MoneyMade = 30;
+                        break;
+                    case InventorySlot.Glass.Decanter:
+                        MoneyMade = 40 * inventorySlot.Amount;
+                        if (inventorySlot.Amount == 0) MoneyMade = 40;
+                        break;
+                }
             }
+            
 
             GameManager.GetComponent<MenuManager>().GainMoney(MoneyMade);
             inventorySlot.GetComponent<InventorySlot>().PreviousSlot.GetComponent<Item>().Occupied = false;
             Destroy(inventorySlot.gameObject);
-
+            
         }
 
     }
