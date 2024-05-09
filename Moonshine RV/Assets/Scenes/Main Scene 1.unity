@@ -3232,7 +3232,7 @@ PrefabInstance:
     - target: {fileID: 1870411152527992311, guid: 35bc5eddbdf87d44cae70d10bf025413,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: 0.9415283
       objectReference: {fileID: 0}
     - target: {fileID: 2074056374418156196, guid: 35bc5eddbdf87d44cae70d10bf025413,
         type: 3}
@@ -3354,6 +3354,15 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 1807
       objectReference: {fileID: 0}
+    - target: {fileID: 4686443574157941335, guid: 35bc5eddbdf87d44cae70d10bf025413,
+        type: 3}
+      propertyPath: m_text
+      value: "- Buy various glass types from the Mick's Quality Glassware website\n\n-
+        Buy one of each tree type from the Garden of Ralph website\n\n- Trees purchased
+        are automatically planted in the backyard section \n\n- Lighting tree cannot
+        be bought as it isalready planted in the backyard\n\n- Sell components and
+        finished drinks on the Bill's Surplus website"
+      objectReference: {fileID: 0}
     - target: {fileID: 4919000050859028360, guid: 35bc5eddbdf87d44cae70d10bf025413,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -3397,12 +3406,12 @@ PrefabInstance:
     - target: {fileID: 6519263726780634251, guid: 35bc5eddbdf87d44cae70d10bf025413,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0.9997359
       objectReference: {fileID: 0}
     - target: {fileID: 6519263726780634251, guid: 35bc5eddbdf87d44cae70d10bf025413,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0.89231634
+      value: 0.89205223
       objectReference: {fileID: 0}
     - target: {fileID: 6802499767082170752, guid: 35bc5eddbdf87d44cae70d10bf025413,
         type: 3}
