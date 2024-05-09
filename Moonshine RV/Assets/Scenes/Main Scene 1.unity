@@ -22779,7 +22779,6 @@ Transform:
   m_LocalScale: {x: 0.59572715, y: 0.59572715, z: 0.59572715}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1556416011}
   - {fileID: 644083197}
   - {fileID: 913693105}
   m_Father: {fileID: 382738817}
@@ -45672,7 +45671,7 @@ MonoBehaviour:
   HoneyTreeMenu: {fileID: 2075962081}
   GlassComputerMenu: {fileID: 1588250924}
   TreeComputerMenu: {fileID: 1853023972}
-  SellComputerMenu: {fileID: 804675076}
+  SellComputerMenu: {fileID: 2117945518}
   MainComputerMenu: {fileID: 151349235}
   GlassMenuButton: {fileID: 1652532919}
   TreeMenuButton: {fileID: 1331729206}
@@ -47340,15 +47339,15 @@ RectTransform:
   m_GameObject: {fileID: 1556416010}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5957271, y: 0.5957271, z: 0.5957271}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1473397649}
-  m_Father: {fileID: 804675077}
+  m_Father: {fileID: 2117945519}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 56, y: -130}
+  m_AnchoredPosition: {x: 0, y: 84.8}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1556416012
@@ -47410,6 +47409,18 @@ MonoBehaviour:
       - m_Target: {fileID: 127358840}
         m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
         m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1511155457}
+        m_TargetAssemblyTypeName: Inventory, Assembly-CSharp
+        m_MethodName: PublicToggle
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -65401,6 +65412,7 @@ Transform:
   - {fileID: 712362848}
   - {fileID: 1036046992}
   - {fileID: 1817283375}
+  - {fileID: 1556416011}
   m_Father: {fileID: 842181015}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2118420557

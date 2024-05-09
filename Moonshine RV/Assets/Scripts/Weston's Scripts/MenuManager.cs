@@ -257,7 +257,8 @@ public class MenuManager : MonoBehaviour
         TreeMenuButton.SetActive(false);
         GlassMenuButton.SetActive(false);
         SellMenuButton.SetActive(false);
-        this.GetComponent<Inventory>().SellWebsite = true;
+        this.GetComponent<Inventory>().PublicToggle();
+        this.GetComponent<Inventory>().StatusEnabled = false;
     }
 
     public void CloseComputerMenus()
@@ -265,6 +266,7 @@ public class MenuManager : MonoBehaviour
         GlassComputerMenu.SetActive(false);
         TreeComputerMenu.SetActive(false);
         SellComputerMenu.SetActive(false);
+        this.GetComponent<Inventory>().StatusEnabled = true;
         GlassMenuButton.SetActive(true);
         TreeMenuButton.SetActive(true);
         SellMenuButton.SetActive(true);

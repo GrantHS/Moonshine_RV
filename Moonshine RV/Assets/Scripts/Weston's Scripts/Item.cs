@@ -137,6 +137,7 @@ public class Item : MonoBehaviour,IDropHandler
             int MoneyMade = 0;
             if ((int)inventorySlot.GlassType == 4) //checks for flavors and colors
             {
+                
                 MoneyMade = 5 * inventorySlot.Amount;
             }
             switch (inventorySlot.GlassType)

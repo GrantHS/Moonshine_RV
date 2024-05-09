@@ -40,6 +40,11 @@ public class Inventory : MonoBehaviour
         
     }
 
+    public void PublicToggle()
+    {
+        ToggleStatusPage();
+    }
+
     private void ToggleStatusPage()
     {
         if (!StillWindow)
@@ -62,17 +67,6 @@ public class Inventory : MonoBehaviour
             else
             {
                 StillScreen.SetActive(true);
-            }
-        }
-        if (SellWebsite)
-        {
-            if (SellScreen.activeInHierarchy)
-            {
-                SellScreen.SetActive(false);
-            }
-            else
-            {
-                SellScreen.SetActive(true);
             }
         }
         
